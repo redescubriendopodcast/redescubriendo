@@ -64,12 +64,15 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
         "- Si conoces nombres exactos del mapa, menciónalos en negrita conceptual (sin asteriscos), para que el usuario sepa qué buscar.\n" +
         "- Si te preguntan algo fuera del corpus, di lo que sepas brevemente y propón por dónde tirar." +
         (ctx ? "\n\nContexto que tienes ahora (úsalo si encaja, no lo expongas):\n" + ctx : "");
-      const resp = await window.claude.complete({
-        messages: [
-          { role: "user", content: sys + "\n\n=== PREGUNTA ===\n" + text }
-        ]
+      const res = await fetch("https://rdc-chat.redescubriendopodcast.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [{ role: "user", content: sys + "\n\n=== PREGUNTA ===\n" + text }]
+        })
       });
-      setMessages(prev => [...prev, { role: "assistant", content: resp }]);
+      const data = await res.json();
+      setMessages(prev => [...prev, { role: "assistant", content: data.text }]);
     } catch (e) {
       setMessages(prev => [...prev, { role: "assistant", content: "No he podido responder ahora (" + (e?.message || "error") + "). Inténtalo de nuevo." }]);
     } finally {
