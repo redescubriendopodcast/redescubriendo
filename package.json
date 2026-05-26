@@ -1,0 +1,13 @@
+{
+  "name": "redescubriendo-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mapa galáctico UAP/NHI del corpus Redescubriendo. Web estática + script de build de data.js.",
+  "scripts": {
+    "build": "node scripts/build-data.js",
+    "dev": "npx --yes serve . -l 8000"
+  },
+  "dependencies": {
+    "xlsx": "0.18.5"
+  }
+}

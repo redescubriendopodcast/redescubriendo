@@ -7,6 +7,13 @@ source/*.xlsx
 *.zip
 *.xlsx
 
+# Dependencias y artefactos de build
+node_modules/
+
+# Backups del pipeline (solo en local)
+data.js.backup*
+source/_backup_*
+
 # Sistema
 .DS_Store
 Thumbs.db

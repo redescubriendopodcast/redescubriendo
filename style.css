@@ -1177,7 +1177,7 @@ button {
 }
 .threads-head {
   max-width: 900px;
-  margin-bottom: 48px;
+  margin: 0 auto 48px;
   position: relative;
 }
 .th-eyebrow {
@@ -1251,8 +1251,10 @@ button {
 
 .threads-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .thread-card {
   position: relative;
@@ -1389,6 +1391,7 @@ button {
 .tl-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   padding: 14px 28px 12px;
   background: linear-gradient(180deg, rgba(8,16,28,0.7), rgba(8,16,28,0.4));
@@ -1406,7 +1409,6 @@ button {
 .tl-tabs {
   display: flex;
   gap: 6px;
-  flex: 1;
 }
 .tl-tab {
   display: inline-flex;
