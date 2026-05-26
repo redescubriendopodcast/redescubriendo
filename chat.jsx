@@ -2,6 +2,20 @@
 
 const { useState: useStateChat, useEffect: useEffectChat, useRef: useRefChat } = React;
 
+// Render **bold** and line breaks from model output
+const renderText = (text) => {
+  return text.split('\n').reduce((acc, line, lineIdx) => {
+    if (lineIdx > 0) acc.push(React.createElement('br', { key: 'br-' + lineIdx }));
+    const parts = line.split(/(\*{1,3}[^*]+\*{1,3})/g);
+    parts.forEach((part, i) => {
+      const match = part.match(/^\*{1,3}([^*]+)\*{1,3}$/);
+      if (match) acc.push(React.createElement('strong', { key: lineIdx + '-' + i }, match[1]));
+      else if (part) acc.push(part);
+    });
+    return acc;
+  }, []);
+};
+
 function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
   const [open, setOpen] = useStateChat(false);
   const [messages, setMessages] = useStateChat([]);
@@ -61,7 +75,7 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
         "- NO cites cifras del corpus (nº de entidades, conexiones, vídeos). El usuario ya las ve.\n" +
         "- NO presumas del mapa ni hables de 'la base de datos'. Habla del fenómeno, no de la app.\n" +
         "- Sé conciso: 2–5 frases, lenguaje directo y cálido. Si la pregunta es abierta, ofrece un punto de entrada concreto.\n" +
-        "- Si conoces nombres exactos del mapa, menciónalos en negrita conceptual (sin asteriscos), para que el usuario sepa qué buscar.\n" +
+        "- Si conoces nombres exactos del mapa, escríbelos entre dobles asteriscos así: **Nombre**, para que se muestren en negrita.\n" +
         "- Si te preguntan algo fuera del corpus, di lo que sepas brevemente y propón por dónde tirar." +
         (ctx ? "\n\nContexto que tienes ahora (úsalo si encaja, no lo expongas):\n" + ctx : "");
       const res = await fetch("https://rdc-chat.redescubriendopodcast.workers.dev", {
@@ -146,7 +160,7 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
             {messages.map((m, i) => (
               <div key={i} className={`chat-msg ${m.role}`}>
                 {m.role === "assistant" && <span className="chat-msg-orb"></span>}
-                <div className="chat-msg-text">{m.content}</div>
+                <div className="chat-msg-text">{renderText(m.content)}</div>
               </div>
             ))}
             {thinking && (
