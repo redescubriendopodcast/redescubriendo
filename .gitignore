@@ -1,0 +1,12 @@
+# Archivos fuente / trabajo interno (no necesarios en producción)
+uploads/
+screenshots/
+source/*.xlsx
+
+# Binarios y comprimidos
+*.zip
+*.xlsx
+
+# Sistema
+.DS_Store
+Thumbs.db
