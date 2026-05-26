@@ -1484,8 +1484,8 @@ button {
 .about-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 6;
-  max-height: 420px;
+  /* Altura responsive: mínimo 240px (móvil), crece con el ancho hasta 460px máx */
+  height: clamp(240px, 30vw, 460px);
   overflow: hidden;
   background: #04080f;
 }
@@ -1493,8 +1493,23 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  /* 55% vertical = exactamente donde está "REDESCUBRIENDO" en la imagen.
+     El texto queda visible en cualquier proporción de container. */
+  object-position: center 55%;
   display: block;
+}
+/* Degradado sutil en los bordes laterales para suavizar el recorte horizontal
+   en pantallas muy anchas (donde la imagen se "estira" más allá de sus extremos). */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(4,8,15,0.45) 0%,
+    rgba(4,8,15,0) 18%,
+    rgba(4,8,15,0) 82%,
+    rgba(4,8,15,0.45) 100%);
 }
 .about-content {
   max-width: 980px;
