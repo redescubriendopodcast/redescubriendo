@@ -24,8 +24,39 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SRC  = path.join(ROOT, 'source');
 const OUT  = path.join(ROOT, 'data.js');
+
+// Fuentes únicas (no duplicadas en este repo): viven en las carpetas donde
+// el operador trabaja habitualmente. Si cambias estas rutas, ajusta el README.
+const PROJECT_ROOT = path.resolve(ROOT, '..', '..');
+const LINEAS_DE_TIEMPO = path.join(PROJECT_ROOT, 'LINEAS DE TIEMPO');
+const TRANSCRIPCIONES  = path.join(PROJECT_ROOT, 'Transcripciones');
+
+const TIMELINE_FILES = {
+  personas: path.join(LINEAS_DE_TIEMPO, 'ReDescubriendo Podcast- Personas.xlsx'),
+  eventos:  path.join(LINEAS_DE_TIEMPO, 'ReDescubriendo_Podcast-_Eventos.xlsx'),
+  grupos:   path.join(LINEAS_DE_TIEMPO, 'ReDescubriendo_Podcast-_Grupos_y_Programas.xlsx')
+};
+const CORPUS_FILE = path.join(TRANSCRIPCIONES, 'Videos_RDC.xlsx');
+
+// Mapeo de headers castellano → keys del corpus (compatibilidad con el shape
+// que esperan el resto del script y el frontend).
+const CORPUS_HEADER_MAP = {
+  'Nº':                'n',
+  'Título del Video':  'titulo',
+  'Canal':             'canal',
+  'URL':               'url',
+  'Fecha Guardado':    'fecha',
+  'Temas':             'temas',
+  'Por qué lo guardé': 'porque',
+  'Estado':            'estado',
+  'Duración':          'duracion',
+  'Resumen':           'resumen',
+  'Highlights':        'highlights',
+  'Archivo Local':     'archivo',
+  'Episodio':          'episodio',
+  'Fecha Procesado':   'procesado'
+};
 
 // ============================================================
 // 1. CANALES — 15 canales en el corpus, mapeados a 13 brazos de la galaxia.
@@ -389,24 +420,41 @@ function parseHeadline(headline) {
 // 6. LECTURA DE FUENTES
 // ============================================================
 
-function readSheet(file) {
-  const wb = XLSX.readFile(path.join(SRC, file));
+function readTimelineXlsx(filepath) {
+  const wb = XLSX.readFile(filepath);
   const sh = wb.Sheets[wb.SheetNames[0]];
   const rows = XLSX.utils.sheet_to_json(sh, { defval: null });
   // Filtrar fila "title" de TimelineJS y filas sin Headline
   return rows.filter(r => r.Headline && r.Type !== 'title');
 }
 
-const corpus = JSON.parse(fs.readFileSync(path.join(SRC, 'corpus_full.json'), 'utf8'));
-const personasRows = readSheet('Personas.xlsx');
-const eventosRows  = readSheet('Eventos.xlsx');
-const grupos       = readSheet('GruposProgramas.xlsx');
+function readCorpusXlsx(filepath) {
+  // Videos_RDC.xlsx tiene headers en castellano; los traducimos al shape
+  // que el resto del script espera (n, titulo, canal, url, ...).
+  const wb = XLSX.readFile(filepath);
+  const sh = wb.Sheets[wb.SheetNames[0]];
+  const rows = XLSX.utils.sheet_to_json(sh, { defval: null });
+  return rows.filter(r => r['Título del Video'] || r['Nº']).map(r => {
+    const out = {};
+    for (const [orig, key] of Object.entries(CORPUS_HEADER_MAP)) {
+      let v = r[orig];
+      if (v != null && key === 'n') v = String(v);
+      out[key] = v != null ? v : '';
+    }
+    return out;
+  });
+}
+
+const corpus       = readCorpusXlsx(CORPUS_FILE);
+const personasRows = readTimelineXlsx(TIMELINE_FILES.personas);
+const eventosRows  = readTimelineXlsx(TIMELINE_FILES.eventos);
+const grupos       = readTimelineXlsx(TIMELINE_FILES.grupos);
 
 console.log(`[1/6] Fuentes leídas:`);
-console.log(`      - corpus_full.json:   ${corpus.length} vídeos`);
-console.log(`      - Personas.xlsx:      ${personasRows.length} filas`);
-console.log(`      - Eventos.xlsx:       ${eventosRows.length} filas`);
-console.log(`      - GruposProgramas.xlsx: ${grupos.length} filas`);
+console.log(`      - Transcripciones/Videos_RDC.xlsx:                ${corpus.length} vídeos`);
+console.log(`      - LINEAS DE TIEMPO/...Personas.xlsx:              ${personasRows.length} filas`);
+console.log(`      - LINEAS DE TIEMPO/...Eventos.xlsx:               ${eventosRows.length} filas`);
+console.log(`      - LINEAS DE TIEMPO/...Grupos_y_Programas.xlsx:    ${grupos.length} filas`);
 
 // ============================================================
 // 7. CREAR NODOS desde los xlsx
