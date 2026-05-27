@@ -360,6 +360,33 @@ const TIMELINES = [
 
 function TimelinesView() {
   const [idx, setIdx] = useState(0);
+  // Calcula la altura disponible para el iframe en función del viewport
+  // (descontando topbar ~60px + tl-nav ~70px + algún margen). TimelineJS
+  // necesita un valor concreto en píxeles — si lo dejamos fijo (720) se
+  // desborda en pantallas menores y crea un scroll vertical externo.
+  const calcHeight = () =>
+    typeof window === "undefined" ? 600 : Math.max(420, window.innerHeight - 140);
+  const [iframeHeight, setIframeHeight] = useState(calcHeight);
+
+  useEffect(() => {
+    let t;
+    const onResize = () => {
+      clearTimeout(t);
+      // Debounce y umbral de 30px para evitar recargas constantes del iframe
+      t = setTimeout(() => {
+        const h = calcHeight();
+        setIframeHeight((prev) => (Math.abs(prev - h) > 30 ? h : prev));
+      }, 250);
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  const currentSrc = TIMELINES[idx].src.replace(/height=\d+/, `height=${iframeHeight}`);
+
   return (
     <div className="timelines-view">
       <div className="tl-nav">
@@ -377,7 +404,7 @@ function TimelinesView() {
         </div>
       </div>
       <div className="tl-frame-wrap">
-        <iframe key={idx} src={TIMELINES[idx].src} className="tl-iframe" allowFullScreen></iframe>
+        <iframe key={`${idx}-${iframeHeight}`} src={currentSrc} className="tl-iframe" allowFullScreen></iframe>
       </div>
     </div>);
 

@@ -1387,6 +1387,8 @@ button {
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
+  overflow: hidden;          /* impide cualquier scroll vertical externo */
+  min-height: 0;
 }
 .tl-nav {
   display: flex;
@@ -1463,6 +1465,7 @@ button {
   overflow: hidden;
   padding: 0 24px;
   min-height: 0;
+  display: flex;             /* permite que el iframe tome exactamente el alto disponible */
 }
 .tl-iframe {
   width: 100%;
@@ -1470,6 +1473,8 @@ button {
   border: 0;
   display: block;
   background: #fff;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 /* ===================================================================
