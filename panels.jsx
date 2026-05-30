@@ -1,12 +1,25 @@
 // DetailPanel + Sidebar + ThreadList components
 
-function DetailPanel({ node, data, onSelect, onClose }) {
+function DetailPanel({ node, data, onSelect, onClose, lang }) {
+  const { t } = window.useT();
   if (!node) return null;
+
+  // Read localised fields when available
+  const L = lang === "en";
+  const displayName  = (L && node.name_en)  || node.name;
+  const displayRole  = (L && node.role_en)  || node.role  || "";
+  const displayGroup = (L && node.group_en) || node.group || "";
+  const displayBio   = (L && node.bio_en)   || node.bio   || "";
+
   const color = TYPE_COLORS[node.type];
   const typeLabel = {
-    person: "Persona", agency: "Agencia / Grupo", event: "Evento",
-    program: "Programa", concept: "Concepto / Tema", channel: "Canal",
-    phenomenon: "Núcleo galáctico"
+    person:    t("panel.type.person"),
+    agency:    t("panel.type.agency"),
+    event:     t("panel.type.event"),
+    program:   t("panel.type.program"),
+    concept:   t("panel.type.concept"),
+    channel:   t("panel.type.channel"),
+    phenomenon:t("panel.type.phenomenon")
   }[node.type];
 
   // find connections
@@ -34,8 +47,21 @@ function DetailPanel({ node, data, onSelect, onClose }) {
   }
   const typeOrder = ["person","agency","event","program","channel","concept"];
 
-  // Split bio into paragraphs (after HTML strip, paragraphs are \n\n separated)
-  const bioParas = (node.bio || "").split(/\n\n+/).filter(s => s.trim()).slice(0, 8);
+  // Type labels for connection group headers
+  const connTypeLabel = (type) => ({
+    person:    t("type.person"),
+    agency:    t("type.agency"),
+    event:     t("type.event"),
+    program:   t("type.program"),
+    concept:   t("type.concept"),
+    channel:   t("type.channel"),
+    phenomenon:t("type.phenomenon"),
+  }[type] || type);
+
+  // Split bio into paragraphs
+  const bioParas = (displayBio).split(/\n\n+/).filter(s => s.trim()).slice(0, 8);
+
+  const videoWord = (n) => n === 1 ? t("panel.video") : t("panel.videos");
 
   return (
     <div className="panel">
@@ -45,11 +71,11 @@ function DetailPanel({ node, data, onSelect, onClose }) {
             <span className="dot" style={{background: color}}></span>
             {typeLabel}
           </span>
-          <button className="close" onClick={onClose} aria-label="cerrar">×</button>
+          <button className="close" onClick={onClose} aria-label={t("panel.close")}>×</button>
         </div>
-        <h2 className="panel-name">{node.name}</h2>
-        {node.role && node.role !== node.name && <div className="panel-role">{node.role}</div>}
-        {node.group && node.group !== node.role && <div className="panel-group">{node.group}</div>}
+        <h2 className="panel-name">{displayName}</h2>
+        {displayRole && displayRole !== displayName && <div className="panel-role">{displayRole}</div>}
+        {displayGroup && displayGroup !== displayRole && <div className="panel-group">{displayGroup}</div>}
         {node.year && <div className="panel-year">{node.year}</div>}
         <div className="meta-row">
           {node.blocs && node.blocs.length > 0 && (
@@ -62,7 +88,7 @@ function DetailPanel({ node, data, onSelect, onClose }) {
           )}
           {node.videoCount > 0 && (
             <div className="vid-count-pill">
-              {node.videoCount} vídeo{node.videoCount > 1 ? "s" : ""}
+              {node.videoCount} {videoWord(node.videoCount)}
             </div>
           )}
         </div>
@@ -77,7 +103,7 @@ function DetailPanel({ node, data, onSelect, onClose }) {
 
         {node.media && (
           <section>
-            <h3 className="section-h">Recurso destacado</h3>
+            <h3 className="section-h">{t("panel.featured")}</h3>
             <a href={node.media} target="_blank" rel="noopener" className="media-link">
               <span className="play-i">▶</span>
               <span className="ml-body">
@@ -91,7 +117,10 @@ function DetailPanel({ node, data, onSelect, onClose }) {
 
         {node.videos && node.videos.length > 0 && (
           <section>
-            <h3 className="section-h">Aparece en {node.videoCount} vídeo{node.videoCount > 1 ? "s" : ""} {node.videoCount > node.videos.length ? "· top " + node.videos.length : ""}</h3>
+            <h3 className="section-h">
+              {t("panel.appearsIn")} {node.videoCount} {videoWord(node.videoCount)}
+              {node.videoCount > node.videos.length ? " · " + t("panel.top") + " " + node.videos.length : ""}
+            </h3>
             <ul className="video-list">
               {node.videos.map((v, i) => (
                 <li key={i}>
@@ -110,16 +139,16 @@ function DetailPanel({ node, data, onSelect, onClose }) {
         )}
 
         <section>
-          <h3 className="section-h">Conexiones · {connections.length}</h3>
-          {connections.length === 0 && <p className="empty">Sin conexiones detectadas.</p>}
-          {typeOrder.map(t => grouped[t] && (
-            <div key={t} className="conn-group">
-              <div className="conn-group-h" style={{color: TYPE_COLORS[t]}}>
-                <span className="dot" style={{background: TYPE_COLORS[t]}}></span>
-                {TYPE_LABEL_ES[t]} <span className="cg-count">{grouped[t].length}</span>
+          <h3 className="section-h">{t("panel.connections")} · {connections.length}</h3>
+          {connections.length === 0 && <p className="empty">{t("panel.noConnections")}</p>}
+          {typeOrder.map(type => grouped[type] && (
+            <div key={type} className="conn-group">
+              <div className="conn-group-h" style={{color: TYPE_COLORS[type]}}>
+                <span className="dot" style={{background: TYPE_COLORS[type]}}></span>
+                {connTypeLabel(type)} <span className="cg-count">{grouped[type].length}</span>
               </div>
               <ul className="conn-list">
-                {grouped[t].map((c, i) => (
+                {grouped[type].map((c, i) => (
                   <li key={i}>
                     <button className="conn-item" onClick={() => onSelect(c.node.id)}>
                       <span className="conn-name">{c.node.name}</span>
@@ -155,11 +184,22 @@ const CANAL_LIST = [
 ];
 
 function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selectedId, onThread, threadId }) {
+  const { t } = window.useT();
   const allTypes = ["person","agency","event","program","channel","concept"];
   const allBlocs = CANAL_LIST.map(c => c.id);
 
-  const toggleType = (t) => setFilters({...filters, types: {...filters.types, [t]: !filters.types[t]}});
+  const toggleType = (type) => setFilters({...filters, types: {...filters.types, [type]: !filters.types[type]}});
   const toggleBloc = (b) => setFilters({...filters, blocs: {...filters.blocs, [b]: !filters.blocs[b]}});
+
+  const typeLabel = (type) => ({
+    person:  t("type.person"),
+    agency:  t("type.agency"),
+    event:   t("type.event"),
+    program: t("type.program"),
+    concept: t("type.concept"),
+    channel: t("type.channel"),
+    phenomenon: t("type.phenomenon"),
+  })[type] || type;
 
   const counts = React.useMemo(() => {
     const c = {};
@@ -193,7 +233,7 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
           type="text"
           value={query}
           onChange={e => setQuery(e.target.value)}
-          placeholder="Buscar persona, evento, programa…"
+          placeholder={t("search.placeholder")}
           className="search"
         />
         {searchResults.length > 0 && (
@@ -202,7 +242,7 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
               <button key={n.id} className="search-result" onClick={() => { onSelect(n.id); setQuery(""); }}>
                 <span className="dot" style={{background: TYPE_COLORS[n.type]}}></span>
                 <span className="sr-name">{n.name}</span>
-                <span className="sr-type">{TYPE_LABEL_ES[n.type].slice(0,-1).toLowerCase()}</span>
+                <span className="sr-type">{typeLabel(n.type).slice(0,-1).toLowerCase()}</span>
               </button>
             ))}
           </div>
@@ -211,21 +251,21 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
 
       <section className="filter-section">
         <div className="filter-h">
-          <span>Tipos</span>
+          <span>{t("filter.types")}</span>
           <button className="mini-btn" onClick={() => {
-            const all = allTypes.reduce((acc,t) => ({...acc, [t]: true}), {});
+            const all = allTypes.reduce((acc, type) => ({...acc, [type]: true}), {});
             setFilters({...filters, types: all});
-          }}>todos</button>
+          }}>{t("filter.all")}</button>
         </div>
         <div className="type-grid">
-          {allTypes.filter(t => counts[t] > 0).map(t => (
-            <button key={t}
-              className={`type-btn ${filters.types[t] ? "on" : "off"}`}
-              onClick={() => toggleType(t)}
-              style={{"--c": TYPE_COLORS[t]}}>
-              <span className="dot" style={{background: TYPE_COLORS[t]}}></span>
-              <span className="t-name">{TYPE_LABEL_ES[t]}</span>
-              <span className="t-count">{counts[t]||0}</span>
+          {allTypes.filter(type => counts[type] > 0).map(type => (
+            <button key={type}
+              className={`type-btn ${filters.types[type] ? "on" : "off"}`}
+              onClick={() => toggleType(type)}
+              style={{"--c": TYPE_COLORS[type]}}>
+              <span className="dot" style={{background: TYPE_COLORS[type]}}></span>
+              <span className="t-name">{typeLabel(type)}</span>
+              <span className="t-count">{counts[type]||0}</span>
             </button>
           ))}
         </div>
@@ -233,11 +273,11 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
 
       <section className="filter-section">
         <div className="filter-h">
-          <span>Canales / fuentes</span>
+          <span>{t("filter.channels")}</span>
           <button className="mini-btn" onClick={() => {
-            const none = allBlocs.reduce((acc,b) => ({...acc, [b]: false}), {});
+            const none = allBlocs.reduce((acc, b) => ({...acc, [b]: false}), {});
             setFilters({...filters, blocs: none});
-          }}>todos</button>
+          }}>{t("filter.all")}</button>
         </div>
         <div className="canal-list">
           {CANAL_LIST.map(c => (
@@ -253,21 +293,21 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
       </section>
 
       <section className="filter-section">
-        <div className="filter-h"><span>Hilos transversales</span></div>
+        <div className="filter-h"><span>{t("filter.threads")}</span></div>
         <div className="thread-list">
           {data.threads.map(th => (
             <button key={th.id}
               className={`thread-btn ${threadId === th.id ? "on" : ""}`}
               onClick={() => onThread(threadId === th.id ? null : th.id)}>
               <div className="th-title">{th.title}</div>
-              <div className="th-count">{th.nodes.length} nodos</div>
+              <div className="th-count">{th.nodes.length} {t("threads.nodeCount")}</div>
             </button>
           ))}
         </div>
       </section>
 
       <div className="legend-footer">
-        Click en un nodo para ficha · Arrastra para reorganizar · Scroll para zoom
+        {t("graph.hint")}
       </div>
     </aside>
   );

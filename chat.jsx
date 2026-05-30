@@ -16,7 +16,8 @@ const renderText = (text) => {
   }, []);
 };
 
-function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
+function ChatWidget({ data, selectedNode, filters, threadId, onMode, lang }) {
+  const { t } = window.useT();
   const [open, setOpen] = useStateChat(false);
   const [messages, setMessages] = useStateChat([]);
   const [input, setInput] = useStateChat("");
@@ -51,7 +52,7 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
       if (conn.length) parts.push(`Conectado con: ${[...new Set(conn)].slice(0, 25).join(", ")}.`);
     }
     if (threadId) {
-      const th = data.threads.find(t => t.id === threadId);
+      const th = data.threads.find(thr => thr.id === threadId);
       if (th) parts.push(`Hilo activo: "${th.title}" — ${th.desc}`);
     }
     const activeBlocs = Object.entries(filters.blocs).filter(([k,v]) => v).map(([k]) => k);
@@ -67,76 +68,96 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
     setThinking(true);
     try {
       const ctx = buildContext();
-      const sys =
-        "Eres Redescubriendo, la guía interna del podcast del mismo nombre sobre el fenómeno UAP/OVNI. " +
-        "Hablas con la gente que está explorando el mapa. " +
-        "TONO: cercano y humano, como un amigo bien informado que te explica algo apasionante. Neutral en el juicio (ni creyente ni escéptico), pero NO técnico ni periodístico-distante. " +
-        "REGLAS DURAS:\n" +
-        "- NO cites cifras del corpus (nº de entidades, conexiones, vídeos). El usuario ya las ve.\n" +
-        "- NO presumas del mapa ni hables de 'la base de datos'. Habla del fenómeno, no de la app.\n" +
-        "- Sé conciso: 2–5 frases, lenguaje directo y cálido. Si la pregunta es abierta, ofrece un punto de entrada concreto.\n" +
-        "- Si conoces nombres exactos del mapa, escríbelos entre dobles asteriscos así: **Nombre**, para que se muestren en negrita.\n" +
-        "- Si te preguntan algo fuera del corpus, di lo que sepas brevemente y propón por dónde tirar." +
-        (ctx ? "\n\nContexto que tienes ahora (úsalo si encaja, no lo expongas):\n" + ctx : "");
+      const isEN = lang === "en";
+      const sys = isEN
+        ? "You are Redescubriendo, the internal guide of the podcast of the same name about the UAP/UFO phenomenon. " +
+          "You speak with people exploring the map. " +
+          "TONE: warm and human, like a knowledgeable friend explaining something fascinating. Neutral in judgment (neither believer nor skeptic), but NOT technical or journalistically distant. " +
+          "HARD RULES:\n" +
+          "- Do NOT cite corpus statistics (node count, connection count, video count). The user can already see them.\n" +
+          "- Do NOT boast about the map or talk about 'the database'. Talk about the phenomenon, not the app.\n" +
+          "- Be concise: 2–5 sentences, direct and warm language. If the question is open-ended, offer a concrete entry point.\n" +
+          "- If you know exact names from the map, write them between double asterisks like this: **Name**, so they appear in bold.\n" +
+          "- If asked something outside the corpus, say what you know briefly and suggest where to look." +
+          (ctx ? "\n\nContext you have now (use it if relevant, don't expose it):\n" + ctx : "")
+        : "Eres Redescubriendo, la guía interna del podcast del mismo nombre sobre el fenómeno UAP/OVNI. " +
+          "Hablas con la gente que está explorando el mapa. " +
+          "TONO: cercano y humano, como un amigo bien informado que te explica algo apasionante. Neutral en el juicio (ni creyente ni escéptico), pero NO técnico ni periodístico-distante. " +
+          "REGLAS DURAS:\n" +
+          "- NO cites cifras del corpus (nº de entidades, conexiones, vídeos). El usuario ya las ve.\n" +
+          "- NO presumas del mapa ni hables de 'la base de datos'. Habla del fenómeno, no de la app.\n" +
+          "- Sé conciso: 2–5 frases, lenguaje directo y cálido. Si la pregunta es abierta, ofrece un punto de entrada concreto.\n" +
+          "- Si conoces nombres exactos del mapa, escríbelos entre dobles asteriscos así: **Nombre**, para que se muestren en negrita.\n" +
+          "- Si te preguntan algo fuera del corpus, di lo que sepas brevemente y propón por dónde tirar." +
+          (ctx ? "\n\nContexto que tienes ahora (úsalo si encaja, no lo expongas):\n" + ctx : "");
+
       const res = await fetch("https://rdc-chat.redescubriendopodcast.workers.dev", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: [{ role: "user", content: sys + "\n\n=== PREGUNTA ===\n" + text }]
+          messages: [{ role: "user", content: sys + "\n\n=== " + (isEN ? "QUESTION" : "PREGUNTA") + " ===\n" + text }]
         })
       });
       const data = await res.json();
       setMessages(prev => [...prev, { role: "assistant", content: data.text }]);
     } catch (e) {
-      setMessages(prev => [...prev, { role: "assistant", content: "No he podido responder ahora (" + (e?.message || "error") + "). Inténtalo de nuevo." }]);
+      setMessages(prev => [...prev, { role: "assistant", content: t("chat.error").replace("...", e?.message || "error") }]);
     } finally {
       setThinking(false);
     }
   };
 
+  const fillName = (str, name) => str.replace("{name}", name);
+
   const suggestions = (() => {
     if (selectedNode) {
       const n = selectedNode;
       if (n.type === "person") return [
-        `¿Por qué es relevante ${n.name}?`,
-        `¿Qué dijo bajo juramento o por escrito?`,
-        `¿Qué otros nodos del mapa están relacionados con ${n.name}?`
+        fillName(t("chat.sugg.person0"), n.name),
+        t("chat.sugg.person1"),
+        fillName(t("chat.sugg.person2"), n.name)
       ];
       if (n.type === "event") return [
-        `Resume ${n.name} en 3 frases`,
-        `¿Por qué importa este caso hoy?`,
-        `¿Qué testigos lo respaldan?`
+        fillName(t("chat.sugg.event0"), n.name),
+        t("chat.sugg.event1"),
+        t("chat.sugg.event2")
       ];
       if (n.type === "program") return [
-        `¿Qué hace exactamente ${n.name}?`,
-        `¿Quién lo dirige o lo dirigió?`,
-        `¿Está activo o se cerró?`
+        fillName(t("chat.sugg.program0"), n.name),
+        t("chat.sugg.program1"),
+        t("chat.sugg.program2")
       ];
       if (n.type === "agency") return [
-        `¿Qué papel juega ${n.name} en el fenómeno?`,
-        `¿Quiénes han trabajado allí en este contexto?`,
-        `¿Hay críticas documentadas?`
+        fillName(t("chat.sugg.agency0"), n.name),
+        t("chat.sugg.agency1"),
+        t("chat.sugg.agency2")
       ];
       if (n.type === "phenomenon") return [
-        `¿Por qué es el centro de todo esto?`,
-        `¿Qué nombres ha tenido a lo largo del tiempo?`,
-        `¿Por qué los gobiernos lo han ocultado?`
+        t("chat.sugg.phenomenon0"),
+        t("chat.sugg.phenomenon1"),
+        t("chat.sugg.phenomenon2")
       ];
     }
     return [
-      "¿Qué es Redescubriendo?",
-      "¿Por dónde empiezo si no sé nada del fenómeno?",
-      "¿Cuáles son los 3 eventos más importantes?",
-      "¿Quién es David Grusch y por qué importa?"
+      t("chat.sugg.g0"),
+      t("chat.sugg.g1"),
+      t("chat.sugg.g2"),
+      t("chat.sugg.g3")
     ];
   })();
+
+  const statusText = thinking
+    ? t("chat.thinking")
+    : selectedNode
+      ? t("chat.focused") + " " + selectedNode.name
+      : t("chat.connected");
 
   return (
     <>
       {!open && (
-        <button className="chat-fab" onClick={() => setOpen(true)} title="Pregunta a Redescubriendo">
+        <button className="chat-fab" onClick={() => setOpen(true)} title={t("chat.fab")}>
           <span className="chat-fab-orb"><span className="chat-fab-pulse"></span></span>
-          <span className="chat-fab-text">Pregunta a Redescubriendo</span>
+          <span className="chat-fab-text">{t("chat.fab")}</span>
         </button>
       )}
       {open && (
@@ -144,9 +165,9 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
           <div className="chat-head">
             <span className="chat-head-orb"></span>
             <div className="chat-head-info">
-              <div className="chat-head-title">Redescubriendo · IA</div>
+              <div className="chat-head-title">{t("chat.title")}</div>
               <div className={`chat-head-status ${thinking ? "thinking" : ""}`}>
-                {thinking ? "Pensando…" : (selectedNode ? `Centrado en ${selectedNode.name}` : "Conectado al mapa")}
+                {statusText}
               </div>
             </div>
             <button className="chat-close" onClick={() => setOpen(false)}>×</button>
@@ -154,7 +175,7 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
           <div className="chat-body" ref={bodyRef}>
             {messages.length === 0 && (
               <div className="chat-intro">
-                <p>Soy una guía interna del mapa. Puedo explicar cualquier nodo que veas o ayudarte a orientarte si no sabes por dónde empezar.</p>
+                <p>{t("chat.intro")}</p>
               </div>
             )}
             {messages.map((m, i) => (
@@ -182,7 +203,7 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode }) {
               type="text"
               value={input}
               onChange={e => setInput(e.target.value)}
-              placeholder="Pregunta sobre lo que ves…"
+              placeholder={t("chat.placeholder")}
               disabled={thinking}
             />
             <button type="submit" disabled={thinking || !input.trim()}>→</button>

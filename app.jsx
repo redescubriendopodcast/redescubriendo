@@ -30,8 +30,60 @@ const PALETTES = {
   }
 };
 
+// ── Timelines ─────────────────────────────────────────────────────────────
+
+const TIMELINES = [
+{
+  titleKey: "tl.tab1.title",
+  subtitleKey: "tl.tab1.sub",
+  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vTsuebMx2acQpKWMicwGbhOvvseIEH5flAFkMXx_j-qOJYK_H4T8jXeUOjQyZ2ZGA&font=Default&lang=en&initial_zoom=2&width=100%25&height=720"
+},
+{
+  titleKey: "tl.tab2.title",
+  subtitleKey: "tl.tab2.sub",
+  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vShbTjzp5yHCEBn3mnN0HHL6mITya0z4MnE9Xxscb72mqLKfTJe42px4zrHMeyaTw&font=Default&lang=en&initial_zoom=2&width=100%25&height=720"
+},
+{
+  titleKey: "tl.tab3.title",
+  subtitleKey: "tl.tab3.sub",
+  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vT6V2iIy1v_01eFAyiSbS0w9sTLhoWtRWETMYii8e3zP3W66W2o8386iGBdjcoBqQ&font=Default&lang=en&initial_zoom=2&width=100%25&height=720"
+}];
+
+// English-language Google Sheets sources for the same timelines
+const TIMELINES_EN = [
+{
+  titleKey: "tl.tab1.title",
+  subtitleKey: "tl.tab1.sub",
+  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQvmq-eQiviURVid1U1SuORpMdst-1pzbi-PIBL3P8k1-rwsacRzGHlap-Jq3Mtbg&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
+},
+{
+  titleKey: "tl.tab2.title",
+  subtitleKey: "tl.tab2.sub",
+  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vRULrFKLWc-bgRuIGcqyU2RNgDuVRk-GGjDNe-esRY7zxlUW5s-1UDZzsx1UkGdbA&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
+},
+{
+  titleKey: "tl.tab3.title",
+  subtitleKey: "tl.tab3.sub",
+  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQ2MUGcKj40VAvc26ax_73Qx_7wC_0-5qn7tazNb2d5_PINPJBBoTUleWc3xiBEqA&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
+}];
+
+// Static timeline labels (not in i18n because they live only in TIMELINES arrays)
+const TIMELINE_LABELS = {
+  es: [
+    { title: "Personas",           subtitle: "Investigadores, testigos, militares y figuras políticas" },
+    { title: "Eventos",            subtitle: "Crashes, avistamientos, audiencias y contactos" },
+    { title: "Grupos y programas", subtitle: "Agencias, programas secretos, contratistas y marcos legales" }
+  ],
+  en: [
+    { title: "People",             subtitle: "Researchers, witnesses, military and political figures" },
+    { title: "Events",             subtitle: "Crashes, sightings, hearings and contacts" },
+    { title: "Groups and programs",subtitle: "Agencies, secret programs, contractors and legal frameworks" }
+  ]
+};
+
 function App({ tweaks }) {
   const data = window.RDC_DATA;
+  const { t, lang } = window.useT();
   const [tab, setTab] = useState("timelines");
   const [selectedId, setSelectedId] = useState(null);
   const [query, setQuery] = useState("");
@@ -79,25 +131,32 @@ function App({ tweaks }) {
           <img src="assets/logo.png" alt="RDC" className="brand-bar-logo" />
           <div>
             <div className="brand-bar-title">REDESCUBRIENDO</div>
-            <div className="brand-bar-sub">Mapa interactivo · UAP/UFO</div>
+            <div className="brand-bar-sub">{t("topbar.sub")}</div>
           </div>
         </div>
         <nav className="tabs">
           <button className={`tab ${tab === "timelines" ? "on" : ""}`} onClick={() => setTab("timelines")}>
-            <span className="tab-i">⟶</span> Líneas de tiempo
+            <span className="tab-i">⟶</span> {t("tabs.timelines")}
           </button>
           <button className={`tab ${tab === "graph" ? "on" : ""}`} onClick={() => setTab("graph")}>
-            <span className="tab-i">◉</span> Galaxia de conexiones
+            <span className="tab-i">◉</span> {t("tabs.graph")}
           </button>
           <button className={`tab ${tab === "threads" ? "on" : ""}`} onClick={() => setTab("threads")}>
-            <span className="tab-i">≋</span> Hilos transversales
+            <span className="tab-i">≋</span> {t("tabs.threads")}
           </button>
           <button className={`tab ${tab === "about" ? "on" : ""}`} onClick={() => setTab("about")}>
-            <span className="tab-i">?</span> Sobre el proyecto
+            <span className="tab-i">?</span> {t("tabs.about")}
           </button>
         </nav>
         <div className="topbar-meta">
-          <span className="counter">{effectiveData.nodes.length} nodos · {effectiveData.edges.length} conexiones</span>
+          <span className="counter">{effectiveData.nodes.length} {t("counter.nodes")} · {effectiveData.edges.length} {t("counter.connections")}</span>
+          <button
+            className="lang-toggle"
+            onClick={() => window.changeLang(lang === "es" ? "en" : "es")}
+            title={lang === "es" ? "Switch to English" : "Cambiar a español"}
+          >
+            {t("topbar.langToggle")}
+          </button>
         </div>
       </header>
 
@@ -110,7 +169,7 @@ function App({ tweaks }) {
           onSelect={handleSelect} selectedId={selectedId}
           onThread={(id) => {setThreadId(id);setSelectedId(null);}}
           threadId={threadId} />
-        
+
           <main className="canvas-wrap">
             <NetworkGraph
             data={effectiveData}
@@ -120,12 +179,12 @@ function App({ tweaks }) {
             tweaks={tweaks}
             focusId={focusId}
             chatMode={chatMode} />
-          
+
             <ZoomControls />
             {threadId &&
           <div className="thread-banner">
-                <span>Viendo hilo: <b>{data.threads.find((t) => t.id === threadId).title}</b></span>
-                <button onClick={() => setThreadId(null)}>× ver todo</button>
+                <span>{t("banner.viewing")} <b>{data.threads.find((t) => t.id === threadId).title}</b></span>
+                <button onClick={() => setThreadId(null)}>{t("banner.viewAll")}</button>
               </div>
           }
             <ChatWidget
@@ -133,15 +192,17 @@ function App({ tweaks }) {
             selectedNode={selectedNode}
             filters={filters}
             threadId={threadId}
-            onMode={setChatMode} />
-          
+            onMode={setChatMode}
+            lang={lang} />
+
           </main>
           {selectedNode &&
         <DetailPanel
           node={selectedNode}
           data={data}
           onSelect={handleSelect}
-          onClose={() => setSelectedId(null)} />
+          onClose={() => setSelectedId(null)}
+          lang={lang} />
 
         }
         </div>
@@ -152,7 +213,7 @@ function App({ tweaks }) {
       }
 
       {tab === "timelines" &&
-      <TimelinesView />
+      <TimelinesView lang={lang} />
       }
 
       {tab === "about" &&
@@ -165,6 +226,7 @@ function App({ tweaks }) {
 // ============== FULLSCREEN BUTTON ==============
 
 function FullscreenButton() {
+  const { t } = window.useT();
   const [isFull, setIsFull] = useState(false);
   const [fallback, setFallback] = useState(false);
   useEffect(() => {
@@ -173,7 +235,6 @@ function FullscreenButton() {
     return () => document.removeEventListener("fullscreenchange", onChange);
   }, []);
   const toggle = async () => {
-    // If we're sandboxed and fullscreen API is not allowed, open in new tab
     if (fallback) {
       window.open(window.location.href, "_blank", "noopener");
       return;
@@ -187,7 +248,6 @@ function FullscreenButton() {
         throw new Error("Fullscreen API not supported");
       }
     } catch (e) {
-      // Fullscreen blocked (typically iframe sandbox) → fall back to opening in new tab
       console.warn("Fullscreen blocked, switching to new-tab fallback:", e?.message || e);
       setFallback(true);
       window.open(window.location.href, "_blank", "noopener");
@@ -195,8 +255,8 @@ function FullscreenButton() {
   };
   return (
     <button className="fs-btn" onClick={toggle} title={
-    fallback ? "Abrir en nueva pestaña (pantalla completa)" :
-    isFull ? "Salir de pantalla completa" : "Pantalla completa"
+    fallback ? t("fs.newTab") :
+    isFull ? t("fs.exit") : t("fs.full")
     }>
       {fallback ?
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -212,7 +272,7 @@ function FullscreenButton() {
         </svg>
       }
       <span>
-        {fallback ? "Abrir aparte" : isFull ? "Salir" : "Pantalla completa"}
+        {fallback ? t("fs.openApart") : isFull ? t("fs.exitShort") : t("fs.full")}
       </span>
     </button>);
 
@@ -221,6 +281,7 @@ function FullscreenButton() {
 // ============== ZOOM CONTROLS ==============
 
 function ZoomControls() {
+  const { t } = window.useT();
   const [zoom, setZoom] = useState(1);
   useEffect(() => {
     const id = setInterval(() => {
@@ -236,11 +297,11 @@ function ZoomControls() {
   const reset = () => window.__rdcGraph?.reset();
   return (
     <div className="zoom-controls">
-      <button className="zc-btn" onClick={zoomIn} title="Acercar">+</button>
+      <button className="zc-btn" onClick={zoomIn} title={t("zoom.in")}>+</button>
       <div className="zc-val">{Math.round(zoom * 100)}%</div>
-      <button className="zc-btn" onClick={zoomOut} title="Alejar">−</button>
+      <button className="zc-btn" onClick={zoomOut} title={t("zoom.out")}>−</button>
       <div className="zc-sep"></div>
-      <button className="zc-btn zc-reset" onClick={reset} title="Restablecer vista">⊙</button>
+      <button className="zc-btn zc-reset" onClick={reset} title={t("zoom.reset")}>⊙</button>
     </div>);
 
 }
@@ -289,16 +350,17 @@ function Starfield({ enabled }) {
 // ============== THREADS VIEW ==============
 
 function ThreadsView({ data, onOpenGraph, onOpenNode }) {
+  const { t } = window.useT();
   return (
     <div className="threads-view">
       <div className="threads-head">
-        <div className="th-eyebrow">PATRONES DETECTADOS</div>
-        <h1>Hilos<br /><em>transversales</em></h1>
-        <p>Patrones recurrentes que atraviesan canales, épocas y testigos. Cada hilo aísla un subgrafo navegable de entidades co-ocurrentes.</p>
+        <div className="th-eyebrow">{t("threads.eyebrow")}</div>
+        <h1>{t("threads.heading1")}<br /><em>{t("threads.heading2")}</em></h1>
+        <p>{t("threads.desc")}</p>
         <div className="th-stats">
-          <div><b>{data.threads.length}</b><span>hilos</span></div>
-          <div><b>{data.nodes.length}</b><span>nodos</span></div>
-          <div><b>{data.edges.length}</b><span>conexiones</span></div>
+          <div><b>{data.threads.length}</b><span>{t("threads.stat.threads")}</span></div>
+          <div><b>{data.nodes.length}</b><span>{t("threads.stat.nodes")}</span></div>
+          <div><b>{data.edges.length}</b><span>{t("threads.stat.connections")}</span></div>
         </div>
       </div>
       <div className="threads-grid">
@@ -328,7 +390,7 @@ function ThreadsView({ data, onOpenGraph, onOpenNode }) {
             })}
             </div>
             <button className="th-open" onClick={() => onOpenGraph(th.id)}>
-              <span>Ir a la constelación</span>
+              <span>{t("threads.goTo")}</span>
               <span className="arrow">→</span>
             </button>
           </article>
@@ -340,71 +402,52 @@ function ThreadsView({ data, onOpenGraph, onOpenNode }) {
 
 // ============== TIMELINES VIEW ==============
 
-const TIMELINES = [
-{
-  title: "Personas",
-  subtitle: "Investigadores, testigos, militares y figuras políticas",
-  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vTsuebMx2acQpKWMicwGbhOvvseIEH5flAFkMXx_j-qOJYK_H4T8jXeUOjQyZ2ZGA&font=Default&lang=en&initial_zoom=2&width=100%25&height=720"
-},
-{
-  title: "Eventos",
-  subtitle: "Crashes, avistamientos, audiencias y contactos",
-  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vShbTjzp5yHCEBn3mnN0HHL6mITya0z4MnE9Xxscb72mqLKfTJe42px4zrHMeyaTw&font=Default&lang=en&initial_zoom=2&width=100%25&height=720"
-},
-{
-  title: "Grupos y programas",
-  subtitle: "Agencias, programas secretos, contratistas y marcos legales",
-  src: "https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vT6V2iIy1v_01eFAyiSbS0w9sTLhoWtRWETMYii8e3zP3W66W2o8386iGBdjcoBqQ&font=Default&lang=en&initial_zoom=2&width=100%25&height=720"
-}];
-
-
-function TimelinesView() {
+function TimelinesView({ lang }) {
+  const { t } = window.useT();
   const [idx, setIdx] = useState(0);
-  // Calcula la altura disponible para el iframe en función del viewport
-  // (descontando topbar ~60px + tl-nav ~70px + algún margen). TimelineJS
-  // necesita un valor concreto en píxeles — si lo dejamos fijo (720) se
-  // desborda en pantallas menores y crea un scroll vertical externo.
+  const tlSet = lang === "en" ? TIMELINES_EN : TIMELINES;
+  const labels = TIMELINE_LABELS[lang] || TIMELINE_LABELS.es;
+
   const calcHeight = () =>
     typeof window === "undefined" ? 600 : Math.max(420, window.innerHeight - 140);
   const [iframeHeight, setIframeHeight] = useState(calcHeight);
 
   useEffect(() => {
-    let t;
+    let ti;
     const onResize = () => {
-      clearTimeout(t);
-      // Debounce y umbral de 30px para evitar recargas constantes del iframe
-      t = setTimeout(() => {
+      clearTimeout(ti);
+      ti = setTimeout(() => {
         const h = calcHeight();
         setIframeHeight((prev) => (Math.abs(prev - h) > 30 ? h : prev));
       }, 250);
     };
     window.addEventListener("resize", onResize);
     return () => {
-      clearTimeout(t);
+      clearTimeout(ti);
       window.removeEventListener("resize", onResize);
     };
   }, []);
 
-  const currentSrc = TIMELINES[idx].src.replace(/height=\d+/, `height=${iframeHeight}`);
+  const currentSrc = tlSet[idx].src.replace(/height=\d+/, `height=${iframeHeight}`);
 
   return (
     <div className="timelines-view">
       <div className="tl-nav">
-        <div className="tl-nav-eyebrow">LÍNEAS DE TIEMPO</div>
+        <div className="tl-nav-eyebrow">{t("tl.eyebrow")}</div>
         <div className="tl-tabs">
-          {TIMELINES.map((t, i) =>
+          {tlSet.map((tl, i) =>
           <button key={i} className={`tl-tab ${idx === i ? "on" : ""}`} onClick={() => setIdx(i)}>
               <span className="tl-tab-num">{String(i + 1).padStart(2, "0")}</span>
               <span className="tl-tab-body">
-                <span className="tl-tab-title">{t.title}</span>
-                <span className="tl-tab-sub">{t.subtitle}</span>
+                <span className="tl-tab-title">{labels[i].title}</span>
+                <span className="tl-tab-sub">{labels[i].subtitle}</span>
               </span>
             </button>
           )}
         </div>
       </div>
       <div className="tl-frame-wrap">
-        <iframe key={`${idx}-${iframeHeight}`} src={currentSrc} className="tl-iframe" allowFullScreen></iframe>
+        <iframe key={`${idx}-${iframeHeight}-${lang}`} src={currentSrc} className="tl-iframe" allowFullScreen></iframe>
       </div>
     </div>);
 
@@ -413,11 +456,23 @@ function TimelinesView() {
 // ============== ABOUT VIEW ==============
 
 function AboutView({ data }) {
+  const { t, lang } = window.useT();
   const stats = useMemo(() => {
     const byType = {};
     for (const n of data.nodes) byType[n.type] = (byType[n.type] || 0) + 1;
     return byType;
   }, [data]);
+
+  const typeLabel = (type) => {
+    const labels = {
+      es: { person: "personas", agency: "agencias", event: "eventos", program: "programas", concept: "conceptos", channel: "canales", phenomenon: "fenómeno" },
+      en: { person: "people", agency: "agencies", event: "events", program: "programs", concept: "concepts", channel: "channels", phenomenon: "phenomenon" }
+    };
+    return (labels[lang] || labels.es)[type] || type;
+  };
+
+  const channelList = t("about.channels.list");
+
   return (
     <div className="about-view">
       <div className="about-hero">
@@ -426,136 +481,64 @@ function AboutView({ data }) {
 
       <div className="about-content">
         <section className="about-intro">
-          <div className="about-eyebrow">EL PROYECTO</div>
-          <p className="about-lead">
-            <em>Redescubriendo</em> es un podcast de Carlos Díaz, que nace con la voluntad de ofrecer a la gente una 
-            <strong> primera fuente seria</strong> sobre el fenómeno UAP/OVNI — y, sobre todo, sobre
-            lo que los gobiernos han hecho y siguen haciendo con esta información.
-          </p>
-          <p>
-            El problema de mirar todo este corpus de manera objetiva es que, <em>independientemente
-            de si los alienígenas existen o no</em>, hay un hecho que ya no se puede pasar por alto:
-            durante décadas, <strong>muchos gobiernos — por no decir todos los que sabían algo —
-            han ocultado información a su población</strong>. Y existe un factor de fenómeno no identificado
-            real, físicamente medido y testificado, que merece estar en el centro de la conversación.
-          </p>
-          <p>
-            La meta no es vender una conclusión sino <strong>traer el debate al centro</strong> y empezar
-            a entender las consecuencias que conlleva. Esta web es una herramienta de navegación
-            que irá creciendo con el tiempo — de momento reúne más de 300 vídeos junto a otros
-            documentos y fuentes que han ido alimentando las líneas de tiempo.
-          </p>
-          <p>
-            Es un trabajo <em>en evolución</em>. Todos estamos en este camino de entender lo que está
-            pasando y, de alguna manera, todos tenemos que ayudar a quienes saben un poquito menos
-            para, entre todos, poder saber un poquito más.
-          </p>
+          <div className="about-eyebrow">{t("about.eyebrow")}</div>
+          <p className="about-lead" dangerouslySetInnerHTML={{ __html: t("about.lead") }} />
+          <p dangerouslySetInnerHTML={{ __html: t("about.p1") }} />
+          <p dangerouslySetInnerHTML={{ __html: t("about.p2") }} />
+          <p dangerouslySetInnerHTML={{ __html: t("about.p3") }} />
         </section>
 
         <section className="about-section">
-          <div className="about-eyebrow">TEMAS, EVENTOS Y FIGURAS QUE NO DEBERÍAS IGNORAR</div>
+          <div className="about-eyebrow">{t("about.pillars.eyebrow")}</div>
           <div className="about-pillars">
-            <article className="pillar">
-              <div className="pillar-num">01</div>
-              <h3>David Grusch y la audiencia del Congreso</h3>
-              <p>
-                En julio 2023 un ex-oficial de inteligencia con credenciales impecables testificó <strong>bajo juramento</strong> ante el
-                Congreso de EE.UU. que el gobierno posee programas encubiertos de recuperación
-                de naves de origen no humano. El ICIG calificó su queja como <em>urgente y creíble</em>.
-                Es el momento bisagra de toda la "era post-Grusch".
-              </p>
-            </article>
-            <article className="pillar">
-              <div className="pillar-num">02</div>
-              <h3>Project Blue Book y la trilogía del encubrimiento</h3>
-              <p>
-                Sign (1947) → Grudge → Blue Book (cerrado 1969). La respuesta oficial de la USAF
-                al fenómeno OVNI durante 22 años. El <strong>memo Bolander</strong> cerró el programa públicamente
-                pero la investigación continuó en secreto, abriendo la senda al moderno AATIP.
-              </p>
-            </article>
-            <article className="pillar">
-              <div className="pillar-num">03</div>
-              <h3>Proyecto Stargate — espionaje psíquico</h3>
-              <p>
-                17 de las 19 agencias de inteligencia de EE.UU. obtuvieron resultados positivos
-                usando visión remota (1978-1995). Operadores como Joe McMoneagle localizaron objetivos
-                verificables. La telepatía y la psionics como capacidades operacionales reales — no especulación.
-              </p>
-            </article>
-            <article className="pillar">
-              <div className="pillar-num">04</div>
-              <h3>Declaraciones recientes en el Congreso</h3>
-              <p>
-                Las audiencias 2023-2025 (Grusch, Fravor, Graves; después Mellon, McConnell, Gallaudet,
-                Davis) son la mayor cadena de testimonios oficiales bajo juramento de la historia del campo.
-                Por primera vez senadores y congresistas reconocen abiertamente que <em>existen objetos
-                que ni el Congreso ni los departamentos saben qué son</em>.
-              </p>
-            </article>
-            <article className="pillar">
-              <div className="pillar-num">05</div>
-              <h3>Página oficial UAP del gobierno de EE.UU. (mayo 2026)</h3>
-              <p>
-                La creación de un portal oficial de divulgación UAP por parte del ejecutivo
-                estadounidense marca un cambio estructural: por primera vez la administración
-                reconoce el fenómeno como categoría legítima de comunicación pública con el ciudadano.
-              </p>
-            </article>
+            {[1,2,3,4,5].map(n => (
+              <article key={n} className="pillar">
+                <div className="pillar-num">0{n}</div>
+                <h3>{t(`about.pillar${n}.title`)}</h3>
+                <p dangerouslySetInnerHTML={{ __html: t(`about.pillar${n}.body`) }} />
+              </article>
+            ))}
           </div>
         </section>
 
         <section className="about-section">
-          <div className="about-eyebrow">CANALES Y FUENTES DEL CORPUS</div>
-          <p className="about-section-intro">
-            La base documental es una lectura cruzada del trabajo de los principales investigadores
-            independientes y medios especializados del campo. Cada nodo del mapa está enlazado a los
-            vídeos donde aparece:
-          </p>
+          <div className="about-eyebrow">{t("about.channels.eyebrow")}</div>
+          <p className="about-section-intro">{t("about.channels.intro")}</p>
           <ul className="about-channels">
-            <li><strong>American Alchemy</strong> · Jesse Michels — gonzo journalism + foco técnico en propulsión</li>
-            <li><strong>Weaponized</strong> · Jeremy Corbell &amp; George Knapp — testimonios de whistleblowers</li>
-            <li><strong>NewsNation / Reality Check</strong> · Ross Coulthart — periodismo de investigación</li>
-            <li><strong>The Sol Foundation</strong> — simposios académicos: Nolan, Davis, Puthoff, Nell, Loeb…</li>
-            <li><strong>Richard Dolan</strong> — historiador clásico del fenómeno</li>
-            <li><strong>Area52 / DEBRIEFED</strong> — entrevistas largas a actores clave</li>
-            <li><strong>Jason Samosa</strong> — series temáticas largas (Vallée, Collins Elite, Pandulfi)</li>
-            <li><strong>UAP Gerb</strong> — investigador emergente con acceso directo a ex-militares</li>
-            <li><strong>Ashton Forbes</strong> — MH370, ZPE, free energy y warp drive</li>
-            <li><strong>That UFO Podcast</strong> · <strong>Polarity</strong> · <strong>VETTED</strong> · <strong>Dr. Steven Greer</strong> — cobertura complementaria</li>
+            {(Array.isArray(channelList) ? channelList : []).map((item, i) => (
+              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
           </ul>
         </section>
 
         <section className="about-section">
-          <div className="about-eyebrow">COBERTURA ACTUAL</div>
+          <div className="about-eyebrow">{t("about.coverage.eyebrow")}</div>
           <ul className="stats">
-            {Object.entries(stats).map(([t, n]) =>
-            <li key={t}>
-                <span className="dot" style={{ background: TYPE_COLORS[t] }}></span>
-                <b>{n}</b> {TYPE_LABEL_ES[t].toLowerCase()}
+            {Object.entries(stats).map(([type, n]) =>
+            <li key={type}>
+                <span className="dot" style={{ background: TYPE_COLORS[type] }}></span>
+                <b>{n}</b> {typeLabel(type)}
               </li>
             )}
-            <li><span className="dot" style={{ background: "var(--cyan)" }}></span><b>{data.edges.length}</b> conexiones documentadas</li>
-            <li><span className="dot" style={{ background: "var(--cyan-bright)" }}></span><b>{data.threads.length}</b> hilos transversales</li>
+            <li><span className="dot" style={{ background: "var(--cyan)" }}></span><b>{data.edges.length}</b> {t("about.coverage.connections")}</li>
+            <li><span className="dot" style={{ background: "var(--cyan-bright)" }}></span><b>{data.threads.length}</b> {t("about.coverage.threads")}</li>
           </ul>
-          <p className="about-footnote">
-            Trabajo en proceso · El corpus crece episodio a episodio · Última actualización mayo 2026
-          </p>
+          <p className="about-footnote">{t("about.coverage.note")}</p>
         </section>
 
         <section className="about-section about-yt">
-          <div className="about-eyebrow">EL CANAL</div>
+          <div className="about-eyebrow">{t("about.yt.eyebrow")}</div>
           <div className="yt-cta">
             <div className="yt-cta-body">
-              <h3>Redescubriendo en YouTube</h3>
-              <p>Cada episodio desgrana una pieza de este mapa. Suscríbete para seguir el hilo completo del fenómeno.</p>
+              <h3>{t("about.yt.title")}</h3>
+              <p>{t("about.yt.body")}</p>
             </div>
             <div className="yt-cta-actions">
               <a className="yt-btn yt-btn-primary" href="https://www.youtube.com/@ReDescubriendo" target="_blank" rel="noopener">
-                <span className="yt-ico">▶</span> Ver el canal
+                <span className="yt-ico">▶</span> {t("about.yt.watch")}
               </a>
               <a className="yt-btn yt-btn-ghost" href="https://www.youtube.com/@ReDescubriendo?sub_confirmation=1" target="_blank" rel="noopener">
-                Suscribirse
+                {t("about.yt.subscribe")}
               </a>
             </div>
           </div>
