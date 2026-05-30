@@ -181,12 +181,16 @@ function App({ tweaks }) {
             chatMode={chatMode} />
 
             <ZoomControls />
-            {threadId &&
-          <div className="thread-banner">
-                <span>{t("banner.viewing")} <b>{data.threads.find((t) => t.id === threadId).title}</b></span>
-                <button onClick={() => setThreadId(null)}>{t("banner.viewAll")}</button>
-              </div>
-          }
+            {threadId && (() => {
+              const activeThread = data.threads.find((th) => th.id === threadId);
+              const activeTitle = (lang === "en" && activeThread?.title_en) || activeThread?.title || "";
+              return (
+                <div className="thread-banner">
+                  <span>{t("banner.viewing")} <b>{activeTitle}</b></span>
+                  <button onClick={() => setThreadId(null)}>{t("banner.viewAll")}</button>
+                </div>
+              );
+            })()}
             <ChatWidget
             data={data}
             selectedNode={selectedNode}
@@ -364,37 +368,43 @@ function ThreadsView({ data, onOpenGraph, onOpenNode }) {
         </div>
       </div>
       <div className="threads-grid">
-        {data.threads.map((th, idx) =>
-        <article key={th.id} className="thread-card">
+        {data.threads.map((th, idx) => {
+          const { lang } = window.useT();
+          const thTitle = (lang === "en" && th.title_en) || th.title;
+          const thDesc  = (lang === "en" && th.desc_en)  || th.desc;
+          return (
+          <article key={th.id} className="thread-card">
             <div className="th-card-num">{String(idx + 1).padStart(2, "0")}</div>
             <header>
-              <h3>{th.title}</h3>
+              <h3>{thTitle}</h3>
               <div className="th-blocs">
                 {th.blocs.map((b) => {
-                const c = window.CANAL_LIST.find((x) => x.id === b);
-                return <span key={b} className="bloc-chip" title={c?.name || "B" + b}>{c?.short || "B" + b}</span>;
-              })}
+                  const c = window.CANAL_LIST.find((x) => x.id === b);
+                  return <span key={b} className="bloc-chip" title={c?.name || "B" + b}>{c?.short || "B" + b}</span>;
+                })}
               </div>
             </header>
-            <p>{th.desc}</p>
+            <p>{thDesc}</p>
             <div className="th-nodes">
               {th.nodes.map((nid) => {
-              const n = data.nodes.find((x) => x.id === nid);
-              if (!n) return null;
-              return (
-                <button key={nid} className="th-node" onClick={() => onOpenNode(nid)}>
+                const n = data.nodes.find((x) => x.id === nid);
+                if (!n) return null;
+                const displayName = (lang === "en" && n.name_en) || n.name;
+                return (
+                  <button key={nid} className="th-node" onClick={() => onOpenNode(nid)}>
                     <span className="dot" style={{ background: TYPE_COLORS[n.type] }}></span>
-                    {n.name}
-                  </button>);
-
-            })}
+                    {displayName}
+                  </button>
+                );
+              })}
             </div>
             <button className="th-open" onClick={() => onOpenGraph(th.id)}>
               <span>{t("threads.goTo")}</span>
               <span className="arrow">→</span>
             </button>
           </article>
-        )}
+          );
+        })}
       </div>
     </div>);
 

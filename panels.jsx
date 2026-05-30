@@ -184,7 +184,7 @@ const CANAL_LIST = [
 ];
 
 function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selectedId, onThread, threadId }) {
-  const { t } = window.useT();
+  const { t, lang } = window.useT();
   const allTypes = ["person","agency","event","program","channel","concept"];
   const allBlocs = CANAL_LIST.map(c => c.id);
 
@@ -295,14 +295,17 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
       <section className="filter-section">
         <div className="filter-h"><span>{t("filter.threads")}</span></div>
         <div className="thread-list">
-          {data.threads.map(th => (
-            <button key={th.id}
-              className={`thread-btn ${threadId === th.id ? "on" : ""}`}
-              onClick={() => onThread(threadId === th.id ? null : th.id)}>
-              <div className="th-title">{th.title}</div>
-              <div className="th-count">{th.nodes.length} {t("threads.nodeCount")}</div>
-            </button>
-          ))}
+          {data.threads.map(th => {
+            const thTitle = (lang === "en" && th.title_en) || th.title;
+            return (
+              <button key={th.id}
+                className={`thread-btn ${threadId === th.id ? "on" : ""}`}
+                onClick={() => onThread(threadId === th.id ? null : th.id)}>
+                <div className="th-title">{thTitle}</div>
+                <div className="th-count">{th.nodes.length} {t("threads.nodeCount")}</div>
+              </button>
+            );
+          })}
         </div>
       </section>
 

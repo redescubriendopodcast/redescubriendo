@@ -164,22 +164,27 @@ button {
 .lang-toggle {
   display: inline-flex;
   align-items: center;
-  padding: 5px 10px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--ink-dim);
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  background: rgba(126,224,255,0.04);
-  transition: all 0.15s;
+  justify-content: center;
+  width: 42px;
+  height: 36px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  border: 1px solid rgba(126,224,255,0.35);
+  border-radius: 6px;
+  background: rgba(126,224,255,0.06);
+  box-shadow: 0 0 10px rgba(126,224,255,0.15), inset 0 0 6px rgba(126,224,255,0.05);
+  transition: all 0.18s;
   cursor: pointer;
+  flex-shrink: 0;
 }
 .lang-toggle:hover {
   border-color: var(--cyan);
   color: var(--cyan-bright);
-  background: rgba(126,224,255,0.12);
-  box-shadow: 0 0 12px var(--cyan-glow);
+  background: rgba(126,224,255,0.14);
+  box-shadow: 0 0 18px rgba(126,224,255,0.35), inset 0 0 8px rgba(126,224,255,0.08);
+  text-shadow: 0 0 8px var(--cyan-glow);
 }
 
 /* ===================================================================
