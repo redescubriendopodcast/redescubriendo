@@ -456,7 +456,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         const labels = [];
         for (const n of labelCandidates) {
           const r = nodeRadius(n) * n.scale;
-          const labelText = n.name;
+          const labelText = window.nodeDisplayName ? window.nodeDisplayName(n) : n.name;
           const isFocus = focus === n;
           const size = isFocus ? 14 : 12;
           ctx.font = `${isFocus ? 600 : 500} ${size}px ui-sans-serif, system-ui, sans-serif`;

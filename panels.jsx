@@ -151,7 +151,7 @@ function DetailPanel({ node, data, onSelect, onClose, lang }) {
                 {grouped[type].map((c, i) => (
                   <li key={i}>
                     <button className="conn-item" onClick={() => onSelect(c.node.id)}>
-                      <span className="conn-name">{c.node.name}</span>
+                      <span className="conn-name">{(lang === 'en' && c.node.name_en) || c.node.name}</span>
                       {c.note && <span className="conn-note">{c.note}</span>}
                     </button>
                   </li>
@@ -241,7 +241,7 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
             {searchResults.map(n => (
               <button key={n.id} className="search-result" onClick={() => { onSelect(n.id); setQuery(""); }}>
                 <span className="dot" style={{background: TYPE_COLORS[n.type]}}></span>
-                <span className="sr-name">{n.name}</span>
+                <span className="sr-name">{(lang === 'en' && n.name_en) || n.name}</span>
                 <span className="sr-type">{typeLabel(n.type).slice(0,-1).toLowerCase()}</span>
               </button>
             ))}

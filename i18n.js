@@ -367,8 +367,14 @@ window.useT = function useT() {
   return { t: t, lang: lang };
 };
 
+// ── _rdcLang global (read by graph.jsx canvas loop without React) ──────────
+window._rdcLang = localStorage.getItem('lang') ||
+                  new URLSearchParams(window.location.search).get('lang') ||
+                  'es';
+
 // ── changeLang ─────────────────────────────────────────────────────────────
 window.changeLang = function changeLang(newLang) {
+  window._rdcLang = newLang;
   localStorage.setItem('lang', newLang);
   try {
     var url = new URL(window.location.href);
@@ -376,4 +382,9 @@ window.changeLang = function changeLang(newLang) {
     history.replaceState(null, '', url.toString());
   } catch(e) {}
   window.dispatchEvent(new CustomEvent('rdcLangChange', { detail: newLang }));
+};
+
+// Helper: get localised node name (used by graph, panels, etc.)
+window.nodeDisplayName = function(n) {
+  return (window._rdcLang === 'en' && n.name_en) ? n.name_en : n.name;
 };

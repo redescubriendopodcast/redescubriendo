@@ -108,27 +108,29 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode, lang }) {
   };
 
   const fillName = (str, name) => str.replace("{name}", name);
+  const nodeName = (n) => (lang === 'en' && n.name_en) || n.name;
 
   const suggestions = (() => {
     if (selectedNode) {
       const n = selectedNode;
+      const nm = nodeName(n);
       if (n.type === "person") return [
-        fillName(t("chat.sugg.person0"), n.name),
+        fillName(t("chat.sugg.person0"), nm),
         t("chat.sugg.person1"),
-        fillName(t("chat.sugg.person2"), n.name)
+        fillName(t("chat.sugg.person2"), nm)
       ];
       if (n.type === "event") return [
-        fillName(t("chat.sugg.event0"), n.name),
+        fillName(t("chat.sugg.event0"), nm),
         t("chat.sugg.event1"),
         t("chat.sugg.event2")
       ];
       if (n.type === "program") return [
-        fillName(t("chat.sugg.program0"), n.name),
+        fillName(t("chat.sugg.program0"), nm),
         t("chat.sugg.program1"),
         t("chat.sugg.program2")
       ];
       if (n.type === "agency") return [
-        fillName(t("chat.sugg.agency0"), n.name),
+        fillName(t("chat.sugg.agency0"), nm),
         t("chat.sugg.agency1"),
         t("chat.sugg.agency2")
       ];
@@ -149,7 +151,7 @@ function ChatWidget({ data, selectedNode, filters, threadId, onMode, lang }) {
   const statusText = thinking
     ? t("chat.thinking")
     : selectedNode
-      ? t("chat.focused") + " " + selectedNode.name
+      ? t("chat.focused") + " " + nodeName(selectedNode)
       : t("chat.connected");
 
   return (
