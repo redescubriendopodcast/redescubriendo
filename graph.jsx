@@ -75,12 +75,12 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     // Galaxy disk lies in XZ plane; Y is thickness (small).
     // 13 spiral arms, one per canal.
     const minDim = Math.min(st.size.w, st.size.h);
-    const maxR = minDim * 0.42;
-    const channelR = minDim * 0.30;
-    const hubR = minDim * 0.07;
-    const thickness = minDim * 0.05;
+    const maxR = minDim * 0.46;
+    const channelR = minDim * 0.32;
+    const hubR = minDim * 0.06;
+    const thickness = minDim * 0.022; // flatter -> more disc-like
     const NUM_ARMS = 13;
-    const SPIRAL_TWIST = 0.6;
+    const SPIRAL_TWIST = 1.25; // more pronounced spiral arms
 
     let maxDeg = 1;
     for (const n of visibleNodes) maxDeg = Math.max(maxDeg, n.degree || 0);
@@ -187,9 +187,12 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     const id = focusId.split(":")[0];
     const node = st.nodes.find(n => n.id === id);
     if (!node) return;
-    // Re-center pan so node sits in middle of view
+    // Re-center pan so node sits in the middle of the VISIBLE area.
+    // The detail panel (380px) covers the right side, so shift target left by ~190px.
+    const PANEL_W = 380;
+    const targetX = (st.size.w - PANEL_W) / 2;
     const proj = projectPoint(node.x, node.y, node.z, st);
-    st.pan.x -= (proj.px - st.size.w / 2);
+    st.pan.x -= (proj.px - targetX);
     st.pan.y -= (proj.py - st.size.h / 2);
     st.alpha = Math.max(st.alpha, 0.3);
   }, [focusId]);
@@ -868,10 +871,11 @@ function runSimulation3D(st, iters, spread) {
 
 function nodeRadius(n) {
   if (n.type === "phenomenon") return 18; // large enough to anchor, but specifically rendered
-  const base = { person: 4.5, agency: 6, event: 5.5, program: 5.5, concept: 4.5, channel: 7.5 }[n.type] || 4.5;
-  // Exponential compression: small nodes barely shrink, large nodes shrink more.
+  const base = { person: 4, agency: 5, event: 4.5, program: 4.5, concept: 4, channel: 6 }[n.type] || 4;
+  // Exponential compression: small nodes barely shrink, large nodes shrink much more.
+  // Asymptotic cap lowered so the most-connected nodes don't dominate the disc.
   const deg = n.deg || 0;
-  return base + (1 - Math.exp(-deg / 12)) * 6.5;
+  return base + (1 - Math.exp(-deg / 18)) * 4.5;
 }
 
 // Render the central black hole (the phenomenon).

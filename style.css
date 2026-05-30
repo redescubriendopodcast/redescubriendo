@@ -1672,6 +1672,32 @@ button {
   display: inline-block;
 }
 
+.about-yt { margin-top: 8px; }
+.yt-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,0,0,0.10), rgba(126,224,255,0.04));
+}
+.yt-cta-body h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; color: var(--ink); }
+.yt-cta-body p { margin: 0; font-size: 14px; color: rgba(226,242,255,0.75); max-width: 480px; }
+.yt-cta-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.yt-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  text-decoration: none; transition: all 0.15s; white-space: nowrap;
+}
+.yt-btn-primary { background: #ff0033; color: #fff; }
+.yt-btn-primary:hover { background: #ff2a52; box-shadow: 0 0 20px rgba(255,0,51,0.4); transform: translateY(-1px); }
+.yt-btn-ghost { border: 1px solid var(--line); color: var(--ink); }
+.yt-btn-ghost:hover { border-color: var(--cyan); color: var(--cyan-bright); }
+.yt-ico { font-size: 11px; }
+
 .about-footnote {
   margin-top: 32px;
   font-size: 11px;

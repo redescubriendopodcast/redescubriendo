@@ -441,14 +441,14 @@ function AboutView({ data }) {
           </p>
           <p>
             La meta no es vender una conclusión sino <strong>traer el debate al centro</strong> y empezar
-            a entender las consecuencias que conlleva. Este corpus es una herramienta de navegación
+            a entender las consecuencias que conlleva. Esta web es una herramienta de navegación
             que irá creciendo con el tiempo — de momento reúne más de 300 vídeos junto a otros
             documentos y fuentes que han ido alimentando las líneas de tiempo.
           </p>
           <p>
             Es un trabajo <em>en evolución</em>. Todos estamos en este camino de entender lo que está
             pasando y, de alguna manera, todos tenemos que ayudar a quienes saben un poquito menos
-            a saber un poquito más.
+            para, entre todos, poder saber un poquito más.
           </p>
         </section>
 
@@ -541,6 +541,24 @@ function AboutView({ data }) {
           <p className="about-footnote">
             Trabajo en proceso · El corpus crece episodio a episodio · Última actualización mayo 2026
           </p>
+        </section>
+
+        <section className="about-section about-yt">
+          <div className="about-eyebrow">EL CANAL</div>
+          <div className="yt-cta">
+            <div className="yt-cta-body">
+              <h3>Redescubriendo en YouTube</h3>
+              <p>Cada episodio desgrana una pieza de este mapa. Suscríbete para seguir el hilo completo del fenómeno.</p>
+            </div>
+            <div className="yt-cta-actions">
+              <a className="yt-btn yt-btn-primary" href="https://www.youtube.com/@ReDescubriendo" target="_blank" rel="noopener">
+                <span className="yt-ico">▶</span> Ver el canal
+              </a>
+              <a className="yt-btn yt-btn-ghost" href="https://www.youtube.com/@ReDescubriendo?sub_confirmation=1" target="_blank" rel="noopener">
+                Suscribirse
+              </a>
+            </div>
+          </div>
         </section>
       </div>
     </div>);
