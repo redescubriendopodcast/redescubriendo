@@ -3312,7 +3312,7 @@ window.RDC_DATA = {
       "canal": 4,
       "degree": 1,
       "name_en": "Kevin Knuth",
-      "role_en": "El Físico que Cuantificó la Imposibilidad del Tic Tac",
+      "role_en": "The Physicist Who Quantified the Impossibility of the Tic Tac",
       "bio_en": "Associate Professor of Physics at the University at Albany, State University of New York. Research focus: Bayesian inference, information theory and scientific data analysis.\n\nUAP Contribution: Knuth published a peer-reviewed analysis of the 2004 USS Nimitz Tic Tac encounter in the journal Entropy (2019), applying rigorous physics to the reported performance parameters. His calculations showed that if the reported manoeuvres were accurate, the Tic Tac would have required 5,400 G of acceleration (16 G causes human loss of consciousness) and approximately 1,100 gigawatts of power — more than 10× the total U.S. nuclear output.\n\nSignificance: Knuth's paper is the most frequently cited peer-reviewed physics analysis of a specific UAP incident. By publishing in a reputable journal with full methodology, he made the physical impossibility of the Tic Tac's reported behaviour a matter of scientific record rather than anecdote.",
       "group_en": "Scientists & Researchers"
     },
@@ -3357,7 +3357,7 @@ window.RDC_DATA = {
       "canal": 4,
       "degree": 5,
       "name_en": "Admiral Thomas Wilson",
-      "role_en": "El Vicedirector de la DIA al que Negaron el Acceso",
+      "role_en": "The DIA Vice-Director Who Was Denied Access",
       "bio_en": "Vice Admiral Thomas Wilson served as Director of the Defense Intelligence Agency (DIA) from 1999 to 2002. He is the subject of the 'Wilson-Davis Memo' — a set of notes attributed to astrophysicist Eric Davis documenting a meeting between Wilson and Davis at the EG&G Special Projects office in Las Vegas in April 2002.\n\nThe Wilson-Davis Memo: According to the memo, Wilson told Davis that he had discovered the existence of a classified UAP crash retrieval and reverse engineering program held by a private contractor, but had been denied access. The contractor invoked a special access program (SAP) structure that effectively blocked a sitting DIA Director from gaining access to the program.\n\nAuthenticity Debate: Wilson has neither confirmed nor denied the memo. Davis has declined to comment on its authenticity while not denying it. The memo was published by Steven Greer in 2019 and has been analysed by multiple researchers. Aspects of the document appear consistent with other testimony and with documented facts about Wilson's tenure and access attempts.\n\nRelevance: If authentic, the Wilson-Davis memo is the most significant document in the modern disclosure corpus: a DIA Director discovering a UAP program that blocked even his access, describing the exact mechanisms (SAP contractor structure) by which programs could operate outside presidential and Congressional oversight.",
       "group_en": "Military Figures"
     },
@@ -3388,7 +3388,7 @@ window.RDC_DATA = {
       "canal": 4,
       "degree": 1,
       "name_en": "Edgar Mitchell",
-      "role_en": "El Astronauta Apolo 14 Custodio del Memo Wilson-Davis",
+      "role_en": "The Apollo 14 Astronaut and Custodian of the Wilson-Davis Memo",
       "bio_en": "Professional Background: NASA astronaut and sixth person to walk on the Moon (Apollo 14, 1971). After his NASA career, Mitchell founded the Institute of Noetic Sciences (IONS) to study consciousness and paranormal phenomena.\n\nKey Statements: Mitchell became one of the most prominent credentialed advocates for UAP reality, stating publicly that the Roswell crash was real and that the U.S. government has been covering up extraterrestrial contact for decades. He claimed to have been briefed by former intelligence officers about ongoing UAP programs.\n\nRelevance: Edgar Mitchell represents the 'astronaut credibility' dimension of the disclosure movement: one of the most rigorously selected and trained individuals in human history, who used his remaining years and credibility to publicly advocate for disclosure.",
       "group_en": "Historical Figures"
     },
@@ -3435,7 +3435,7 @@ window.RDC_DATA = {
       "canal": 1,
       "degree": 1,
       "name_en": "John E. Mack",
-      "role_en": "El Psiquiatra de Harvard que Pagó Por Tomar las Abducciones En Serio",
+      "role_en": "The Harvard Psychiatrist Who Paid the Price for Taking Abductions Seriously",
       "bio_en": "Professional Background: Professor of Psychiatry at Harvard Medical School and Pulitzer Prize winner (A Prince of Our Disorder, 1977). Founded the Program for Extraordinary Experience Research (PEER) at Harvard in 1993. He died in September 2004 in London, struck by a drunk driver.\n\nKey Publications & Statements: Mack's books Abduction: Human Encounters with Aliens (1994) and Passport to the Cosmos (1999) presented his clinical analysis of over 200 'experiencers' — individuals who reported alien abduction. Rather than dismissing these accounts as delusion or fabrication, Mack treated them as genuine experiences deserving rigorous phenomenological investigation, while carefully distinguishing between the reality of the experience and its ultimate ontological nature.\n\nHarvard Review: Mack's research triggered an unprecedented review by Harvard Medical School in 1994, seeking grounds to discipline or dismiss him. After 14 months, the Dean of the Medical School sent him a letter reaffirming his academic freedom — the only documented case of Harvard attempting to discipline a tenured professor for the subject matter of their research. The outcome was widely seen as a vindication.\n\nRelevance: John Mack represents the entry of first-tier academic psychiatry into serious engagement with the abduction phenomenon — and the institutional resistance that serious engagement provoked. His Ruwa, Zimbabwe investigation (1994) remains among the most rigorous multi-witness documentation of a collective contact experience.",
       "group_en": "Scientists & Researchers"
     },
@@ -3513,7 +3513,7 @@ window.RDC_DATA = {
       "canal": 5,
       "degree": 10,
       "name_en": "Anna Paulina Luna",
-      "role_en": "La Congresista que Coordinó la Desclasificación Trump",
+      "role_en": "The Congresswoman Who Coordinated the Trump Declassification",
       "bio_en": "Republican Representative for Florida's 13th district, in office since 2023. Air Force veteran and member of the House Oversight Committee. Luna has been one of the most aggressive Congressional advocates for full UAP disclosure, co-leading with Tim Burchett and Eric Burlison the effort to access classified UAP sites and documents.\n\nKey Actions: Luna was part of the delegation of Representatives who visited a classified UAP-related site in 2024 (the visit confirmed by Eric Burlison), and who Jeremy Corbell interviewed after the visit. She has been outspoken about the existence of classified programs beyond Congressional oversight, framing the issue as a matter of constitutional accountability — Congress's right to know what the executive branch is doing with taxpayer funds.\n\nRelevance: As a military veteran (Air Force) and member of the oversight committee, Luna combines personal military credibility with institutional oversight authority — making her part of the most credible congressional bloc on UAP issues.",
       "group_en": "Political Figure"
     },
@@ -3575,7 +3575,7 @@ window.RDC_DATA = {
       "canal": 1,
       "degree": 6,
       "name_en": "Eric Burlison",
-      "role_en": "El Legislador que Incorporó a Grusch como Asesor del Congreso",
+      "role_en": "The Legislator Who Brought Grusch onto the Congressional Staff",
       "bio_en": "Republican Representative for Missouri's 7th district, in office since 2023. Member of the House Oversight Committee and one of the most active Congressional advocates for UAP disclosure.\n\nKey Actions: Burlison confirmed in 2024 that he and other Representatives visited a classified UAP-related site, the visit subsequently detailed in interviews with Jeremy Corbell. He also brought David Grusch on as Special Advisor to the House Oversight Committee staff in 2025 — the first time a UAP whistleblower has been formally incorporated into the Congressional oversight apparatus.\n\nSignificance: Burlison represents the institutionalisation of disclosure advocacy within Congress: moving from hearings and statements to direct access and staff appointments that give whistleblowers formal legislative standing.",
       "group_en": "Political Figure"
     },
@@ -3606,7 +3606,7 @@ window.RDC_DATA = {
       "canal": 6,
       "degree": 1,
       "name_en": "Kirsan Ilyumzhinov",
-      "role_en": "El Líder en Activo que Declaró \"Fui Invitado por Aliens\"",
+      "role_en": "The Sitting Leader Who Declared 'I Was Invited by Aliens'",
       "bio_en": "President of the Republic of Kalmykia (Russia, 1993–2010) and President of the World Chess Federation (FIDE, 1995–2018). In 2010, Ilyumzhinov gave an interview on Russian state television in which he described being abducted by aliens from his Moscow apartment in 1997 — a claim he maintained consistently in subsequent interviews. He described being taken aboard a craft, communicating with beings in yellow spacesuits, and being returned to his apartment.\n\nSignificance: While abduction claims from politicians are not uncommon, Ilyumzhinov's case is notable for his sustained public position, the lack of apparent commercial motivation, and the fact that he was a sitting head of government at the time of the alleged event. The Russian state media context — where such statements would normally be career-ending — adds to the peculiarity of his claim.",
       "group_en": "Political Figure"
     },
@@ -3637,7 +3637,7 @@ window.RDC_DATA = {
       "canal": 2,
       "degree": 1,
       "name_en": "Haim Eshed",
-      "role_en": "El General Israelí que Habló de la \"Federación Galáctica\"",
+      "role_en": "The Israeli General Who Spoke of the 'Galactic Federation'",
       "bio_en": "Former Israeli space security chief (2000–2011) and founder of Israel's satellite intelligence program. In December 2020, he made extraordinary statements in an interview with Yedioth Ahronoth and subsequently in his book The Universe Beyond the Horizon: that the United States and Israel have been in contact with an extraterrestrial 'Galactic Federation', that there is a secret underground base on Mars shared between U.S. astronauts and alien representatives, and that Donald Trump had been on the verge of revealing extraterrestrial contact but was asked not to by the aliens themselves.\n\nAssessment: Eshed's credentials (professor at Technion, Israel's MIT equivalent; decades of classified space security work) make him difficult to dismiss outright. However, his claims go significantly further than any other credentialed figure in the corpus. The UAP research community has treated his statements with caution, noting the age and health context of the interview, while acknowledging that his background gives them more weight than similar claims from civilian sources.",
       "group_en": "Military Figures"
     },
@@ -3668,7 +3668,7 @@ window.RDC_DATA = {
       "canal": 3,
       "degree": 1,
       "name_en": "Nick Pope",
-      "role_en": "El \"Agente X-Files Real\" del MoD Británico",
+      "role_en": "The Real-Life 'X-Files Agent' of the British MoD",
       "bio_en": "Professional Background: Former British civil servant who worked for the UK Ministry of Defence (MoD) from 1985 to 2006. From 1991 to 1994, he ran the MoD's UFO project — the office responsible for investigating and responding to UFO reports from British military personnel and the public.\n\nKey Publications & Statements: Pope is the author of several books including Open Skies, Closed Minds (1996), which details his government UFO investigations, and The Uninvited (1997). During his tenure at the MoD, Pope investigated hundreds of UFO reports and became personally convinced that some represented genuinely unexplained phenomena that warranted serious official investigation. After leaving the MoD, he became a prominent media commentator on UFOs and UAPs.\n\nRelevance: Nick Pope is significant as the most prominent former Western government official to publicly state, while still in a credible position, that some UFO cases are genuine and unexplained. His MoD background gives him institutional credibility in the UK context equivalent to what Elizondo provides in the U.S. context. He is particularly associated with the Rendlesham Forest incident, for which he has been a consistent advocate of serious investigation.",
       "group_en": "Military Figures"
     },
@@ -3706,7 +3706,7 @@ window.RDC_DATA = {
       "canal": 7,
       "degree": 3,
       "name_en": "Russell Targ",
-      "role_en": "El Físico Láser que Co-fundó el Remote Viewing en Stanford",
+      "role_en": "The Laser Physicist Who Co-founded Remote Viewing at Stanford",
       "bio_en": "Professional Background: American physicist and parapsychology researcher. Co-founder (with Hal Puthoff) of the Stanford Research Institute (SRI) remote viewing program that became Project Stargate. Targ is also a laser physicist and inventor, with significant contributions to laser technology.\n\nKey Publications & Statements: Targ co-authored Mind-Reach: Scientists Look at Psychic Ability (1977) and The Mind Race: Understanding and Using Psychic Abilities (1984), summarising the SRI research findings. He has consistently maintained that the statistical evidence for remote viewing is robust and replicable.\n\nStargate Context: Within the Stargate program, Targ and Puthoff conducted the foundational experiments establishing the scientific validity of remote viewing under rigorous laboratory conditions. Their work was peer-reviewed and published in the journal Nature in 1974. While the operational intelligence value remained contested, the laboratory research produced results that exceeded chance at levels most physicists would consider significant.\n\nRelevance: Russell Targ represents the scientific credibility wing of the remote viewing phenomenon — a physicist who measured and documented anomalous human perception under controlled conditions, and whose work forms the evidentiary foundation for the claim that the Stargate program was based on real phenomena.",
       "group_en": "Scientists & Researchers"
     },
@@ -3737,7 +3737,7 @@ window.RDC_DATA = {
       "canal": 5,
       "degree": 1,
       "name_en": "Roberto Pinotti",
-      "role_en": "El Decano de la Ufología Italiana y el Caso Magenta 1933",
+      "role_en": "The Dean of Italian Ufology and the 1933 Magenta Case",
       "bio_en": "Professional Background: Italian UFO researcher and president of the Centro Ufologico Nazionale (CUN), Italy's national UFO research centre. He is considered the dean of Italian ufology, with over 60 years of investigation.\n\nKey Contribution: In 1996, Pinotti received an envelope bearing the seal of the Kingdom of Italy's Senate containing documents he claims are originals from Mussolini's fascist regime relating to the 1933 Magenta crash: three telegrams from the Stefani agency ordering total silence on a UAP crash, the RS/33 cabinet protocol, and the team organisational chart (Mussolini, Ciano, Balbo, astronomer Cecchini). Forensic analysis by the Tribunal of Como confirmed the paper, ink and handwriting as authentic to the period.\n\nSol Foundation Testimony: In 2021, at a Sol Foundation conference, Pinotti presented his analysis of the Magenta case, connecting it to Luis Elizondo's statement that he had seen authentic Mussolini-era documentation about the event through his intelligence sources.\n\nRelevance: Pinotti is the primary source for the 1933 Magenta case — the oldest documented UAP recovery in the corpus — and represents the European dimension of UAP research that the predominantly American-focused mainstream narrative tends to overlook.",
       "group_en": "Key Journalists"
     },
@@ -3799,7 +3799,7 @@ window.RDC_DATA = {
       "canal": 4,
       "degree": 4,
       "name_en": "Tim Phillips",
-      "role_en": "El Sucesor de Kirkpatrick al Frente de la AARO",
+      "role_en": "Kirkpatrick's Successor as AARO Director",
       "bio_en": "Tim Phillips is a UAP researcher and investigator known for his work documenting cases in the United Kingdom and his analysis of historical British UAP incidents. He has contributed to multiple UAP documentaries and research publications, focusing particularly on military encounter cases from the UK's Cold War-era classified files.",
       "group_en": "Military Figures"
     },
