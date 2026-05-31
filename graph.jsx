@@ -28,7 +28,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     edges: [],
     rotX: 0.68,
     rotY: 0,
-    zoom: 1.5,
+    zoom: 1.0,
     pan: { x: 0, y: 0 },
     galaxyRot: 0,
     convergence: 0,        // 0 = normal galaxy, 1 = fully converged (chat orb mode)
@@ -68,48 +68,62 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     const visibleEdges = data.edges.filter(e => idSet.has(e[0]) && idSet.has(e[1]));
 
     // === 3D GALAXY HOME POSITIONS ===
-    // Galaxy disk lies in XZ plane; Y is thickness (small).
-    // 13 spiral arms, one per canal.
+    // Galaxy disk lies in XZ plane; Y is thickness (small → flat disc).
+    // Logarithmic spiral arms, one per canal, with a diffuse halo of
+    // channel-less nodes. Nodes are spread across a wide annulus (clear core,
+    // populated mid-band, plenty at the rim) instead of piling at the centre.
     const minDim = Math.min(st.size.w, st.size.h);
     const maxR = minDim * 0.46;
-    const channelR = minDim * 0.32;
-    const hubR = minDim * 0.06;
-    const thickness = minDim * 0.022; // flatter -> more disc-like
+    const innerEdge = minDim * 0.09;   // small empty zone around the black hole
+    const channelR = minDim * 0.40;    // channels sit out on the disc
+    const thickness = minDim * 0.018;  // thin → disc-like
     const NUM_ARMS = 13;
-    const SPIRAL_TWIST = 1.25; // more pronounced spiral arms
+    const SPIRAL_TWIST = 3.4;          // pronounced, visible logarithmic arms
 
     let maxDeg = 1;
     for (const n of visibleNodes) maxDeg = Math.max(maxDeg, n.degree || 0);
 
+    // Radius fraction 0(core)→1(rim). An even low-discrepancy spread fills every
+    // radial band (so density is naturally higher near the core and lighter at
+    // the rim, like a real disc), with degree only a mild inward nudge so the
+    // most-connected nodes sit a little further in.
+    const radiusFrac = (n, i) => {
+      const dn = (n.degree || 0) / maxDeg;
+      const rphase = (i * 0.7548776662) % 1;            // even spread 0..1
+      let g = 0.72 * rphase + 0.28 * (1 - dn);
+      g = Math.max(0, Math.min(1, g));
+      return 0.12 + 0.86 * g;                            // 0.12(core)…0.98(rim)
+    };
+
     const computeHome = (n, i) => {
       const c = n.canal || 0;
-      const dn = (n.degree || 0) / maxDeg;
-      const phase = (i * 0.6180339) % 1; // golden-ratio jitter
+      const phase = (i * 0.6180339) % 1; // golden-ratio angular jitter
       const yJitter = (Math.sin(i * 12.9898) * 43758.5453 % 1) - 0.5; // deterministic pseudo-random
-      let homeR, homeA;
+      let homeR, homeA, frac;
       if (n.type === "channel") {
         const arm = (c - 1) / NUM_ARMS;
-        homeA = arm * Math.PI * 2;
-        homeR = channelR * 0.95;
-      } else if (c === 0) {
-        homeA = phase * Math.PI * 2;
-        homeR = hubR * (0.4 + phase * 0.7);
+        frac = channelR / maxR;
+        homeR = channelR;
+        homeA = arm * Math.PI * 2 + SPIRAL_TWIST * frac;
       } else {
-        const arm = (c - 1) / NUM_ARMS;
-        const baseAngle = arm * Math.PI * 2;
-        const tRad = 1 - Math.pow(dn, 0.55);
-        const minR = channelR * 0.32;
-        const baseR = minR + tRad * (maxR - minR);
-        const wedge = (Math.PI * 2 / NUM_ARMS) * 0.55;
-        const angleJitter = (phase - 0.5) * wedge;
-        const spiral = baseR / maxR * SPIRAL_TWIST;
-        homeA = baseAngle + angleJitter + spiral;
-        homeR = baseR;
+        frac = radiusFrac(n, i);
+        homeR = innerEdge + (maxR - innerEdge) * frac;
+        if (c === 0) {
+          // Diffuse halo: uniform angle + a little spiral so it blends in.
+          homeA = phase * Math.PI * 2 + SPIRAL_TWIST * 0.5 * frac;
+        } else {
+          const baseAngle = (c - 1) / NUM_ARMS * Math.PI * 2;
+          const wedge = (Math.PI * 2 / NUM_ARMS) * 0.55;
+          homeA = baseAngle + (phase - 0.5) * wedge + SPIRAL_TWIST * frac;
+        }
       }
+      // Flatter towards the centre (disc), a touch more thickness at the rim.
+      const yScale = n.type === "channel" ? 0.3 : (0.35 + 0.65 * frac);
       return {
         hx: Math.cos(homeA) * homeR,
-        hy: yJitter * thickness * (n.type === "channel" ? 0.3 : 1),
-        hz: Math.sin(homeA) * homeR
+        hy: yJitter * thickness * yScale,
+        hz: Math.sin(homeA) * homeR,
+        frac
       };
     };
 
@@ -130,8 +144,8 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         hx: home.hx, hy: home.hy, hz: home.hz,
         homeR: Math.hypot(home.hx, home.hz),
         homeA: Math.atan2(home.hz, home.hx),
-        // Start collapsed at the galactic centre; the spiral intro flings them
-        // out along one revolution into their home position.
+        homeFrac: home.frac,
+        // Start collapsed at the galactic centre; the launch flings them out.
         x: 0, y: 0, z: 0,
         vx: 0, vy: 0, vz: 0,
         deg: 0,
@@ -229,7 +243,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       const chatActive = st.chatMode && st.chatMode !== "closed";
       const shouldAutoRotate = !selectedId && !isInteracting && idleMs > 1500 && !chatActive;
       if (shouldAutoRotate) {
-        st.galaxyRot += 0.00009 * dt;
+        st.galaxyRot += 0.000045 * dt;
       }
 
       // Convergence ramp: 0 = normal galaxy, 1 = converged into Jarvis orb
@@ -246,22 +260,30 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       // time so the motion is identical on every device.
       if (st.intro) {
         if (st.intro.start == null) st.intro.start = t;
-        const p = Math.min(1, (t - st.intro.start) / st.intro.dur);
-        const e = easeOutCubic(p);
+        const P = Math.min(1, (t - st.intro.start) / st.intro.dur);
+        const SPREAD = 0.5; // outer nodes are released later → arms grow outward
+        const TWO_PI = Math.PI * 2;
+        let allDone = true;
         for (let i = 0; i < st.nodes.length; i++) {
           const n = st.nodes[i];
           if (n.type === "phenomenon") { n.x = n.y = n.z = 0; continue; }
           if (n === st.drag) continue;
-          // Radius grows from the centre while the angle completes exactly one
-          // revolution, decelerating into place (like releasing the inertia of
-          // a circular orbit).
+          // Each node is "released" from the central point of gravity. Nodes
+          // bound for the rim launch later, so the disc grows outward rather
+          // than scaling uniformly. The radius decelerates (ease-out) while the
+          // angle trails one revolution in the SAME sense as the final spin
+          // (conservation of the rotational inertia) — a parabola seen in plan.
+          const delay = SPREAD * n.homeFrac;
+          const p = Math.max(0, Math.min(1, (P - delay) / (1 - delay)));
+          if (p < 1) allDone = false;
+          const e = easeOutCubic(p);
           const r = n.homeR * e;
-          const ang = n.homeA - (1 - e) * Math.PI * 2 * st.intro.dir;
+          const ang = n.homeA + (1 - e) * TWO_PI * st.intro.dir;
           n.x = Math.cos(ang) * r;
           n.z = Math.sin(ang) * r;
           n.y = n.hy * e;
         }
-        if (p >= 1) {
+        if (P >= 1 && allDone) {
           for (const n of st.nodes) {
             if (n.type !== "phenomenon" && n !== st.drag) { n.x = n.hx; n.y = n.hy; n.z = n.hz; }
           }
@@ -718,17 +740,17 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
   React.useEffect(() => {
     const st = stateRef.current;
     window.__rdcGraph = {
-      // 1.5 internal = 100% UI baseline
-      zoomBy: (f) => { st.zoom = clamp(st.zoom * f, 0.5, 6); },
+      // 1.0 internal = 100% UI baseline (galaxy fits the viewport at load)
+      zoomBy: (f) => { st.zoom = clamp(st.zoom * f, 0.4, 6); },
       reset: () => {
-        st.zoom = 1.5;
+        st.zoom = 1.0;
         st.rotX = 0.68;
         st.rotY = 0;
         st.pan = { x: 0, y: 0 };
         st.alpha = Math.max(st.alpha, 0.4);
       },
-      // Display: 1.5 internal => 100% display
-      getZoom: () => st.zoom / 1.5
+      // Display: 1.0 internal => 100% display
+      getZoom: () => st.zoom / 1.0
     };
   }, []);
 
