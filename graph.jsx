@@ -67,10 +67,6 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     const idSet = new Set(visibleNodes.map(n => n.id));
     const visibleEdges = data.edges.filter(e => idSet.has(e[0]) && idSet.has(e[1]));
 
-    // Preserve positions for nodes already simulated
-    const oldPos = {};
-    st.nodes.forEach(n => { oldPos[n.id] = { x: n.x, y: n.y, z: n.z, vx: n.vx, vy: n.vy, vz: n.vz }; });
-
     // === 3D GALAXY HOME POSITIONS ===
     // Galaxy disk lies in XZ plane; Y is thickness (small).
     // 13 spiral arms, one per canal.
@@ -118,13 +114,12 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     };
 
     st.nodes = visibleNodes.map((n, i) => {
-      const prev = oldPos[n.id];
       const home = computeHome(n, i);
       // The phenomenon stays anchored at the galactic center
       if (n.type === "phenomenon") {
         return {
           ...n,
-          hx: 0, hy: 0, hz: 0,
+          hx: 0, hy: 0, hz: 0, homeR: 0, homeA: 0,
           x: 0, y: 0, z: 0,
           vx: 0, vy: 0, vz: 0,
           deg: 0, px: 0, py: 0, scale: 1, depth: 0
@@ -133,12 +128,12 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       return {
         ...n,
         hx: home.hx, hy: home.hy, hz: home.hz,
-        x: prev?.x ?? home.hx + (Math.random() - 0.5) * 20,
-        y: prev?.y ?? home.hy + (Math.random() - 0.5) * 10,
-        z: prev?.z ?? home.hz + (Math.random() - 0.5) * 20,
-        vx: prev?.vx ?? 0,
-        vy: prev?.vy ?? 0,
-        vz: prev?.vz ?? 0,
+        homeR: Math.hypot(home.hx, home.hz),
+        homeA: Math.atan2(home.hz, home.hx),
+        // Start collapsed at the galactic centre; the spiral intro flings them
+        // out along one revolution into their home position.
+        x: 0, y: 0, z: 0,
+        vx: 0, vy: 0, vz: 0,
         deg: 0,
         px: 0, py: 0, scale: 1, depth: 0
       };
@@ -151,8 +146,10 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       return { source: s, target: t, kind: e[2], note: e[3] || "" };
     });
 
-    runSimulation3D(st, 200, 1.0);
-    st.alpha = 0.4;
+    // Trigger the elegant spiral intro. Start timestamp is captured on the
+    // first render frame so it is driven by wall-clock time (identical pacing
+    // on desktop, tablet and phone — no physics, no vibration).
+    st.intro = { start: null, dur: 1500, dir: 1 };
   }, [data, filters]);
 
   // ============== CANVAS SIZING ==============
@@ -197,6 +194,23 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     st.alpha = Math.max(st.alpha, 0.3);
   }, [focusId]);
 
+  // ============== RE-FORM THE GALAXY ON DESELECT ==============
+  // When the user closes a panel / deselects, replay the spiral so the galaxy
+  // gracefully re-forms (same elegant revolution as the intro).
+  const prevSelRef = React.useRef(selectedId);
+  React.useEffect(() => {
+    const prev = prevSelRef.current;
+    prevSelRef.current = selectedId;
+    if (prev && !selectedId) {
+      const st = stateRef.current;
+      const chatActive = st.chatMode && st.chatMode !== "closed";
+      if (!chatActive) {
+        st.pan = { x: 0, y: 0 };               // recenter the galaxy
+        st.intro = { start: null, dur: 1200, dir: 1 };
+      }
+    }
+  }, [selectedId]);
+
   // ============== RENDER + SIMULATION LOOP ==============
   React.useEffect(() => {
     const cv = canvasRef.current;
@@ -227,13 +241,43 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         st.pulse += 0.0008 * dt;
       }
 
-      // Simulation: pause if user has selected something (so connections don't wiggle when reading)
-      const lockedForReading = !!selectedId;
-      if ((st.alpha || 0) > 0.001 && !lockedForReading) {
-        runSimulation3D(st, 1, tweaks.spread || 1);
-        st.alpha = Math.max(0, st.alpha - 0.008);
-      } else if (lockedForReading && st.drag) {
-        runSimulation3D(st, 1, tweaks.spread || 1);
+      // === LAYOUT: deterministic spiral intro + gentle home settle ===
+      // No force simulation → no vibration. Positions are driven by wall-clock
+      // time so the motion is identical on every device.
+      if (st.intro) {
+        if (st.intro.start == null) st.intro.start = t;
+        const p = Math.min(1, (t - st.intro.start) / st.intro.dur);
+        const e = easeOutCubic(p);
+        for (let i = 0; i < st.nodes.length; i++) {
+          const n = st.nodes[i];
+          if (n.type === "phenomenon") { n.x = n.y = n.z = 0; continue; }
+          if (n === st.drag) continue;
+          // Radius grows from the centre while the angle completes exactly one
+          // revolution, decelerating into place (like releasing the inertia of
+          // a circular orbit).
+          const r = n.homeR * e;
+          const ang = n.homeA - (1 - e) * Math.PI * 2 * st.intro.dir;
+          n.x = Math.cos(ang) * r;
+          n.z = Math.sin(ang) * r;
+          n.y = n.hy * e;
+        }
+        if (p >= 1) {
+          for (const n of st.nodes) {
+            if (n.type !== "phenomenon" && n !== st.drag) { n.x = n.hx; n.y = n.hy; n.z = n.hz; }
+          }
+          st.intro = null;
+        }
+      } else {
+        // Gentle critically-damped pull to home (no overshoot, no jitter).
+        // Handles drag spring-back; otherwise nodes simply rest at home.
+        const k = 1 - Math.exp(-dt * 0.012);
+        for (let i = 0; i < st.nodes.length; i++) {
+          const n = st.nodes[i];
+          if (n.type === "phenomenon" || n === st.drag) continue;
+          n.x += (n.hx - n.x) * k;
+          n.y += (n.hy - n.y) * k;
+          n.z += (n.hz - n.z) * k;
+        }
       }
 
       // project all nodes (blend between galaxy position and Jarvis sphere)
@@ -805,70 +849,6 @@ function drawProjectedCircle(ctx, r, st, color, width) {
   ctx.stroke();
 }
 
-function runSimulation3D(st, iters, spread) {
-  const nodes = st.nodes;
-  const edges = st.edges;
-  const N = nodes.length;
-  if (!N) return;
-  spread = spread || 1;
-  const charge = -140 * spread;
-
-  for (let it = 0; it < iters; it++) {
-    // Home gravity in 3D (lighter for gentler motion)
-    const g = 0.045;
-    for (let i = 0; i < N; i++) {
-      const n = nodes[i];
-      if (n === st.drag || n.fixed || n.type === "phenomenon") continue;
-      n.vx += (n.hx - n.x) * g;
-      n.vy += (n.hy - n.y) * g;
-      n.vz += (n.hz - n.z) * g;
-    }
-    // Charge repulsion (smaller cap, cuts off vibration)
-    for (let i = 0; i < N; i++) {
-      const a = nodes[i];
-      if (a.type === "phenomenon") continue; // don't push the black hole
-      for (let j = i + 1; j < N; j++) {
-        const b = nodes[j];
-        if (b.type === "phenomenon") continue;
-        const dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z;
-        let d2 = dx*dx + dy*dy + dz*dz;
-        if (d2 < 1) d2 = 1;
-        if (d2 > 30000) continue;
-        const d = Math.sqrt(d2);
-        const f = charge / d2;
-        const fx = (dx/d) * f, fy = (dy/d) * f, fz = (dz/d) * f;
-        if (a !== st.drag) { a.vx -= fx; a.vy -= fy; a.vz -= fz; }
-        if (b !== st.drag) { b.vx += fx; b.vy += fy; b.vz += fz; }
-      }
-    }
-    // Link forces (weaker)
-    const linkStr = 0.022;
-    const linkDist = 55 * spread;
-    for (const e of edges) {
-      if (e.source.type === "phenomenon" || e.target.type === "phenomenon") continue;
-      const dx = e.target.x - e.source.x;
-      const dy = e.target.y - e.source.y;
-      const dz = e.target.z - e.source.z;
-      const d = Math.sqrt(dx*dx + dy*dy + dz*dz) || 1;
-      const diff = (d - linkDist) * linkStr;
-      const fx = (dx/d) * diff, fy = (dy/d) * diff, fz = (dz/d) * diff;
-      if (e.source !== st.drag) { e.source.vx += fx; e.source.vy += fy; e.source.vz += fz; }
-      if (e.target !== st.drag) { e.target.vx -= fx; e.target.vy -= fy; e.target.vz -= fz; }
-    }
-    // Integrate with strong damping for elegance
-    const damping = 0.84;
-    for (let i = 0; i < N; i++) {
-      const n = nodes[i];
-      if (n.type === "phenomenon") { n.x = n.y = n.z = 0; n.vx = n.vy = n.vz = 0; continue; }
-      if (n === st.drag) { n.vx = n.vy = n.vz = 0; continue; }
-      n.vx *= damping; n.vy *= damping; n.vz *= damping;
-      const speed2 = n.vx*n.vx + n.vy*n.vy + n.vz*n.vz;
-      if (speed2 < 0.0009) { n.vx = n.vy = n.vz = 0; }
-      n.x += n.vx; n.y += n.vy; n.z += n.vz;
-    }
-  }
-}
-
 function nodeRadius(n) {
   if (n.type === "phenomenon") return 18; // large enough to anchor, but specifically rendered
   const base = { person: 4, agency: 5, event: 4.5, program: 4.5, concept: 4, channel: 6 }[n.type] || 4;
@@ -982,6 +962,8 @@ function parseHex(hex) {
 }
 
 function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+function easeOutCubic(p) { return 1 - Math.pow(1 - p, 3); }
 
 function labelBox(cx, cy, w, h, anchor) {
   let x = cx;
