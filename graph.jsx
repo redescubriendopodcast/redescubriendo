@@ -77,7 +77,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     const donutInner = minDim * 0.045; // black-hole hole at the very centre
     const NUM_ARMS = 2;
     const ARM_WIND = 3.1;              // radians an arm sweeps from centre→rim
-    const ARM_SCATTER = 0.62;          // angular scatter around the arm spine
+    const ARM_HALF = 1.5;              // wide angular half-spread (arm is suggested, fills disc)
     const BULGE_FRAC = 0.24;           // f below this = amorphous central bulge
     const thickness = minDim * 0.02;
     st.donutR = minDim * 0.07;         // launch torus radius (used by the intro)
@@ -103,7 +103,11 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       const frac = n.type === "channel"
         ? 0.42 + 0.46 * ((c * 0.3819660) % 1)   // channels spread across mid-outer disc
         : radiusFrac(n, i);
-      const homeR = donutInner + (maxR - donutInner) * frac;
+      // Radial jitter so nodes don't sit on exact spiral lines (breaks the
+      // "necklace" look and fills the disc).
+      const rHash = Math.sin(i * 91.7) * 23456.789;
+      const rJit = rHash - Math.floor(rHash);            // 0..1
+      const homeR = (donutInner + (maxR - donutInner) * frac) * (1 + 0.16 * (rJit - 0.5) * 2);
       let homeA;
       if (frac < BULGE_FRAC) {
         // Amorphous, dense central bulge.
@@ -111,8 +115,12 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       } else {
         const baseA = armSel * Math.PI;                  // two arms, 180° apart
         const wind = ARM_WIND * frac;                    // logarithmic winding
-        const scatter = (phase - 0.5) * ARM_SCATTER * (1 - 0.6 * frac); // crisper outward
-        homeA = baseA + wind + scatter;
+        // Wide, soft scatter: density peaks on the arm spine and fades out, so
+        // the arm is only *suggested* and the surrounding disc fills in — not a
+        // hard chain of beads.
+        const s = phase - 0.5;
+        const soft = Math.sign(s) * Math.pow(Math.abs(s) * 2, 1.7);
+        homeA = baseA + wind + soft * ARM_HALF;
       }
       // Bulge a touch puffier; disc thin and flat.
       const yScale = frac < BULGE_FRAC ? 0.9 : 0.28;
