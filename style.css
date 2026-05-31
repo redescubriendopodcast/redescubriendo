@@ -853,6 +853,23 @@ button {
   color: var(--ink);
   text-wrap: balance;
 }
+.panel-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.panel-name-row .panel-name { flex: 1; min-width: 0; }
+.panel-face {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--cyan);
+  background: rgba(126,224,255,0.06);
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
 .panel-role {
   margin-top: 4px;
   font-size: 12px;
@@ -1047,6 +1064,56 @@ button {
 .ml-cred { font-size: 12px; color: var(--ink); }
 .ml-cap { font-size: 10px; color: var(--ink-dim); }
 .ml-arrow { color: var(--cyan); font-size: 14px; }
+
+/* Channel link (top of channel panels) */
+.channel-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  text-decoration: none;
+  border: 1px solid var(--cyan);
+  border-radius: 4px;
+  background: rgba(126,224,255,0.08);
+  transition: all 0.15s;
+}
+.channel-link:hover {
+  background: rgba(126,224,255,0.16);
+  box-shadow: 0 0 16px var(--cyan-glow);
+}
+.yt-i {
+  width: 28px; height: 28px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+  background: #ff0033;
+  color: #fff;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.cl-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cl-cta { font-size: 12px; font-weight: 600; color: var(--ink); }
+.cl-desc { font-size: 11px; color: var(--ink-dim); line-height: 1.45; }
+
+/* Publications (papers / patents) */
+.paper-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.paper-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(126,224,255,0.03);
+  transition: all 0.15s;
+}
+.paper-item:hover {
+  border-color: var(--cyan);
+  background: rgba(126,224,255,0.1);
+  box-shadow: 0 0 14px var(--cyan-glow);
+}
+.paper-i { font-size: 13px; flex-shrink: 0; }
+.paper-title { flex: 1; min-width: 0; font-size: 12px; line-height: 1.4; color: rgba(226,242,255,0.92); }
 
 .cg-count {
   font-size: 9px;

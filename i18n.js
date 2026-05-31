@@ -47,6 +47,8 @@ window.I18N = {
     // ── Panel body ───────────────────────────────────────────
     "panel.close":             "cerrar",
     "panel.featured":          "Recurso destacado",
+    "panel.publications":      "Publicaciones",
+    "panel.visitChannel":      "Ver el canal en YouTube",
     "panel.appearsIn":         "Aparece en",
     "panel.video":             "vídeo",
     "panel.videos":            "vídeos",
@@ -215,6 +217,8 @@ window.I18N = {
     // ── Panel body ───────────────────────────────────────────
     "panel.close":             "close",
     "panel.featured":          "Featured Resource",
+    "panel.publications":      "Publications",
+    "panel.visitChannel":      "View the channel on YouTube",
     "panel.appearsIn":         "Appears in",
     "panel.video":             "video",
     "panel.videos":            "videos",

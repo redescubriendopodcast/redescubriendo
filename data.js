@@ -165,7 +165,8 @@ window.RDC_DATA = {
       "name_en": "Luis Elizondo",
       "role_en": "Going Public",
       "bio_en": "Professional Background: Former U.S. Army Counterterrorism intelligence officer and investigator with a 20-year career that included sensitive missions in South Asia and Latin America. Within the Department of Defense, he was assigned to the Office of the Undersecretary of Defense for Intelligence, where he became the de facto director of the Advanced Aerospace Threat Identification Program (AATIP), a UAP research program funded from 2007 to 2012. His 2017 resignation, through a letter citing internal bureaucracy and opposition to disclosure, catapulted him to public fame.\n\nKey Publications & Statements: Elizondo was the key source behind the 2017 New York Times articles that exposed the existence of AATIP. He was instrumental in the declassification and release of the now-famous Navy videos: 'FLIR' (Tic Tac), 'Gimbal' and 'GoFast'. To frame the phenomenon, he coined the '5 Observables' framework: 1) Lift without aerodynamic surfaces, 2) Sudden Acceleration, 3) Hypersonic Travel, 4) Low Observability (stealth), and 5) Transmedium Capability (traveling unimpeded between air, water and space). His book, Impossible (2024), addresses the evidence of a non-human intelligence. He has consistently maintained that UAPs represent a national security 'unknown' and a scientific opportunity.\n\nMedia Appearances: He was a central piece of the 60 Minutes UFO report. He starred in the History Channel series Unidentified: Inside America's UFO Investigation. He is a frequent guest on podcasts and news programs.",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/luis_elizondo.png"
     },
     {
       "id": "christopher_mellon",
@@ -220,7 +221,8 @@ window.RDC_DATA = {
       "name_en": "Christopher Mellon",
       "role_en": "Support from Defense",
       "bio_en": "Professional Background: Member of the influential Mellon family and intelligence community professional. He held senior positions as Deputy Assistant Secretary of Defense for Intelligence during the Clinton and Bush administrations, and as Staff Director of the Senate Select Committee on Intelligence. This unique combination of experience in the inner workings of the Pentagon and legislative oversight grants him unmatched credibility and access. He is the quintessential 'establishment' link within the modern disclosure movement.\n\nKey Publications & Statements: Mellon uses his position to advocate for a formal, transparent government process. He was one of the founders of To The Stars Academy of Arts & Science (TTSA), the vehicle that helped Luis Elizondo come to light. He has written numerous op-eds for media such as The Washington Post and Politico, and wrote the foreword to Leslie Kean's foundational book, UFOs: Generals, Pilots, and Government Officials Go on the Record. His central argument is that UAPs represent an 'intelligence process failure' and a potential national security threat that Congress must thoroughly investigate, criticizing excessive compartmentalization and the stigma within the Pentagon.\n\nMedia Appearances: Mellon is a frequent and highly sought-after commentator on news networks such as CNN and NewsNation. Like Elizondo, he was a key figure in the 60 Minutes segment and has participated in numerous documentaries, including The Phenomenon (2020).",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/christopher_mellon.jpg"
     },
     {
       "id": "j_allen_hynek",
@@ -275,7 +277,8 @@ window.RDC_DATA = {
       "name_en": "J. Allen Hynek",
       "role_en": "The UFO Experience",
       "bio_en": "Professional Background: Astronomer and professor at Northwestern University. He is the most important historical figure in American ufology. He began as a declared skeptic and was hired as the scientific advisor to the U.S. Air Force's Project Blue Book, initially tasked with explaining and debunking UFO sightings.\n\nKey Publications & Statements: Over two decades (1948-1969), Hynek reviewed thousands of cases. His initial skepticism transformed into a deep conviction that a small but significant percentage of cases represented a real and unexplainable physical phenomenon. Frustrated by Blue Book's dismissive attitude and its predetermined goal of 'debunking' rather than investigating, he became one of its most outspoken critics. He created the 'Close Encounters Scale' (Close Encounter of the First, Second and Third Kind) to scientifically classify sightings. His book, The UFO Experience, was a manifesto for serious scientific study of the phenomenon and was the direct inspiration for the film Close Encounters of the Third Kind, for which he served as scientific advisor to Steven Spielberg. He founded the Center for UFO Studies (CUFOS) to continue scientific research after the closure of Blue Book.\n\nMedia Appearances: Hynek was the public face of scientific ufology for decades. The TV series Project Blue Book is based on his life and work. He is the 'founding grandfather' without whose work modern disclosure would not be possible.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/j_allen_hynek.jpg"
     },
     {
       "id": "jacques_vallee",
@@ -375,7 +378,14 @@ window.RDC_DATA = {
       "name_en": "Jacques Vallée",
       "role_en": "Passport to Magonia",
       "bio_en": "Professional Background: Computer scientist, astrophysicist, venture capitalist and UFO researcher. French-born, he worked on the first digital map of Mars for NASA and was the real-life prototype for the French scientist character, Claude Lacombe, in Steven Spielberg's Close Encounters of the Third Kind. Together with J. Allen Hynek, he created the 'Close Encounters' classification system. He is arguably the deepest and most influential thinker in the history of ufology.\n\nKey Publications & Statements: Vallée is the primary proponent of the 'Interdimensional Hypothesis' or 'Control System'. In his groundbreaking book Passport to Magonia, he argued that encounters with 'UFOs' and their 'occupants' are not a new 20th-century phenomenon, but the modern manifestation of encounters with fairies, elves and other beings from folklore tradition. He suggests that this non-human intelligence operates as a 'control system', manipulating human reality and beliefs over time, presenting itself in forms that adapt to the cultural and scientific framework of each era. This is not simply about extraterrestrial visitors in physical craft, but a subtler form of consciousness, possibly native to other dimensions of reality, that interacts with the human psyche.\n\nMedia Appearances: Vallée is a central figure in the acclaimed documentary The Phenomenon (2020). He has given extensive interviews on podcasts such as The Joe Rogan Experience.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/jacques_vallee.jpg",
+      "papers": [
+        {
+          "titulo": "Improved instrumental techniques, including isotopic analysis, applicable to the characterization of unusual materials (Progress in Aerospace Sciences, 2022)",
+          "url": "https://doi.org/10.1016/j.paerosci.2021.100788"
+        }
+      ]
     },
     {
       "id": "george_knapp",
@@ -463,7 +473,8 @@ window.RDC_DATA = {
       "name_en": "George Knapp",
       "role_en": "The Journalist Who Exposed Everything",
       "bio_en": "Professional Background: Investigative journalist for KLAS-TV in Las Vegas and radio host on Coast to Coast AM.\n\nKey Publications & Statements: He is the journalist who 'discovered' Bob Lazar in 1989 and has continued investigating his story for decades. He has also conducted exhaustive investigations into Area 51, Skinwalker Ranch and Bigelow's BAASS program. His archival work is a goldmine of information.\n\nMedia Appearances: His reports for KLAS-TV are legendary. Co-host of the Weaponized podcast with Jeremy Corbell.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/george_knapp.jpg"
     },
     {
       "id": "avi_loeb",
@@ -526,7 +537,18 @@ window.RDC_DATA = {
       "name_en": "Avi Loeb",
       "role_en": "",
       "bio_en": "Professional Background: Professor of Astrophysics (Frank B. Baird Jr. Chair) at Harvard University. He was Chair of Harvard's Department of Astronomy (2011-2020) and is founding director of Harvard's Black Hole Initiative. He is a world-renowned theoretical cosmologist with hundreds of peer-reviewed publications. His status at the top of the scientific establishment allows him to address the topic of extraterrestrial life with an authority few can match.\n\nKey Publications & Statements: Loeb rose to public prominence by proposing that the first known interstellar object, 'Oumuamua, could be a piece of alien technology, specifically a deactivated 'lightsail', due to its orbital anomalies and extremely unusual shape. This controversial hypothesis, detailed in his book Extraterrestrial: The First Sign of Intelligent Life Beyond Earth (2021), challenged the scientific community to consider technological explanations ('space archaeology') for anomalous phenomena. To scientifically investigate this possibility, he founded the Galileo Project, a private scientific initiative whose goal is to systematically search for evidence of extraterrestrial technological civilizations (ETCs) by developing a global network of advanced telescopes and AI algorithms. Recently, he has analyzed metallic spherules recovered from the Pacific Ocean ('IM1'), suggesting they could be of interstellar origin.\n\nMedia Appearances: Loeb is an extremely active media contributor, writing op-eds for scientific journals and major newspapers. He is a frequent guest on news networks such as CNN and the BBC, and has appeared on numerous podcasts including multiple appearances on The Joe Rogan Experience.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/avi_loeb.jpg",
+      "papers": [
+        {
+          "titulo": "Could Solar Radiation Pressure Explain 'Oumuamua's Peculiar Acceleration? (ApJL, 2018)",
+          "url": "https://arxiv.org/abs/1810.11490"
+        },
+        {
+          "titulo": "Overview of the Galileo Project (J. Astron. Instrum., 2023)",
+          "url": "https://arxiv.org/abs/2209.02479"
+        }
+      ]
     },
     {
       "id": "hal_puthoff_y_el_programa_baass",
@@ -617,7 +639,18 @@ window.RDC_DATA = {
       "name_en": "Hal Puthoff & the BAASS Program",
       "role_en": "",
       "bio_en": "Professional Background: Physicist with a doctorate from Stanford University. He is a legendary figure in the world of frontier science. During the Cold War, he directed the remote viewing research program for the CIA and DIA at Stanford Research Institute (SRI International), known as Project Stargate. He is co-founder of the Institute for Advanced Studies at Austin. His career has focused on the limits of physics and consciousness.\n\nKey Publications & Statements: Puthoff was, together with physicist James T. Lacatski, one of the directors of the AATIP program. The multi-million dollar contract was awarded to Bigelow's company, Bigelow Aerospace Advanced Space Studies (BAASS), and Puthoff was one of the principal scientific minds. He is co-author of numerous scientific papers on advanced physics topics, including the influential 'Traversable Wormholes, Stargates, and Negative Energy', which explores the theoretical basis for technologies that seem lifted from science fiction. His interest in the UAP phenomenon centers on the possibility that it uses physical principles not yet understood by mainstream science, possibly related to spacetime manipulation or the quantum vacuum.\n\nMedia Appearances: Puthoff has appeared in numerous documentaries and conferences, often explaining the more esoteric aspects of the physics behind the UAP phenomenon.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/hal_puthoff_y_el_programa_baass.png",
+      "papers": [
+        {
+          "titulo": "Polarizable-Vacuum (PV) representation of general relativity (1999)",
+          "url": "https://arxiv.org/abs/gr-qc/9909037"
+        },
+        {
+          "titulo": "Information transmission under conditions of sensory shielding (Nature, 1974)",
+          "url": "https://www.nature.com/articles/251602a0"
+        }
+      ]
     },
     {
       "id": "eric_w_davis",
@@ -718,7 +751,13 @@ window.RDC_DATA = {
       "name_en": "Eric W. Davis",
       "role_en": "\"Vehicles Not Made on This Earth\"",
       "bio_en": "Professional Background: Renowned astrophysicist with a doctorate from the University of Arizona. He is an expert in advanced propulsion theory, including concepts such as the warp drive, traversable wormholes and zero-point energy physics. He is Chief Scientist at EarthTech International, Inc. and has worked as a senior consultant for the U.S. Department of Defense and the Air Force, as well as a subcontractor for the Pentagon's AATIP program.\n\nKey Publications & Statements: According to a 2020 New York Times report, Eric Davis stated in a classified Pentagon briefing in 2019 that he had examined materials from recovered artifacts and described them as 'of non-human origin' and 'not made by man'. The article also cited a memorandum in which Davis briefed a Pentagon official about having conducted a briefing for an Air Force contractor about the recovery of a crashed vehicle 'not of this world'. His work, though largely non-public, focuses on the implications of fundamental physics for propulsion and materials, and his association with AATIP and his statements place him at the epicenter of the most extraordinary claims about reverse engineering.\n\nMedia Appearances: Davis is notably reserved and avoids public appearances. However, his claims have been reported and verified by high-level investigative journalists such as Leslie Kean and Ralph Blumenthal of the New York Times.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "papers": [
+        {
+          "titulo": "Teleportation Physics Study (Air Force Research Laboratory, 2004)",
+          "url": "https://www.theblackvault.com/documentarchive/teleportation-physics-study-air-force-research-laboratory-august-2004-dr-eric-w-davis/"
+        }
+      ]
     },
     {
       "id": "david_grusch",
@@ -820,7 +859,8 @@ window.RDC_DATA = {
       "name_en": "David Grusch",
       "role_en": "Historic Congressional Testimony",
       "bio_en": "Year of Key Testimony: 2023 (Public statements and sworn testimony before Congress).\n\nProfessional Background: U.S. Air Force intelligence officer with 14 years of service, holding Top Secret/SCI clearances. He served in prominent roles within the National Geospatial-Intelligence Agency (NGA) and the National Reconnaissance Office (NRO). His most relevant position for the UAP phenomenon was his assignment to the Department of Defense's UAP Synchronization Management Group (UAP Task Force), where he served as co-lead until 2021. His transition from government insider to public whistleblower has made him the most significant figure in modern disclosure.\n\nKey Publications & Statements: Grusch has not published books, but his testimony — delivered under oath and after an exhaustive review by the Office of the Director of National Intelligence to remove classified information — is monumental. Through journalist Leslie Kean, he alleged the existence of an illegal 'misappropriation' program using public funds to finance a recovery and reverse-engineering program of vehicles of non-human origin. Specifically, he stated that the U.S. possesses a fleet of intact or partially intact craft, as well as the bodies of their pilots. He also described a sophisticated disinformation and intimidation program to silence witnesses.\n\nMedia Appearances: His first in-depth televised interview was with Ross Coulthart on NewsNation. The culmination of his disclosure was his sworn testimony before the House Oversight Committee's Cybersecurity and Information Technology Subcommittee on July 26, 2023 — a historic nationally-televised hearing that placed the UAP topic at the center of U.S. political debate.\n\n2025 — Congressional Advisor: In 2025, Representative Eric Burlison (R-MO) brought Grusch on as Special Advisor to the House Oversight Committee staff, making him the first former intelligence officer with an ICIG complaint to transition from public witness to formal legislative advisor.",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/david_grusch.jpg"
     },
     {
       "id": "ralph_blumenthal",
@@ -862,7 +902,8 @@ window.RDC_DATA = {
       "name_en": "Linda Moulton Howe",
       "role_en": "",
       "bio_en": "Professional Background: American investigative journalist, documentary filmmaker and producer. With a master's degree in Communication from Stanford University, she began her career making documentaries for networks such as CNN and CBS. Her investigation into cattle mutilations in the early 1980s marked a turning point, leading her to dedicate her life to researching frontier phenomena. She is the creator of the award-winning website EarthFiles.com. Howe is an iconic figure in the UFO community, known for her meticulous style and willingness to tackle highly controversial topics.\n\nKey Publications & Statements: Howe is known for presenting cases that mix UFO phenomena, cattle mutilations and alleged government covert agendas. She has produced numerous whistleblower testimonies and reports about alleged exotic materials and secret programs. Her documentary A Strange Harvest argues that cattle mutilations are carried out by non-human intelligence for reasons including genetic engineering.\n\nMedia Appearances: Linda Moulton Howe is a constant presence in alternative radio and television. She is a very popular guest on the late-night radio program Coast to Coast AM. She has also produced and appeared in numerous documentaries and TV series, including Ancient Aliens on The History Channel.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/linda_moulton_howe.jpg"
     },
     {
       "id": "carey_schmitt",
@@ -925,7 +966,8 @@ window.RDC_DATA = {
       "name_en": "Carl Gustav Jung",
       "role_en": "",
       "bio_en": "Year of Publication on Flying Saucers: 1958 (First German edition; English edition 1959).\n\nProfessional Background: Swiss psychiatrist, psychologist and essayist. Founder of Analytical Psychology. His most well-known contributions include the concepts of the collective unconscious, archetypes, synchronicity and the individuation process.\n\nKey Publications & Statements: Although not a UFO researcher in the traditional sense, Jung applied his psychological framework to analyze the phenomenon as a modern myth. In his book Flying Saucers: A Modern Myth of Things Seen in the Skies, he argued that 'flying saucers' were psychic projections or archetypal manifestations of the collective unconscious at a moment of profound cultural anxiety (the Cold War, nuclear threat). For Jung, the symbol of the 'mandala' or circle, so common in saucer accounts, represented a longing for psychic wholeness and order in a fragmented world.\n\nMedia Appearances: Jung's contribution spread primarily through his writings and academic analysis. His influence is fundamental and enduring, frequently cited in modern analyses seeking to understand the psychosocial and symbolic dimension of the UAP phenomenon.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/carl_gustav_jung.jpg"
     },
     {
       "id": "diana_walsh_pasulka",
@@ -1455,7 +1497,8 @@ window.RDC_DATA = {
       "name_en": "John B. Alexander",
       "role_en": "",
       "bio_en": "Year of Publication of Definitive Work: 2011 (Publication of 'UFOs: Myths, Conspiracies, and Realities').\n\nProfessional Background: Former U.S. Army Colonel with a 30+ year career that included service in Special Forces (Green Berets). He holds a doctorate and has worked on advanced technology programs for the Department of Defense, including an assignment at Los Alamos National Laboratory.\n\nKey Publications & Statements: Alexander's stance is unique and often misunderstood. He does not deny the reality of the UFO phenomenon; in fact, he affirms it is real and has been seriously studied by several government agencies. However, his central thesis in UFOs: Myths, Conspiracies, and Realities is that there is no centralized, monolithic 'UFO conspiracy' (like an all-powerful MJ-12). Instead, he argues that information is highly compartmentalized and dispersed among multiple non-cooperating agencies (Air Force, Navy, CIA, DIA, etc.), and that the main obstacle to understanding is bureaucratic 'stigma' and the lack of a centralized coordinating body — not a cover-up order.\n\nMedia Appearances: Alexander is a frequent guest at conferences and documentaries, offering a perspective from inside the military-intelligence establishment that challenges both absolute skepticism and broader conspiracy theories.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/john_b_alexander.jpg"
     },
     {
       "id": "joe_mcmoneagle",
@@ -1703,7 +1746,8 @@ window.RDC_DATA = {
       "name_en": "Danny Sheehan",
       "role_en": "",
       "bio_en": "Professional Background: Renowned constitutional and civil rights attorney with a long history of landmark cases. He was attorney for the New York Times in the 'Pentagon Papers' case, counsel for the American Civil Liberties Union (ACLU) and co-founder of the Christic Institute, where he led investigations into the Nicaraguan contra affair (Iran-Contra). His experience in uncovering government conspiracies has prepared him for what he considers the 'greatest cover-up in history'. In recent years, he has focused his practice and activism almost exclusively on the UAP phenomenon, representing whistleblowers such as Luis Elizondo and David Grusch.\n\nKey Publications & Statements: Sheehan is the founder and president of the New Paradigm Institute (NPI) in 2021, a non-profit organization whose stated goal is to achieve a 'controlled disclosure' of the UAP phenomenon. The NPI advocates for the creation of a presidential or Congressional Truth and Reconciliation Commission to investigate the cover-up, offer immunity to whistleblowers and reveal non-human origin technology to the world to address global crises such as climate change. He has made extraordinary claims in interviews, alleging the existence of an 'illegal acquisition program' run by a 'secret government within the government' that has been operating for 80 years.\n\nMedia Appearances: Danny Sheehan has become a frequent presence in UAP media, appearing in long interviews on the Richard Dolan Show. His status as a serious attorney with a proven track record gives significant weight to his claims.",
-      "group_en": "Historical Figures"
+      "group_en": "Historical Figures",
+      "photo": "assets/faces/danny_sheehan.png"
     },
     {
       "id": "admiral_tim_gallaudet",
@@ -1749,7 +1793,8 @@ window.RDC_DATA = {
       "name_en": "Admiral Tim Gallaudet",
       "role_en": "",
       "bio_en": "Professional Background: Retired U.S. Navy officer with the rank of Rear Admiral (Two-Star). He is an oceanographer with a doctorate from the Scripps Institution of Oceanography. His career includes senior leadership positions: he served as Chief of Naval Research, Oceanographer and Navigator of the Navy, and ultimately as Deputy Administrator of NOAA (National Oceanic and Atmospheric Administration) and Acting Administrator under the Trump administration. This unique combination of naval operational experience, scientific leadership and ocean policy authority makes him an exceptionally credible voice, especially regarding UAPs in the maritime domain.\n\nKey Publications & Statements: Admiral Gallaudet has positioned himself as a key advocate for expanding UAP research beyond the aerospace domain and into the transmedium domain (air and sea). He has stated he is 'completely convinced' that UAPs exhibiting advanced capabilities are real. He co-authored a Politico op-ed titled 'The Government Should Tell the Truth About UFOs'. Gallaudet advocates for greater investment in ocean sensors and better integration of Navy and NOAA data to track these objects.\n\nMedia Appearances: Admiral Gallaudet testified at the landmark House Intelligence Committee hearing on UAPs in 2022. He has been a constant presence in serious media, including interviews on NewsNation and appearances on the Weaponized podcast.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/admiral_tim_gallaudet.jpg"
     },
     {
       "id": "skip_atwater",
@@ -1859,7 +1904,13 @@ window.RDC_DATA = {
       "name_en": "prof. Garry Nolan",
       "role_en": "",
       "bio_en": "Year of Public Involvement in UAP Research: 2012 (Beginning of his analysis of biological and physical materials related to the phenomenon).\n\nProfessional Background: World-renowned immunologist and systems biologist. He is a professor in the Department of Pathology at Stanford University and holds more than 300 U.S. patents. Nolan is a highly decorated scientist, having received prestigious awards such as the NIH Director's Award. His cutting-edge research focuses on immunology, cancer biology and cytometric technology (cell analysis). It is this latter experience — the use of cutting-edge mass cytometers — that led him to be covertly recruited by the U.S. government to investigate biological anomalies in individuals claiming to have had encounters with UAPs.\n\nKey Publications & Statements: Professor Nolan has publicly stated that, around 2012, the CIA (through an intermediary) asked him to analyze the brains of individuals, including military personnel and pilots, who had suffered injuries or developed mysterious illnesses after close UAP encounters. Using his technology, he identified significant anomalies in their basal ganglia. He has since expanded his research to include the analysis of 'exotic materials' allegedly recovered from crashed UAPs or encounters. He has presented data on metallic alloys with isotopic compositions impossible to reproduce with current terrestrial technology, showing, for example, the presence of a magnesium isotope (Mg-25) not found naturally. He founded the Laboratory for Analysis of the Unknown (LAB) to conduct these analyses rigorously and openly.\n\nMedia Appearances: Garry Nolan has become a fundamental voice in UAP discourse, appearing in high-profile documentaries such as The Phenomenon and on numerous high-audience podcasts including multiple appearances on The Joe Rogan Experience and Lex Fridman Podcast.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "papers": [
+        {
+          "titulo": "Improved instrumental techniques, including isotopic analysis, applicable to the characterization of unusual materials (Progress in Aerospace Sciences, 2022)",
+          "url": "https://doi.org/10.1016/j.paerosci.2021.100788"
+        }
+      ]
     },
     {
       "id": "timothy_tyler_d_taylor",
@@ -1929,7 +1980,8 @@ window.RDC_DATA = {
       "name_en": "Harald Malmgren",
       "role_en": "",
       "bio_en": "Year of Death and Public Legacy: 2023 (Death); 2017–2023 (Period of his most specific UAP statements).\n\nProfessional Background: High-level economist and geopolitical analyst with exceptional credentials. He served as Special Assistant to President Lyndon B. Johnson and as U.S. Deputy Trade Representative. Malmgren was a prominent international consultant whose clients included foreign governments and multinational corporations. His deep experience at the intersection of politics, economics and national security, together with his access to top governmental circles for decades, positioned him as an unusual and well-connected information source in the later years of his life.\n\nKey Publications & Statements: Although not a central public figure in ufology, Malmgren came to prominence within the community after researcher Richard Dolan revealed private conversations with him. According to Dolan, Malmgren claimed to have first-hand knowledge — through his high-level intelligence contacts — that the UAP phenomenon was absolutely real and of non-human origin. Specifically, Malmgren allegedly stated that a 'mothership' of enormous dimensions was located in the solar system and that several world powers, including the U.S., Russia and China, were aware of its presence. His statements, filtered through Dolan, carried significant weight due to his credible track record in matters of state.\n\nMedia Appearances: Harald Malmgren did not give extensive public interviews on the UAP topic. His impact occurred almost entirely through his private communications with Richard Dolan.",
-      "group_en": "Historical Figures"
+      "group_en": "Historical Figures",
+      "photo": "assets/faces/harald_malmgren.png"
     },
     {
       "id": "thomas_townsend_brown",
@@ -2019,7 +2071,17 @@ window.RDC_DATA = {
       "name_en": "Thomas Townsend Brown",
       "role_en": "",
       "bio_en": "Year of Key Patents and Demonstrations: 1920s-1950s (Electrogravitics experiments and key patents).\n\nProfessional Background: American physicist and inventor whose work focused on the intersection between high-voltage electricity and gravity, a field he called electrogravitics. He began his experiments while still a student, observing anomalies in charged capacitors. He served in the U.S. Navy and later worked on classified projects for aerospace companies and the government, including periods at the Naval Research Laboratory and as a consultant to Lockheed Martin.\n\nKey Publications & Statements: Brown is best known for his 'Biefeld-Brown Effect', the observation that an asymmetric capacitor charged with high-voltage direct current (DC) experiences a net force toward the smaller electrode. He interpreted this as an electrogravitational interaction. His public demonstrations of disc-shaped 'levitators' or 'gravitators' that silently rose when high voltage was applied caused a sensation. He patented several designs, including his 'Electrokinetic Apparatus Patent' in 1960, describing a disc-shaped craft using his principle. Although mainstream science attributes the effect to electrohydrodynamic thrust, Brown and his followers maintained that part of the effect was truly anti-gravitational and operated even in partial vacuum. He founded 'Project Winterhaven' in the 1950s to propose the development of an electrogravitics-powered flying disc for the U.S. Air Force.\n\nMedia Appearances: Brown's work is widely studied. He is a central figure in documentaries and books exploring the secret history of antigravity technology, such as Dr. Paul LaViolette's Secrets of Antigravity Propulsion.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "papers": [
+        {
+          "titulo": "Electrokinetic Apparatus (US2949550A, 1960)",
+          "url": "https://patents.google.com/patent/US2949550A/en"
+        },
+        {
+          "titulo": "Electrokinetic Apparatus (US3187206A, 1965)",
+          "url": "https://patents.google.com/patent/US3187206A/en"
+        }
+      ]
     },
     {
       "id": "ross_coulthart",
@@ -2117,7 +2179,8 @@ window.RDC_DATA = {
       "name_en": "Ross Coulthart",
       "role_en": "",
       "bio_en": "Year of Public Immersion in UAP Phenomenon: 2020-2021 (Research for his book 'In Plain Sight' and coverage on NewsNation).\n\nProfessional Background: Award-winning Australian investigative journalist and TV presenter with over 40 years of experience. Known for his work on high-profile investigative programs such as '60 Minutes' in Australia and the BBC. He has won five Logie awards and a Walkley Award, Australia's most prestigious journalism honor. His track record has centered on exposing corruption, organized crime and government scandals.\n\nKey Publications & Statements: Coulthart is the author of the acclaimed book In Plain Sight: An investigation into UFOs and impossible science (2021). This work represents one of the most exhaustive and well-referenced journalistic investigations into the phenomenon in the modern era. He was one of the first journalists, alongside Leslie Kean and Ralph Blumenthal, to extensively interview David Grusch, bringing his stunning claims to a global audience. Coulthart has repeatedly stated that, based on his research, he is convinced that the U.S. government and its contractors possess intact or partially intact craft and that there has been a massive and illegal cover-up that has evaded Congressional oversight for decades.\n\nReality Check and Trump archives coverage: From 2022, Coulthart produced over 46 episodes of the Reality Check program on NewsNation, making it the leading mainstream television program dedicated to the UAP phenomenon. In 2024-2026 he coordinated coverage of the Trump administration's UAP archives, being one of the first journalists to access the war.gov/UFO documents. Coulthart has stated under his own name to have had access to direct witnesses of crash retrieval in multiple countries.\n\nMedia Appearances: Ross Coulthart has become one of the most prominent journalistic voices on the UAP topic. He is a frequent contributor to NewsNation's Reality Check and a regular guest on influential podcasts such as The Joe Rogan Experience and That UFO Podcast.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/ross_coulthart.jpg"
     },
     {
       "id": "salvatore_pais",
@@ -2201,7 +2264,22 @@ window.RDC_DATA = {
       "name_en": "Salvatore Pais",
       "role_en": "",
       "bio_en": "Year of Presentation of Revolutionary Patents: 2015-2019 (Period of key patent filings for NAWCAD).\n\nProfessional Background: Scientist and aerospace engineer with a doctorate from Case Western Reserve University. He worked for the U.S. Navy's Aircraft Division (NAWCAD) at Naval Air Station Patuxent River. The patents he filed on behalf of the U.S. Navy suggest involvement in extremely high-level theoretical and applied physics research.\n\nKey Publications & Statements: Dr. Pais is famous for a series of extraordinary patents approved by the U.S. Patent Office despite seeming to defy known laws of physics. The most notable include:\n\nThe 'High Frequency Gravitational Wave Generator' Patent (US10322827B2): Describes a device that can generate high-frequency gravitational waves, a concept that mainstream science currently considers impossible to produce practically.\n\nThe 'Inertial Mass Reduction Device' Patent (US10135366B2): Describes a device that could essentially reduce or cancel the inertial mass of an object, enabling propulsion and maneuverability that would perfectly explain the '5 Observables' of UAPs.\n\nTo justify the viability of these inventions, Pais submitted a scientific paper describing a compact solid-state fusion reactor. The Navy claimed these technologies were 'operable' and that the 'inertial mass reduction device' had been successfully tested. For many, Pais's work represents the strongest documentary evidence that the U.S. Navy is actively investigating technologies that replicate UAP capabilities.\n\nMedia Appearances: Dr. Pais is extremely reserved and does not grant public interviews. His story was uncovered by journalist Brett Tingley of The War Zone (The Drive).",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/salvatore_pais.png",
+      "papers": [
+        {
+          "titulo": "Craft Using an Inertial Mass Reduction Device (US10144532B2, US Navy)",
+          "url": "https://patents.google.com/patent/US10144532B2/en"
+        },
+        {
+          "titulo": "High Frequency Gravitational Wave Generator (US10322827B2, US Navy)",
+          "url": "https://patents.google.com/patent/US10322827B2/en"
+        },
+        {
+          "titulo": "Plasma Compression Fusion Device (US20190295733A1, US Navy)",
+          "url": "https://patents.google.com/patent/US20190295733A1/en"
+        }
+      ]
     },
     {
       "id": "jay_stratton",
@@ -2301,7 +2379,8 @@ window.RDC_DATA = {
       "name_en": "Marco Rubio",
       "role_en": "",
       "bio_en": "Professional Background: Senior Republican Senator for the state of Florida, in office since 2011. He holds influential positions including Vice Chairman of the Senate Select Committee on Intelligence and member of the Foreign Relations Committee. These positions, particularly on Intelligence, grant him access to high-level classified information ('briefings') and oversight authority over intelligence agencies and the Department of Defense.\n\nKey Publications & Statements: Senator Rubio has not published books on the topic, but his public statements are among the most significant from the political establishment. In interviews with 60 Minutes and in the documentary The Age of Disclosure, he has made crucial statements. He has confirmed receiving reports from 'credible people' with impressive government and industry credentials who have alleged the existence of non-human artifact recovery programs. He has expressed frustration at the Pentagon's lack of cooperation, stating that there are 'actors within the government who don't want it to be known'. He was a key architect of UAP provisions in the National Defense Authorization Act (NDAA), including the creation of AARO.\n\nHis central argument is one of national security and constitutional oversight: 'If it's something from this world, it's a national security problem. And if it's from another world, it's a national security problem of a different kind, but it's still a national security problem we need to know about.'\n\nMedia Appearances: His 2021 60 Minutes interview was a turning point in bringing Congressional concern to a mass audience. He participated in the documentary The Age of Disclosure and is regularly cited in CNN, NewsNation and Politico reporting.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/marco_rubio.jpg"
     },
     {
       "id": "jim_semivan",
@@ -2407,7 +2486,8 @@ window.RDC_DATA = {
       "name_en": "Sen. Kirsten Gillibrand",
       "role_en": "",
       "bio_en": "Professional Background: Democratic Senator for New York State, in office since 2009. She is a senior member of several key committees, including the Armed Services Committee and the Senate Intelligence Committee. This dual membership grants her unique oversight authority over both the military apparatus and intelligence agencies, ideally positioning her to address the UAP phenomenon from a national security and intelligence perspective.\n\nKey Publications & Statements: Senator Gillibrand is the most important legislative architect of the current official UAP investigation framework. In 2021, she drafted and sponsored a historic amendment to the NDAA that, by law, established the All-domain Anomaly Resolution Office (AARO) within the Department of Defense. This amendment not only created the office but granted it broad powers to centralize data collection, investigate reports from any domain (air, sea, space, subsurface land) and require reports to Congress. She has been highly critical of AARO's slowness and initial lack of transparency under Sean Kirkpatrick's direction.\n\nMedia Appearances: Senator Gillibrand has addressed the topic in interviews with media such as CNN and in Armed Services Committee public hearings. Her legislative action has been fundamental in transforming the UAP phenomenon from a peripheral topic of interest into a bureaucratic, funded and permanently supervised Congressional research program.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/sen_kirsten_gillibrand.jpg"
     },
     {
       "id": "sen_mike_rounds",
@@ -2453,7 +2533,8 @@ window.RDC_DATA = {
       "name_en": "Sen. Mike Rounds",
       "role_en": "",
       "bio_en": "Professional Background: Republican Senator for South Dakota, in office since 2015. He is a member of the Senate Armed Services Committee and the Senate Select Committee on Intelligence. Like his colleague Kirsten Gillibrand, this dual membership provides him with a unique perspective and oversight authority over both the military and intelligence dimensions of the UAP phenomenon.\n\nKey Publications & Statements: Senator Rounds is known for his firm and bipartisan support for UAP legislation. Together with Senator Gillibrand, he was the main Republican co-sponsor of the amendment that created the All-domain Anomaly Resolution Office (AARO). His backing was fundamental in ensuring broad support and preventing the topic from being seen as a partisan concern. Rounds has repeatedly emphasized the need for a scientific, data-based process to investigate UAPs, stripping the topic of its stigma. He has underlined the importance of determining whether these anomalies represent advanced technology from terrestrial adversaries such as China or Russia.\n\nMedia Appearances: Senator Rounds has addressed the topic in Armed Services Committee hearings and in brief press statements. His role has been that of a bipartisan stabilizer and facilitator, working behind the scenes and through formal legislation to ensure that UAP research has a solid, ongoing foundation within the defense establishment.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/sen_mike_rounds.jpg"
     },
     {
       "id": "brett_feddersen",
@@ -2495,7 +2576,8 @@ window.RDC_DATA = {
       "name_en": "André Carson",
       "role_en": "",
       "bio_en": "Professional Background: Democratic Representative for Indiana's 7th district, in office since 2008. He is a senior member of the House Permanent Select Committee on Intelligence and served as Chairman of the influential Subcommittee on Counterterrorism, Counterintelligence and Counterproliferation. This position granted him the authority to convene and chair oversight hearings on intelligence matters, including the UAP phenomenon.\n\nKey Publications & Statements: Congressman Carson was the driving force and chairman of the first public Congressional hearing on UFOs/UAPs in over 50 years, held in May 2022. He has made forceful statements, affirming that UAPs are a 'national security matter' and that the government must 'destigmatize' the topic so that pilots and personnel can report without fear. He has been openly critical of AARO's slowness and opacity. In a NewsNation interview, Carson stated he had been briefed on 'interesting activities' at nuclear facilities by these objects, implicitly linking the phenomenon to nuclear security.\n\nMedia Appearances: André Carson has become one of the most visible faces of Congressional pressure on UAPs. He was the primary face of the 2022 hearing, widely covered by all major media.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/andre_carson.jpg"
     },
     {
       "id": "jared_moskowitz",
@@ -2516,7 +2598,8 @@ window.RDC_DATA = {
       "name_en": "Jared Moskowitz",
       "role_en": "",
       "bio_en": "Professional Background: Democratic Representative for Florida's 23rd district, in office since 2023. Previously served as Director of the Florida Division of Emergency Management (FDEM) under Governor Ron DeSantis, where he managed crises such as the COVID-19 pandemic and hurricanes. In Congress, he is a member of the Committee on Oversight and Accountability, which has broad authority to investigate any matter within federal law jurisdiction.\n\nKey Publications & Statements: Congressman Moskowitz emerged as a surprisingly outspoken and effective voice during the historic House Oversight Committee hearing on UAPs in July 2023. He made forceful statements, suggesting that if the military is hiding UAP programs from Congress, it would be an act of 'treason'. He has been a vocal critic of AARO, calling its early reports inadequate and accusing the Pentagon of lack of cooperation. He has advocated using Congress's appropriations power ('the power of the purse') to force transparency.\n\nMedia Appearances: Jared Moskowitz became a media sensation after the July 2023 hearing, with clips of his intense questioning circulating widely. He has given follow-up interviews to NewsNation. His combative style and position on the powerful Oversight Committee have quickly made him a key figure in the legislative effort.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/jared_moskowitz.jpg"
     },
     {
       "id": "rep_tim_burchett",
@@ -2584,7 +2667,8 @@ window.RDC_DATA = {
       "name_en": "Rep. Tim Burchett",
       "role_en": "",
       "bio_en": "Professional Background: Republican Representative for Tennessee's 2nd district, in office since 2019. He is a member of the House Committee on Oversight and Accountability and the Committee on Transportation and Infrastructure. Burchett is known for his direct, often blunt political style and for positioning himself as an outsider who distrusts the 'Washington establishment', including the Pentagon and the intelligence bureaucracy.\n\nKey Publications & Statements: Congressman Burchett has become one of the loudest and most media-savvy voices in favor of full disclosure. Together with Congressman Matt Gaetz, he was a driving force behind the July 2023 UAP oversight hearing. He has made extremely dramatic claims, repeatedly declaring that the government is involved in a 'massive cover-up' dating back decades and that 'they are lying to us'. He has claimed there exists technology that could 'turn this world upside down' and accuses a 'secret government within the government' of hiding it. His effective slogan is that Americans 'deserve to know the truth'.\n\nMedia Appearances: Tim Burchett is a constant media presence on UAP topics. He is a frequent guest on NewsNation, Fox News and podcasts such as Weaponized. His straightforward and often explosive statements are widely quoted.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/rep_tim_burchett.jpg"
     },
     {
       "id": "john_blitch",
@@ -2988,7 +3072,8 @@ window.RDC_DATA = {
       "name_en": "Colonel Philip J. Corso",
       "role_en": "",
       "bio_en": "Year of Key Testimony: 1961-1963 (service on the Army's Foreign Technology Desk); 1997 (publication of The Day After Roswell).\n\nProfessional Background: Lt. Colonel Philip J. Corso (1915-1998) was a U.S. Army veteran with service on General Eisenhower's Eastern Special Staff in Italy during World War II, intelligence officer in the Korean War, National Security Council member under Eisenhower, and subsequently director of the Foreign Technology Desk of the Army's Research and Development Division between 1961 and 1963 under General Arthur Trudeau. His military record is fully verifiable through Pentagon public archives.\n\nKey Statements: In his book The Day After Roswell (1997, co-written with William J. Birnes), Corso claimed to have been responsible for distributing to private contractors — Bell Labs, IBM, Hughes Aircraft, Dow Corning — artifacts recovered from the Roswell incident, presenting them as 'foreign technology' so that the results could be commercialized without revealing the true origin. He thus attributed to this controlled 'technology seeding' program the emergence of transistors, fiber optics, integrated circuits, Kevlar fibers, lasers and night vision. Corso described having personally seen the body of an extraterrestrial being — grey, thin arms, different head — which he filed as an unknown biological entity.\n\nRelevance to UAP: Corso's claims are the most controversial in the military UAP corpus. They have been challenged by Jacques Vallée (integrated circuits timeline), John B. Alexander (NVG night vision) and Stanton Friedman (methodology). No documents from Trudeau's Foreign Technology Desk confirming the program have been recovered. However, Corso's military record is so solid that it seems unlikely he invented the entirety of the account. His technology seeding thesis has been cited by more recent whistleblowers such as David Grusch and Karl Nell, keeping it alive in modern debate despite lacking direct documentary confirmation. Corso died in 1998, the year after publishing his book.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/coronel_philip_j_corso.jpg"
     },
     {
       "id": "michael_herrera",
@@ -3110,7 +3195,17 @@ window.RDC_DATA = {
       "name_en": "Beatriz Villarroel",
       "role_en": "The Astrophysicist Who Peer-Reviewed UAP in Nature",
       "bio_en": "Background: Dr. Beatriz Villarroel is an astrophysicist at the Nordic Institute for Theoretical Physics (Stockholm) and L'Oréal-UNESCO Award for Women in Science laureate. She is the director of the VASCO Project (Vanishing & Appearing Sources during a Century of Observations), which systematically analyzes 105,000+ photographic transients from the Palomar Observatory predating Sputnik, comparing them with modern Pan-STARRS data.\n\nWhy it matters for the UAP file: In October 2025 she published in Scientific Reports (Nature group journal) with co-author Stephen Bruehl a paper documenting statistically significant correlations between pre-Sputnik transients, same-day UAP sightings and atmospheric nuclear tests. The most extraordinary finding is a 22-sigma deficit of transients in the Earth's shadow zone — consistent with a fraction of the events being solar reflections from flat, reflective surfaces in orbit before the human space age.\n\nWhat changes: Villarroel is the first mainstream scientist to publish UAP-related work in high impact factor journals under strict peer review. Her methodology makes the field defensible in academic press rooms without needing to go through whistleblowers or classified material.\n\nEvidence level: ✅ 5 Confirmed — Scientific Reports 2025 paper (Nature Portfolio) directly verifiable.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "papers": [
+        {
+          "titulo": "Exploring nine simultaneously occurring transients on April 12th 1950 (Scientific Reports, 2021)",
+          "url": "https://www.nature.com/articles/s41598-021-92162-7"
+        },
+        {
+          "titulo": "Transients in the Palomar Observatory Sky Survey (POSS-I) may be associated with nuclear testing and reports of UAP (Scientific Reports, 2025)",
+          "url": "https://www.nature.com/articles/s41598-025-21620-3"
+        }
+      ]
     },
     {
       "id": "matthew_brown",
@@ -3314,7 +3409,13 @@ window.RDC_DATA = {
       "name_en": "Kevin Knuth",
       "role_en": "The Physicist Who Quantified the Impossibility of the Tic Tac",
       "bio_en": "Associate Professor of Physics at the University at Albany, State University of New York. Research focus: Bayesian inference, information theory and scientific data analysis.\n\nUAP Contribution: Knuth published a peer-reviewed analysis of the 2004 USS Nimitz Tic Tac encounter in the journal Entropy (2019), applying rigorous physics to the reported performance parameters. His calculations showed that if the reported manoeuvres were accurate, the Tic Tac would have required 5,400 G of acceleration (16 G causes human loss of consciousness) and approximately 1,100 gigawatts of power — more than 10× the total U.S. nuclear output.\n\nSignificance: Knuth's paper is the most frequently cited peer-reviewed physics analysis of a specific UAP incident. By publishing in a reputable journal with full methodology, he made the physical impossibility of the Tic Tac's reported behaviour a matter of scientific record rather than anecdote.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "papers": [
+        {
+          "titulo": "Estimating Flight Characteristics of Anomalous Unidentified Aerial Vehicles (Entropy, 2019)",
+          "url": "https://doi.org/10.3390/e21100939"
+        }
+      ]
     },
     {
       "id": "almirante_thomas_wilson",
@@ -3359,7 +3460,8 @@ window.RDC_DATA = {
       "name_en": "Admiral Thomas Wilson",
       "role_en": "The DIA Vice-Director Who Was Denied Access",
       "bio_en": "Vice Admiral Thomas Wilson served as Director of the Defense Intelligence Agency (DIA) from 1999 to 2002. He is the subject of the 'Wilson-Davis Memo' — a set of notes attributed to astrophysicist Eric Davis documenting a meeting between Wilson and Davis at the EG&G Special Projects office in Las Vegas in April 2002.\n\nThe Wilson-Davis Memo: According to the memo, Wilson told Davis that he had discovered the existence of a classified UAP crash retrieval and reverse engineering program held by a private contractor, but had been denied access. The contractor invoked a special access program (SAP) structure that effectively blocked a sitting DIA Director from gaining access to the program.\n\nAuthenticity Debate: Wilson has neither confirmed nor denied the memo. Davis has declined to comment on its authenticity while not denying it. The memo was published by Steven Greer in 2019 and has been analysed by multiple researchers. Aspects of the document appear consistent with other testimony and with documented facts about Wilson's tenure and access attempts.\n\nRelevance: If authentic, the Wilson-Davis memo is the most significant document in the modern disclosure corpus: a DIA Director discovering a UAP program that blocked even his access, describing the exact mechanisms (SAP contractor structure) by which programs could operate outside presidential and Congressional oversight.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/almirante_thomas_wilson.jpg"
     },
     {
       "id": "edgar_mitchell",
@@ -3390,7 +3492,8 @@ window.RDC_DATA = {
       "name_en": "Edgar Mitchell",
       "role_en": "The Apollo 14 Astronaut and Custodian of the Wilson-Davis Memo",
       "bio_en": "Professional Background: NASA astronaut and sixth person to walk on the Moon (Apollo 14, 1971). After his NASA career, Mitchell founded the Institute of Noetic Sciences (IONS) to study consciousness and paranormal phenomena.\n\nKey Statements: Mitchell became one of the most prominent credentialed advocates for UAP reality, stating publicly that the Roswell crash was real and that the U.S. government has been covering up extraterrestrial contact for decades. He claimed to have been briefed by former intelligence officers about ongoing UAP programs.\n\nRelevance: Edgar Mitchell represents the 'astronaut credibility' dimension of the disclosure movement: one of the most rigorously selected and trained individuals in human history, who used his remaining years and credibility to publicly advocate for disclosure.",
-      "group_en": "Historical Figures"
+      "group_en": "Historical Figures",
+      "photo": "assets/faces/edgar_mitchell.jpg"
     },
     {
       "id": "john_e_mack",
@@ -3515,7 +3618,8 @@ window.RDC_DATA = {
       "name_en": "Anna Paulina Luna",
       "role_en": "The Congresswoman Who Coordinated the Trump Declassification",
       "bio_en": "Republican Representative for Florida's 13th district, in office since 2023. Air Force veteran and member of the House Oversight Committee. Luna has been one of the most aggressive Congressional advocates for full UAP disclosure, co-leading with Tim Burchett and Eric Burlison the effort to access classified UAP sites and documents.\n\nKey Actions: Luna was part of the delegation of Representatives who visited a classified UAP-related site in 2024 (the visit confirmed by Eric Burlison), and who Jeremy Corbell interviewed after the visit. She has been outspoken about the existence of classified programs beyond Congressional oversight, framing the issue as a matter of constitutional accountability — Congress's right to know what the executive branch is doing with taxpayer funds.\n\nRelevance: As a military veteran (Air Force) and member of the oversight committee, Luna combines personal military credibility with institutional oversight authority — making her part of the most credible congressional bloc on UAP issues.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/anna_paulina_luna.jpg"
     },
     {
       "id": "eric_burlison",
@@ -3577,7 +3681,8 @@ window.RDC_DATA = {
       "name_en": "Eric Burlison",
       "role_en": "The Legislator Who Brought Grusch onto the Congressional Staff",
       "bio_en": "Republican Representative for Missouri's 7th district, in office since 2023. Member of the House Oversight Committee and one of the most active Congressional advocates for UAP disclosure.\n\nKey Actions: Burlison confirmed in 2024 that he and other Representatives visited a classified UAP-related site, the visit subsequently detailed in interviews with Jeremy Corbell. He also brought David Grusch on as Special Advisor to the House Oversight Committee staff in 2025 — the first time a UAP whistleblower has been formally incorporated into the Congressional oversight apparatus.\n\nSignificance: Burlison represents the institutionalisation of disclosure advocacy within Congress: moving from hearings and statements to direct access and staff appointments that give whistleblowers formal legislative standing.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/eric_burlison.jpg"
     },
     {
       "id": "kirsan_ilyumzhinov",
@@ -3608,7 +3713,8 @@ window.RDC_DATA = {
       "name_en": "Kirsan Ilyumzhinov",
       "role_en": "The Sitting Leader Who Declared 'I Was Invited by Aliens'",
       "bio_en": "President of the Republic of Kalmykia (Russia, 1993–2010) and President of the World Chess Federation (FIDE, 1995–2018). In 2010, Ilyumzhinov gave an interview on Russian state television in which he described being abducted by aliens from his Moscow apartment in 1997 — a claim he maintained consistently in subsequent interviews. He described being taken aboard a craft, communicating with beings in yellow spacesuits, and being returned to his apartment.\n\nSignificance: While abduction claims from politicians are not uncommon, Ilyumzhinov's case is notable for his sustained public position, the lack of apparent commercial motivation, and the fact that he was a sitting head of government at the time of the alleged event. The Russian state media context — where such statements would normally be career-ending — adds to the peculiarity of his claim.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/kirsan_ilyumzhinov.jpg"
     },
     {
       "id": "haim_eshed",
@@ -3639,7 +3745,8 @@ window.RDC_DATA = {
       "name_en": "Haim Eshed",
       "role_en": "The Israeli General Who Spoke of the 'Galactic Federation'",
       "bio_en": "Former Israeli space security chief (2000–2011) and founder of Israel's satellite intelligence program. In December 2020, he made extraordinary statements in an interview with Yedioth Ahronoth and subsequently in his book The Universe Beyond the Horizon: that the United States and Israel have been in contact with an extraterrestrial 'Galactic Federation', that there is a secret underground base on Mars shared between U.S. astronauts and alien representatives, and that Donald Trump had been on the verge of revealing extraterrestrial contact but was asked not to by the aliens themselves.\n\nAssessment: Eshed's credentials (professor at Technion, Israel's MIT equivalent; decades of classified space security work) make him difficult to dismiss outright. However, his claims go significantly further than any other credentialed figure in the corpus. The UAP research community has treated his statements with caution, noting the age and health context of the interview, while acknowledging that his background gives them more weight than similar claims from civilian sources.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/haim_eshed.jpg"
     },
     {
       "id": "nick_pope",
@@ -3708,7 +3815,14 @@ window.RDC_DATA = {
       "name_en": "Russell Targ",
       "role_en": "The Laser Physicist Who Co-founded Remote Viewing at Stanford",
       "bio_en": "Professional Background: American physicist and parapsychology researcher. Co-founder (with Hal Puthoff) of the Stanford Research Institute (SRI) remote viewing program that became Project Stargate. Targ is also a laser physicist and inventor, with significant contributions to laser technology.\n\nKey Publications & Statements: Targ co-authored Mind-Reach: Scientists Look at Psychic Ability (1977) and The Mind Race: Understanding and Using Psychic Abilities (1984), summarising the SRI research findings. He has consistently maintained that the statistical evidence for remote viewing is robust and replicable.\n\nStargate Context: Within the Stargate program, Targ and Puthoff conducted the foundational experiments establishing the scientific validity of remote viewing under rigorous laboratory conditions. Their work was peer-reviewed and published in the journal Nature in 1974. While the operational intelligence value remained contested, the laboratory research produced results that exceeded chance at levels most physicists would consider significant.\n\nRelevance: Russell Targ represents the scientific credibility wing of the remote viewing phenomenon — a physicist who measured and documented anomalous human perception under controlled conditions, and whose work forms the evidentiary foundation for the claim that the Stargate program was based on real phenomena.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/russell_targ.jpg",
+      "papers": [
+        {
+          "titulo": "Information transmission under conditions of sensory shielding (Nature, 1974)",
+          "url": "https://www.nature.com/articles/251602a0"
+        }
+      ]
     },
     {
       "id": "roberto_pinotti",
@@ -3739,7 +3853,8 @@ window.RDC_DATA = {
       "name_en": "Roberto Pinotti",
       "role_en": "The Dean of Italian Ufology and the 1933 Magenta Case",
       "bio_en": "Professional Background: Italian UFO researcher and president of the Centro Ufologico Nazionale (CUN), Italy's national UFO research centre. He is considered the dean of Italian ufology, with over 60 years of investigation.\n\nKey Contribution: In 1996, Pinotti received an envelope bearing the seal of the Kingdom of Italy's Senate containing documents he claims are originals from Mussolini's fascist regime relating to the 1933 Magenta crash: three telegrams from the Stefani agency ordering total silence on a UAP crash, the RS/33 cabinet protocol, and the team organisational chart (Mussolini, Ciano, Balbo, astronomer Cecchini). Forensic analysis by the Tribunal of Como confirmed the paper, ink and handwriting as authentic to the period.\n\nSol Foundation Testimony: In 2021, at a Sol Foundation conference, Pinotti presented his analysis of the Magenta case, connecting it to Luis Elizondo's statement that he had seen authentic Mussolini-era documentation about the event through his intelligence sources.\n\nRelevance: Pinotti is the primary source for the 1933 Magenta case — the oldest documented UAP recovery in the corpus — and represents the European dimension of UAP research that the predominantly American-focused mainstream narrative tends to overlook.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/roberto_pinotti.png"
     },
     {
       "id": "tim_phillips",
@@ -3847,7 +3962,8 @@ window.RDC_DATA = {
       "name_en": "Michael Shellenberger",
       "role_en": "The Journalist Who Revealed Immaculate Constellation",
       "bio_en": "Who he is: Michael Shellenberger is an investigative journalist and author known for his work on 'The Twitter Files' (2022-2023) and his publication Public. In 2024 he became the primary communication channel for whistleblower Matthew Brown's allegations about the 'Immaculate Constellation' program.\n\nThe role with Brown: Shellenberger received and published Brown's report, verified his credentials and DoD track record, and coordinated coverage with Jeremy Corbell and George Knapp (Weaponized). The Department of Defense confirmed in November 2024 that it was investigating Brown's allegations — in part as a result of the public pressure generated by Shellenberger's publication.\n\nEvidence level: ✅ 5 Confirmed — verifiable journalist; DoD confirmation of the investigation.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/michael_shellenberger.jpg"
     },
     {
       "id": "david_icke",
@@ -3878,7 +3994,8 @@ window.RDC_DATA = {
       "name_en": "David Icke",
       "role_en": "The Figure Who Points in a Direction — Between Truth and Speculation",
       "bio_en": "Who he is: David Icke (1952-) was a BBC sports commentator before beginning, from the early 1990s, an extraordinarily singular career as a researcher and communicator of theories about hidden powers, global elites and aliens in positions of power. He has written over 20 books, filled stadiums worldwide and reached audiences of tens of millions.\n\nThe grain and the chaff: Icke's work presents a fundamental tension. On one hand, he was a pioneer in pointing to the existence of financial and political elites acting outside democratic systems, the reality of mind control programs, mass surveillance and the existence of concealed phenomena — themes that have been partially verified over time. On the other hand, his more specific claims (reptilians disguised as humans, certain names of public figures) lack evidential support and have generated controversy for their possible antisemitic implications, which he denies.\n\nReDescubriendo presents David Icke as a figure who has dedicated decades to pointing out that 'there is something real behind the curtain' — an alarm that points in a valid direction even if the definition of what is behind it is highly speculative. The editorial position of ReDescubriendo does not endorse his more controversial positions.\n\nEvidence level: 🟨 3 Plausible-debatable — claims about hidden powers; 🟧 2 Speculative — claims about specific identities of public figures.",
-      "group_en": "Political Figure"
+      "group_en": "Political Figure",
+      "photo": "assets/faces/david_icke.jpg"
     },
     {
       "id": "caso_magenta_italia",
@@ -6712,7 +6829,7 @@ window.RDC_DATA = {
       "role": "Los Ingenieros del Imposible",
       "type": "agency",
       "group": "Contratistas de Defensa",
-      "bio": "Historia y Capacidad: La división de proyectos avanzados de Lockheed Martin, conocida como Skunk Works, fue fundada en 1943 por el ingeniero Kelly Johnson para desarrollar el caza P-80 en tiempo de guerra. Desde entonces ha producido algunos de los aviones más revolucionarios de la historia: el U-2 (1955), el SR-71 Blackbird (1966, aún sin igual en velocidad para aeronaves con pilotos), el F-117 Nighthawk (el primer avión de combate completamente invisible al radar) y el F-22 Raptor. Está ubicada en Palmdale, California, adyacente a las instalaciones del Área 51.\n\nLas Declaraciones de Ben Rich: Ben Rich, director de Skunk Works de 1975 a 1991, sucesor de Kelly Johnson, hizo una serie de declaraciones extraordinarias en los últimos años de su vida, antes de morir de cáncer en 1995. La más citada, reportada por múltiples asistentes a sus conferencias de forma independiente: \"Tenemos las cosas para llevar a ET a casa. No, no os estoy tomando el pelo. Estamos sobre algo que no podéis imaginarlo.\" También dijo: \"Cualquier cosa que puedas imaginar, ya la hemos hecho.\" Aunque estas citas son de fuentes secundarias, su consistencia entre testigos independientes les da peso significativo.\n\nLa Conexión con la Retroingeniería: El testimonio de David Grusch ante el Congreso en 2023 señaló a contratistas privados como custodios de material recuperado de origen no humano. Lockheed Martin encabeza prácticamente todas las listas de investigadores. La capacidad técnica de Skunk Works para mantener secretos durante décadas está probada: el SR-71 voló misiones clasificadas durante años antes de que su existencia fuera reconocida públicamente. Si alguna organización tiene la capacidad técnica y la cultura de secreto para gestionar un programa de retroingeniería, es Skunk Works.",
+      "bio": "Historia y Capacidad: La división de proyectos avanzados de Lockheed Martin, conocida como Skunk Works, fue fundada en 1943 por el ingeniero Kelly Johnson para desarrollar el caza P-80 en tiempo de guerra. Desde entonces ha producido algunos de los aviones más revolucionarios de la historia: el U-2 (1955), el SR-71 Blackbird (1966, aún sin igual en velocidad para aeronaves con pilotos), el F-117 Nighthawk (el primer avión de combate completamente invisible al radar) y el F-22 Raptor. Está ubicada en Palmdale, California, adyacente a las instalaciones del Área 51.\n\nLas Declaraciones de Ben Rich: Ben Rich, director de Skunk Works de 1975 a 1991, sucesor de Kelly Johnson, hizo una serie de declaraciones extraordinarias en los últimos años de su vida, antes de morir de cáncer en 1995. La más citada, reportada por múltiples asistentes a sus conferencias de forma independiente: \"Tenemos las cosas para llevar a ET a casa. No, no os estoy tomando el pelo. Estamos sobre algo que no podéis imaginarlo.\" También dijo: \"Cualquier cosa que puedas imaginar, ya la hemos hecho.\" Aunque estas citas son de fuentes secundarias, su consistencia entre testigos independientes les da peso significativo.\n\nLa Conexión con la Retroingeniería: El testimonio de David Grusch ante el Congreso en 2023 señaló a contratistas privados como custodios de material recuperado de origen no humano. Lockheed Martin encabeza prácticamente todas las listas de investigadores. La capacidad técnica de Skunk Works para mantener secretos durante décadas está probada: el SR-71 voló misiones clasificadas durante años antes de que su existencia fuera reconocida públicamente. Si alguna organización tiene la capacidad técnica y la cultura de secreto para gestionar un programa de retroingeniería, es Skunk Works.\n\nEl análisis de UAP Gerb (2024): Uno de los documentales más exhaustivos sobre Lockheed Martin examina el Tonopah Test Range como posible almacén de material recuperado, el rol de Skunk Works en programas de acceso especial de la USAF, y el Memo Wilson-Davis de 2002 — la reunión entre el almirante Thomas Wilson y el físico Eric Davis en la que Wilson describe haber sido bloqueado en el acceso a un programa de recuperación gestionado por un contratista privado cuyo perfil operativo Gerb considera consistente con Lockheed.",
       "year": 1943,
       "media": "https://www.youtube.com/watch?v=LnAiNChnuEQ&t=41s",
       "mediaCredit": "Eric Davis: Los Contratistas y la Retroingeniería — Jesse Michels",
@@ -9578,7 +9695,12 @@ window.RDC_DATA = {
       "name_en": "American Alchemy (Jesse Michels)",
       "role_en": "Gonzo Journalism + UAP Investigation",
       "bio_en": "YouTube channel and production company run by filmmaker Jesse Michels (formerly of Yes Theory). American Alchemy produces long-form documentary interviews with key UAP figures — including David Grusch, Bob Lazar, Bob Salas, Ross Coulthart, Karl Nell, Diana Pasulka and dozens of others — combining personal access journalism with technical depth. Known for extracting candid on-camera admissions from sources who are otherwise guarded in conventional media settings. One of the primary channels in the RDC corpus.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@JesseMichels",
+        "desc": "American Alchemy — periodismo gonzo de Jesse Michels con foco técnico en propulsión y figuras heterodoxas.",
+        "desc_en": "American Alchemy — Jesse Michels's gonzo journalism with a technical focus on propulsion and heterodox figures."
+      }
     },
     {
       "id": "ch_documental_s4_luigi_project_gravitar",
@@ -9609,7 +9731,12 @@ window.RDC_DATA = {
       "name_en": "Project Gravitar (Luigi S4 Documentary)",
       "role_en": "The Bob Lazar Documentary",
       "bio_en": "Documentary project covering the Bob Lazar/S-4 story in detail, including the foundational Project Gravitar documentary. This channel/project produced the most detailed long-form interview with Bob Lazar available, covering the S-4 propulsion systems, his working conditions, and the verification attempts by George Knapp.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@ProjectGravitaurOfficial",
+        "desc": "Project Gravitaur — recreación en VFX del S4 de Bob Lazar dirigida por Luigi Vendittelli.",
+        "desc_en": "Project Gravitaur — VFX recreation of Bob Lazar's S4, directed by Luigi Vendittelli."
+      }
     },
     {
       "id": "ch_weaponized_jeremy_corbell_george_knapp",
@@ -9668,7 +9795,12 @@ window.RDC_DATA = {
       "name_en": "Weaponized (Jeremy Corbell & George Knapp)",
       "role_en": "Primary UAP Whistleblower Channel",
       "bio_en": "Weaponized is a podcast and media platform co-hosted by filmmaker Jeremy Corbell and journalist George Knapp. Since 2022, it has produced over 200 episodes and has become the primary public channel for UAP whistleblowers, including Grusch, Matthew Brown, Jake Barber, Dylan Borland, and Michael Herrera. Known for releasing authenticated military UAP footage and documents. One of the most influential platforms in the modern UAP disclosure movement.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@JeremyCorbell",
+        "desc": "WEAPONIZED — Jeremy Corbell y George Knapp destapan testimonios de whistleblowers y los vídeos de la Navy.",
+        "desc_en": "WEAPONIZED — Jeremy Corbell and George Knapp surface whistleblower testimony and the Navy videos."
+      }
     },
     {
       "id": "ch_jeremy_corbell",
@@ -9762,7 +9894,12 @@ window.RDC_DATA = {
       "name_en": "Jeremy Corbell",
       "role_en": "Documentary Filmmaker and UAP Investigator",
       "bio_en": "Jeremy Corbell's individual YouTube channel, separate from Weaponized, covering his documentary work and standalone UAP investigations including films on Bob Lazar, the Varginha case, and multiple whistleblower interviews.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@JeremyCorbell",
+        "desc": "Canal personal de Jeremy Corbell, cineasta y divulgador de evidencia UAP.",
+        "desc_en": "Personal channel of Jeremy Corbell, filmmaker and UAP-evidence investigator."
+      }
     },
     {
       "id": "ch_jason_samosa",
@@ -9856,7 +9993,12 @@ window.RDC_DATA = {
       "name_en": "Jason Samosa",
       "role_en": "Long-form Thematic Series",
       "bio_en": "YouTube channel producing extended thematic documentary series on UAP-adjacent topics including the Collins Elite, Jacques Vallée's theories, Nazi UFO mythology, CIA involvement, and other deep historical investigations. Known for high production quality and extensive primary source research.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@jason_samosa",
+        "desc": "Jason Samosa — series temáticas largas sobre Vallée, religión y el fenómeno.",
+        "desc_en": "Jason Samosa — long thematic series on Vallée, religion and the phenomenon."
+      }
     },
     {
       "id": "ch_area52",
@@ -9950,7 +10092,12 @@ window.RDC_DATA = {
       "name_en": "Area52 / DEBRIEFED",
       "role_en": "Long-form Expert Interviews",
       "bio_en": "DEBRIEFED is a long-format interview series produced by the Area52 channel, featuring extended in-depth conversations with UAP researchers, whistleblowers and subject matter experts. Episodes regularly run 2–3 hours and cover technical topics in depth. Known for interviews with figures including Eric Davis, Hal Puthoff, David Icke, Angela Ford, Joe McMoneagle and others.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/channel/UCvQ_EDuk8w67a2UkCS1ptbA",
+        "desc": "Area52 / DEBRIEFED — entrevistas largas de Chris Ramsay con actores clave del campo.",
+        "desc_en": "Area52 / DEBRIEFED — Chris Ramsay long-form interviews with key figures in the field."
+      }
     },
     {
       "id": "ch_the_sol_foundation",
@@ -10044,7 +10191,12 @@ window.RDC_DATA = {
       "name_en": "The Sol Foundation",
       "role_en": "Academic UAP Research",
       "bio_en": "The Sol Foundation's YouTube channel, hosting recordings of its symposia, Sol Forums and public lectures. Features presentations by scientists, policy experts and former intelligence officials including Garry Nolan, Karl Nell, Hal Puthoff, Jacques Vallée, Diana Pasulka, Beatriz Villarroel and others. Represents the academic peer-reviewed end of the UAP research spectrum.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@_SolFoundation",
+        "desc": "The Sol Foundation — simposios académicos (Nolan, Davis, Puthoff, Nell, Loeb…).",
+        "desc_en": "The Sol Foundation — academic symposia (Nolan, Davis, Puthoff, Nell, Loeb…)."
+      }
     },
     {
       "id": "ch_richard_dolan_intelligent_disclosure",
@@ -10138,7 +10290,12 @@ window.RDC_DATA = {
       "name_en": "Richard Dolan Intelligent Disclosure",
       "role_en": "Historical and Analytical UAP Commentary",
       "bio_en": "Richard Dolan's YouTube channel, providing historical analysis, current event commentary, and interviews on the UAP/UFO phenomenon. Dolan brings a historian's perspective — situating events within the broader 75+ year institutional history of government UAP management. One of the oldest and most consistently produced UAP media platforms.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/channel/UCnaIeNm-jSa1l8yHrn7PlQg",
+        "desc": "Intelligent Disclosure — análisis histórico del fenómeno por Richard Dolan.",
+        "desc_en": "Intelligent Disclosure — historical analysis of the phenomenon by Richard Dolan."
+      }
     },
     {
       "id": "ch_ashton_forbes",
@@ -10232,7 +10389,12 @@ window.RDC_DATA = {
       "name_en": "Ashton Forbes",
       "role_en": "MH370, ZPE and Advanced Physics",
       "bio_en": "YouTube channel focused on the intersection of UAP technology, zero-point energy, warp drive and the MH370 disappearance. Forbes's approach combines analysis of advanced physics patents (particularly Salvatore Pais's USPTO filings) with UAP encounter data to build a technical framework for UAP propulsion. His Secret Science Wednesday series covers ZPE, Casimir effect, GEM theory and related topics.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@JustXAshton",
+        "desc": "Ashton Forbes — MH370, energía de punto cero y propulsión warp.",
+        "desc_en": "Ashton Forbes — MH370, zero-point energy and warp propulsion."
+      }
     },
     {
       "id": "ch_uap_gerb",
@@ -10326,7 +10488,12 @@ window.RDC_DATA = {
       "name_en": "UAP Gerb",
       "role_en": "Legacy Programs and Military History",
       "bio_en": "YouTube channel produced by an anonymous researcher known as UAP Gerb, specialising in in-depth historical and archival research into UAP legacy programs, crash retrievals, military contractor involvement, and the institutional history of government UAP management. Known for extensive primary source research, FOIA document analysis and detailed investigation of cases including Kingman, Roswell, Kecksburg and the Wilson-Davis memo.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/channel/UCXr8USOuzZN_3y_efZpryrg",
+        "desc": "UAP Gerb — investigador emergente con acceso directo a ex-militares.",
+        "desc_en": "UAP Gerb — emerging researcher with direct access to ex-military sources."
+      }
     },
     {
       "id": "ch_newsnation",
@@ -10420,7 +10587,12 @@ window.RDC_DATA = {
       "name_en": "NewsNation / Reality Check",
       "role_en": "Mainstream Investigative UAP Coverage",
       "bio_en": "NewsNation is a U.S. television network that, through journalist Ross Coulthart's Reality Check program, became the leading mainstream news outlet covering the UAP phenomenon seriously. Coulthart's 46+ episodes of Reality Check provided nationally broadcast television coverage of major UAP developments including the Grusch testimony, Jake Barber's whistleblower claims, Immaculate Constellation, the Trump UAP archives, and multiple other developments.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@NewsNation",
+        "desc": "NewsNation / Reality Check — periodismo de investigación de Ross Coulthart.",
+        "desc_en": "NewsNation / Reality Check — investigative journalism by Ross Coulthart."
+      }
     },
     {
       "id": "ch_that_ufo_podcast",
@@ -10514,7 +10686,12 @@ window.RDC_DATA = {
       "name_en": "That UFO Podcast",
       "role_en": "Spanish-Language UAP Coverage",
       "bio_en": "Spanish-language UAP podcast and YouTube channel covering major developments in the field with a focus on accessibility for Spanish-speaking audiences. Features interviews with researchers including Garry Nolan, Jim Semivan, Joe McMoneagle, Diana Walsh Pasulka, Karl Nell, John Ramirez and others, providing Spanish-language access to primary source material.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@ThatUFOPodcast",
+        "desc": "That UFO Podcast — entrevistas y actualidad del campo UAP desde el Reino Unido.",
+        "desc_en": "That UFO Podcast — UAP interviews and news from the UK."
+      }
     },
     {
       "id": "ch_polarity",
@@ -10587,7 +10764,12 @@ window.RDC_DATA = {
       "name_en": "Polarity",
       "role_en": "Congressional Hearing Coverage",
       "bio_en": "YouTube channel specialising in high-quality coverage of Congressional UAP hearings, providing full-audio recordings and analysis of testimony from figures including Chris Mellon, Tim Gallaudet and others. Notable for its focus on the legislative and institutional dimensions of UAP disclosure.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@PolarityJosh",
+        "desc": "Polarity — directos y deep-dives sobre UAP, inteligencia no humana y potencial humano.",
+        "desc_en": "Polarity — live shows and deep-dives on UAP, non-human intelligence and human potential."
+      }
     },
     {
       "id": "ch_vetted",
@@ -10632,7 +10814,12 @@ window.RDC_DATA = {
       "name_en": "VETTED",
       "role_en": "Evidence-Based UAP Analysis",
       "bio_en": "YouTube channel focused on evidence-based analysis of UAP claims, covering technology, physics and whistleblower testimony with an emphasis on verification and primary sources.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/@VETTEDPODCAST",
+        "desc": "VETTED — investigación y verificación crítica de casos UAP.",
+        "desc_en": "VETTED — critical investigation and fact-checking of UAP cases."
+      }
     },
     {
       "id": "ch_dr_steven_greer",
@@ -10726,7 +10913,12 @@ window.RDC_DATA = {
       "name_en": "Dr. Steven Greer",
       "role_en": "Disclosure Project Founder",
       "bio_en": "Steven Greer's YouTube channel, covering the Disclosure Project (founded 1993), CE5 contact protocols, and extensive compilations of testimonies from military and government witnesses. Greer is one of the earliest and most prolific UAP disclosure advocates, having compiled testimony from hundreds of military and intelligence whistleblowers through the Disclosure Project. His approach — emphasising the benign nature of extraterrestrial visitors and advocating for immediate full disclosure — is more activist than most other corpus sources.",
-      "group_en": "Channels"
+      "group_en": "Channels",
+      "youtube": {
+        "url": "https://www.youtube.com/channel/UCC6B4Y0oFACv9QBlf0ebBcg",
+        "desc": "Dr. Steven Greer — divulgación y el protocolo de contacto CE-5.",
+        "desc_en": "Dr. Steven Greer — disclosure advocacy and the CE-5 contact protocol."
+      }
     }
   ],
   "edges": [

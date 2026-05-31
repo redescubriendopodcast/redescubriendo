@@ -63,6 +63,8 @@ function DetailPanel({ node, data, onSelect, onClose, lang }) {
 
   const videoWord = (n) => n === 1 ? t("panel.video") : t("panel.videos");
 
+  const ytDesc = node.youtube && ((L && node.youtube.desc_en) || node.youtube.desc || "");
+
   return (
     <div className="panel">
       <div className="panel-head">
@@ -73,7 +75,13 @@ function DetailPanel({ node, data, onSelect, onClose, lang }) {
           </span>
           <button className="close" onClick={onClose} aria-label={t("panel.close")}>×</button>
         </div>
-        <h2 className="panel-name">{displayName}</h2>
+        {node.photo
+          ? <div className="panel-name-row">
+              <img className="panel-face" src={node.photo} alt={displayName}
+                   loading="lazy" onError={e => { e.target.style.display = 'none'; }} />
+              <h2 className="panel-name">{displayName}</h2>
+            </div>
+          : <h2 className="panel-name">{displayName}</h2>}
         {displayRole && displayRole !== displayName && <div className="panel-role">{displayRole}</div>}
         {displayGroup && displayGroup !== displayRole && <div className="panel-group">{displayGroup}</div>}
         {node.year && <div className="panel-year">{node.year}</div>}
@@ -95,6 +103,19 @@ function DetailPanel({ node, data, onSelect, onClose, lang }) {
       </div>
 
       <div className="panel-body">
+        {node.youtube && node.youtube.url && (
+          <section>
+            <a href={node.youtube.url} target="_blank" rel="noopener" className="channel-link">
+              <span className="yt-i">▶</span>
+              <span className="cl-body">
+                <span className="cl-cta">{t("panel.visitChannel")}</span>
+                {ytDesc && <span className="cl-desc">{ytDesc}</span>}
+              </span>
+              <span className="ml-arrow">↗</span>
+            </a>
+          </section>
+        )}
+
         {bioParas.length > 0 && (
           <section>
             {bioParas.map((p, i) => <p key={i} className="bio">{p}</p>)}
@@ -112,6 +133,23 @@ function DetailPanel({ node, data, onSelect, onClose, lang }) {
               </span>
               <span className="ml-arrow">↗</span>
             </a>
+          </section>
+        )}
+
+        {node.papers && node.papers.length > 0 && (
+          <section>
+            <h3 className="section-h">{t("panel.publications")}</h3>
+            <ul className="paper-list">
+              {node.papers.map((p, i) => (
+                <li key={i}>
+                  <a href={p.url} target="_blank" rel="noopener" className="paper-item">
+                    <span className="paper-i">📄</span>
+                    <span className="paper-title">{p.titulo}</span>
+                    <span className="ml-arrow">↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 
