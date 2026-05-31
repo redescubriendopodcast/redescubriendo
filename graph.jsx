@@ -77,7 +77,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     const donutInner = minDim * 0.045; // black-hole hole at the very centre
     const NUM_ARMS = 2;
     const ARM_WIND = 3.1;              // radians an arm sweeps from centre→rim
-    const ARM_HALF = 0.95;             // angular half-spread: arm visible but soft (not a thin chain)
+    const ARM_HALF = 1.15;             // angular half-spread: arm visible but soft (not a thin chain)
     const BULGE_FRAC = 0.24;           // f below this = amorphous central bulge
     const thickness = minDim * 0.02;
     st.donutR = minDim * 0.07;         // launch torus radius (used by the intro)
@@ -107,7 +107,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       // "necklace" look and fills the disc).
       const rHash = Math.sin(i * 91.7) * 23456.789;
       const rJit = rHash - Math.floor(rHash);            // 0..1
-      const homeR = (donutInner + (maxR - donutInner) * frac) * (1 + 0.10 * (rJit - 0.5) * 2);
+      const homeR = (donutInner + (maxR - donutInner) * frac) * (1 + 0.13 * (rJit - 0.5) * 2);
       let homeA;
       if (frac < BULGE_FRAC) {
         // Amorphous, dense central bulge.
