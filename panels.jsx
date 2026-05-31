@@ -218,13 +218,15 @@ function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selecte
   const searchResults = React.useMemo(() => {
     if (!query.trim()) return [];
     const q = query.toLowerCase();
+    const isEN = lang === 'en';
     return data.nodes
       .filter(n => n.name.toLowerCase().includes(q) ||
-                   (n.role||"").toLowerCase().includes(q) ||
-                   (n.group||"").toLowerCase().includes(q) ||
-                   (n.bio||"").toLowerCase().includes(q))
+                   (isEN && (n.name_en||"").toLowerCase().includes(q)) ||
+                   (isEN ? (n.role_en||n.role||"") : (n.role||"")).toLowerCase().includes(q) ||
+                   (isEN ? (n.group_en||n.group||"") : (n.group||"")).toLowerCase().includes(q) ||
+                   (isEN ? (n.bio_en||n.bio||"") : (n.bio||"")).toLowerCase().includes(q))
       .slice(0, 14);
-  }, [query, data]);
+  }, [query, data, lang]);
 
   return (
     <aside className="sidebar">
