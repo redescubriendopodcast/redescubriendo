@@ -68,57 +68,54 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
     const visibleEdges = data.edges.filter(e => idSet.has(e[0]) && idSet.has(e[1]));
 
     // === 3D GALAXY HOME POSITIONS ===
-    // Galaxy disk lies in XZ plane; Y is thickness (small → flat disc).
-    // Logarithmic spiral arms, one per canal, with a diffuse halo of
-    // channel-less nodes. Nodes are spread across a wide annulus (clear core,
-    // populated mid-band, plenty at the rim) instead of piling at the centre.
+    // Grand-design TWO-arm logarithmic spiral with a dense central bulge.
+    // Disk lies in the XZ plane; Y is thickness (thin → flat disc). Density is
+    // highest at the centre (bulge) and falls off outward; the two arms trace
+    // the rotation and define the rim.
     const minDim = Math.min(st.size.w, st.size.h);
     const maxR = minDim * 0.46;
-    const innerEdge = minDim * 0.09;   // small empty zone around the black hole
-    const channelR = minDim * 0.40;    // channels sit out on the disc
-    const thickness = minDim * 0.018;  // thin → disc-like
-    const NUM_ARMS = 13;
-    const SPIRAL_TWIST = 3.4;          // pronounced, visible logarithmic arms
+    const donutInner = minDim * 0.045; // black-hole hole at the very centre
+    const NUM_ARMS = 2;
+    const ARM_WIND = 3.1;              // radians an arm sweeps from centre→rim
+    const ARM_SCATTER = 0.62;          // angular scatter around the arm spine
+    const BULGE_FRAC = 0.24;           // f below this = amorphous central bulge
+    const thickness = minDim * 0.02;
+    st.donutR = minDim * 0.07;         // launch torus radius (used by the intro)
 
     let maxDeg = 1;
     for (const n of visibleNodes) maxDeg = Math.max(maxDeg, n.degree || 0);
 
-    // Radius fraction 0(core)→1(rim). An even low-discrepancy spread fills every
-    // radial band (so density is naturally higher near the core and lighter at
-    // the rim, like a real disc), with degree only a mild inward nudge so the
-    // most-connected nodes sit a little further in.
+    // Centre-weighted radius fraction: most nodes sit near the core, fewer at
+    // the rim (pow > 1 concentrates toward 0). High-degree nodes nudged inward.
     const radiusFrac = (n, i) => {
       const dn = (n.degree || 0) / maxDeg;
       const rphase = (i * 0.7548776662) % 1;            // even spread 0..1
-      let g = 0.72 * rphase + 0.28 * (1 - dn);
-      g = Math.max(0, Math.min(1, g));
-      return 0.12 + 0.86 * g;                            // 0.12(core)…0.98(rim)
+      let u = 0.82 * rphase + 0.18 * (1 - dn);
+      u = Math.max(0, Math.min(1, u));
+      return Math.pow(u, 1.9);                           // dense centre, light rim
     };
 
     const computeHome = (n, i) => {
       const c = n.canal || 0;
-      const phase = (i * 0.6180339) % 1; // golden-ratio angular jitter
-      const yJitter = (Math.sin(i * 12.9898) * 43758.5453 % 1) - 0.5; // deterministic pseudo-random
-      let homeR, homeA, frac;
-      if (n.type === "channel") {
-        const arm = (c - 1) / NUM_ARMS;
-        frac = channelR / maxR;
-        homeR = channelR;
-        homeA = arm * Math.PI * 2 + SPIRAL_TWIST * frac;
+      const phase = (i * 0.6180339) % 1;                          // angular jitter
+      const armSel = (((i * 0.3819660) % 1) < 0.5) ? 0 : 1;       // ~50/50 → 2 arms
+      const yJitter = (Math.sin(i * 12.9898) * 43758.5453 % 1) - 0.5;
+      const frac = n.type === "channel"
+        ? 0.42 + 0.46 * ((c * 0.3819660) % 1)   // channels spread across mid-outer disc
+        : radiusFrac(n, i);
+      const homeR = donutInner + (maxR - donutInner) * frac;
+      let homeA;
+      if (frac < BULGE_FRAC) {
+        // Amorphous, dense central bulge.
+        homeA = phase * Math.PI * 2;
       } else {
-        frac = radiusFrac(n, i);
-        homeR = innerEdge + (maxR - innerEdge) * frac;
-        if (c === 0) {
-          // Diffuse halo: uniform angle + a little spiral so it blends in.
-          homeA = phase * Math.PI * 2 + SPIRAL_TWIST * 0.5 * frac;
-        } else {
-          const baseAngle = (c - 1) / NUM_ARMS * Math.PI * 2;
-          const wedge = (Math.PI * 2 / NUM_ARMS) * 0.55;
-          homeA = baseAngle + (phase - 0.5) * wedge + SPIRAL_TWIST * frac;
-        }
+        const baseA = armSel * Math.PI;                  // two arms, 180° apart
+        const wind = ARM_WIND * frac;                    // logarithmic winding
+        const scatter = (phase - 0.5) * ARM_SCATTER * (1 - 0.6 * frac); // crisper outward
+        homeA = baseA + wind + scatter;
       }
-      // Flatter towards the centre (disc), a touch more thickness at the rim.
-      const yScale = n.type === "channel" ? 0.3 : (0.35 + 0.65 * frac);
+      // Bulge a touch puffier; disc thin and flat.
+      const yScale = frac < BULGE_FRAC ? 0.9 : 0.28;
       return {
         hx: Math.cos(homeA) * homeR,
         hy: yJitter * thickness * yScale,
@@ -261,24 +258,23 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       if (st.intro) {
         if (st.intro.start == null) st.intro.start = t;
         const P = Math.min(1, (t - st.intro.start) / st.intro.dur);
-        const SPREAD = 0.5; // outer nodes are released later → arms grow outward
-        const TWO_PI = Math.PI * 2;
+        const SPREAD = 0.18;                 // mild stagger (gentle, not explosive)
+        const SWEEP = Math.PI * 0.6;         // soft partial turn (~108°), few turns
+        const donutR = st.donutR || (Math.min(st.size.w, st.size.h) * 0.07);
         let allDone = true;
         for (let i = 0; i < st.nodes.length; i++) {
           const n = st.nodes[i];
           if (n.type === "phenomenon") { n.x = n.y = n.z = 0; continue; }
           if (n === st.drag) continue;
-          // Each node is "released" from the central point of gravity. Nodes
-          // bound for the rim launch later, so the disc grows outward rather
-          // than scaling uniformly. The radius decelerates (ease-out) while the
-          // angle trails one revolution in the SAME sense as the final spin
-          // (conservation of the rotational inertia) — a parabola seen in plan.
+          // Nodes are released from a small TORUS around the black hole (not the
+          // singular point) and drift out to their orbit with a soft rotation in
+          // the SAME sense as the final spin. Radius decelerates (ease-out).
           const delay = SPREAD * n.homeFrac;
           const p = Math.max(0, Math.min(1, (P - delay) / (1 - delay)));
           if (p < 1) allDone = false;
           const e = easeOutCubic(p);
-          const r = n.homeR * e;
-          const ang = n.homeA + (1 - e) * TWO_PI * st.intro.dir;
+          const r = donutR + (n.homeR - donutR) * e;
+          const ang = n.homeA + SWEEP * (1 - e) * st.intro.dir;
           n.x = Math.cos(ang) * r;
           n.z = Math.sin(ang) * r;
           n.y = n.hy * e;
@@ -834,20 +830,22 @@ function drawGalaxyBackdrop(ctx, st) {
   ctx.beginPath();
   ctx.arc(center.px, center.py, coreR, 0, Math.PI*2);
   ctx.fill();
-  // Spiral arms (faint)
-  const NUM_ARMS = 13;
-  const TWIST = 0.6;
-  const armR0 = minDim * 0.12;
-  const armR1 = minDim * 0.42;
-  ctx.strokeStyle = "rgba(126,224,255,0.04)";
-  ctx.lineWidth = 1;
+  // Two faint spiral-arm guides matching the node layout (NUM_ARMS=2,
+  // ARM_WIND≈3.1) so the grand-design spiral reads clearly.
+  const NUM_ARMS = 2;
+  const TWIST = 3.1;
+  const maxR = minDim * 0.46;
+  const armR0 = minDim * 0.08;
+  const armR1 = minDim * 0.46;
+  ctx.strokeStyle = "rgba(126,224,255,0.06)";
+  ctx.lineWidth = 1.5;
   for (let i = 0; i < NUM_ARMS; i++) {
-    const baseA = (i / NUM_ARMS) * Math.PI * 2;
+    const baseA = i * Math.PI;
     ctx.beginPath();
     let first = true;
-    for (let t = 0; t <= 1.001; t += 0.04) {
+    for (let t = 0; t <= 1.001; t += 0.03) {
       const r = armR0 + (armR1 - armR0) * t;
-      const a = baseA + t * TWIST;
+      const a = baseA + (r / maxR) * TWIST;
       const p = projectPoint(Math.cos(a) * r, 0, Math.sin(a) * r, st);
       if (first) { ctx.moveTo(p.px, p.py); first = false; }
       else ctx.lineTo(p.px, p.py);
