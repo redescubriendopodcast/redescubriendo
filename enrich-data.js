@@ -18,42 +18,18 @@ const j = content.lastIndexOf('}');
 const data = JSON.parse(content.slice(i, j + 1));
 
 // ── 1. PHOTOS (face thumbnails in assets/faces/) ────────────────────────────
-// Sourced from Wikipedia/Wikimedia Commons (free/Commons-licensed page images).
-const PHOTOS = {
-  george_knapp: 'assets/faces/george_knapp.jpg',
-  linda_moulton_howe: 'assets/faces/linda_moulton_howe.jpg',
-  ross_coulthart: 'assets/faces/ross_coulthart.jpg',
-  michael_shellenberger: 'assets/faces/michael_shellenberger.jpg',
-  luis_elizondo: 'assets/faces/luis_elizondo.png',
-  christopher_mellon: 'assets/faces/christopher_mellon.jpg',
-  david_grusch: 'assets/faces/david_grusch.jpg',
-  j_allen_hynek: 'assets/faces/j_allen_hynek.jpg',
-  jacques_vallee: 'assets/faces/jacques_vallee.jpg',
-  avi_loeb: 'assets/faces/avi_loeb.jpg',
-  hal_puthoff_y_el_programa_baass: 'assets/faces/hal_puthoff_y_el_programa_baass.png',
-  carl_gustav_jung: 'assets/faces/carl_gustav_jung.jpg',
-  salvatore_pais: 'assets/faces/salvatore_pais.png',
-  russell_targ: 'assets/faces/russell_targ.jpg',
-  danny_sheehan: 'assets/faces/danny_sheehan.png',
-  harald_malmgren: 'assets/faces/harald_malmgren.png',
-  edgar_mitchell: 'assets/faces/edgar_mitchell.jpg',
-  admiral_tim_gallaudet: 'assets/faces/admiral_tim_gallaudet.jpg',
-  almirante_thomas_wilson: 'assets/faces/almirante_thomas_wilson.jpg',
-  haim_eshed: 'assets/faces/haim_eshed.jpg',
-  marco_rubio: 'assets/faces/marco_rubio.jpg',
-  sen_kirsten_gillibrand: 'assets/faces/sen_kirsten_gillibrand.jpg',
-  sen_mike_rounds: 'assets/faces/sen_mike_rounds.jpg',
-  andre_carson: 'assets/faces/andre_carson.jpg',
-  jared_moskowitz: 'assets/faces/jared_moskowitz.jpg',
-  rep_tim_burchett: 'assets/faces/rep_tim_burchett.jpg',
-  anna_paulina_luna: 'assets/faces/anna_paulina_luna.jpg',
-  eric_burlison: 'assets/faces/eric_burlison.jpg',
-  kirsan_ilyumzhinov: 'assets/faces/kirsan_ilyumzhinov.jpg',
-  david_icke: 'assets/faces/david_icke.jpg',
-  roberto_pinotti: 'assets/faces/roberto_pinotti.png',
-  coronel_philip_j_corso: 'assets/faces/coronel_philip_j_corso.jpg',
-  john_b_alexander: 'assets/faces/john_b_alexander.jpg'
-};
+// Auto-detected: any file named <node.id>.(jpg|jpeg|png|webp) inside
+// assets/faces/ is mapped to that node. Drop a new face in there (named after
+// the node id) and re-run this script — no edits needed.
+// Current images sourced from Wikipedia/Wikimedia Commons (free/Commons images).
+const FACES_DIR = path.join(__dirname, 'assets', 'faces');
+const PHOTOS = {};
+if (fs.existsSync(FACES_DIR)) {
+  for (const f of fs.readdirSync(FACES_DIR)) {
+    const m = f.match(/^(.+)\.(jpg|jpeg|png|webp)$/i);
+    if (m) PHOTOS[m[1]] = 'assets/faces/' + f;
+  }
+}
 
 // ── 2. PAPERS / PATENTS (scientists) ────────────────────────────────────────
 // Official published papers, peer-reviewed articles and granted patents.

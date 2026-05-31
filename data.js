@@ -1458,7 +1458,8 @@ window.RDC_DATA = {
       "name_en": "Ryan Graves",
       "role_en": "",
       "bio_en": "Year of Encounters and Public Testimony: 2014-2015 (UAP Encounters); 2023 (Congressional Testimony).\n\nProfessional Background: Former U.S. Navy F/A-18 Super Hornet pilot and Squadron Commander. Graves and his squadron, the VFA-11 ('Red Rippers'), were stationed aboard the USS Theodore Roosevelt and conducting high-level training exercises in the U.S. East Coast Training Area (W-72), a restricted and highly controlled airspace.\n\nKey Publications & Statements: Graves has reported that between 2014 and 2015, his squadron detected UAPs almost daily over a period of several months. These objects were typically described as a 'dark or translucent sphere enclosing a cube' ('cube-inside-a-sphere'). They could hold stationary against winds over 120 knots and accelerate to supersonic speeds. In response, Graves founded Americans for Safe Aerospace (ASA), a non-profit advocacy organization dedicated to addressing the flight safety risk that UAPs represent, advocating for the destigmatization of pilot reports.\n\nMedia Appearances: Graves testified alongside David Fravor and David Grusch at the landmark Congressional hearing in July 2023. He has shared his story in depth on The Joe Rogan Experience (#2086) and is a frequent guest on the Weaponized podcast.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/ryan_graves.png"
     },
     {
       "id": "john_b_alexander",
@@ -1677,7 +1678,8 @@ window.RDC_DATA = {
       "name_en": "Richard Dolan",
       "role_en": "",
       "bio_en": "Professional Background: Historian, author and researcher specializing in the UFO phenomenon. He holds a master's degree in History from the University of Rochester and did doctoral work at Oxford University before dedicating himself fully to UFO research. Dolan is considered one of the most important and meticulous historians of the phenomenon, known for his scholarly and analytical approach to government documentation and historical context.\n\nKey Publications & Statements: Dolan is best known for his monumental multi-volume work, UFOs and the National Security State. Volume 1 (2000) covers 1941-1973, Volume 2 (2009) 1973-1991, and a third is in development. This trilogy is considered the most complete political and military history of the UFO cover-up, meticulously tracing the response of intelligence agencies and the military to the phenomenon. Dolan coined the term 'National Security State' to describe the alliance between intelligence agencies, military corporations and private elements that, according to him, manages the UFO secret independently of elected government. His voice provides academic depth and a long-term perspective on the phenomenon, arguing that it is the 'greatest secret' in human history.\n\nMedia Appearances: Richard Dolan is a frequent and highly respected guest at UFO conferences, documentaries and podcasts. He has his own YouTube channel where he offers in-depth analysis of UFO news and history.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/richard_dolan.jpg"
     },
     {
       "id": "danny_sheehan",
@@ -3540,7 +3542,8 @@ window.RDC_DATA = {
       "name_en": "John E. Mack",
       "role_en": "The Harvard Psychiatrist Who Paid the Price for Taking Abductions Seriously",
       "bio_en": "Professional Background: Professor of Psychiatry at Harvard Medical School and Pulitzer Prize winner (A Prince of Our Disorder, 1977). Founded the Program for Extraordinary Experience Research (PEER) at Harvard in 1993. He died in September 2004 in London, struck by a drunk driver.\n\nKey Publications & Statements: Mack's books Abduction: Human Encounters with Aliens (1994) and Passport to the Cosmos (1999) presented his clinical analysis of over 200 'experiencers' — individuals who reported alien abduction. Rather than dismissing these accounts as delusion or fabrication, Mack treated them as genuine experiences deserving rigorous phenomenological investigation, while carefully distinguishing between the reality of the experience and its ultimate ontological nature.\n\nHarvard Review: Mack's research triggered an unprecedented review by Harvard Medical School in 1994, seeking grounds to discipline or dismiss him. After 14 months, the Dean of the Medical School sent him a letter reaffirming his academic freedom — the only documented case of Harvard attempting to discipline a tenured professor for the subject matter of their research. The outcome was widely seen as a vindication.\n\nRelevance: John Mack represents the entry of first-tier academic psychiatry into serious engagement with the abduction phenomenon — and the institutional resistance that serious engagement provoked. His Ruwa, Zimbabwe investigation (1994) remains among the most rigorous multi-witness documentation of a collective contact experience.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/john_e_mack.jpg"
     },
     {
       "id": "anna_paulina_luna",

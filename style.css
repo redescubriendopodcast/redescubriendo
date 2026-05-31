@@ -816,10 +816,45 @@ button {
 }
 
 .panel-head {
+  position: relative;
   padding: 18px 20px 16px;
   border-bottom: 1px solid var(--line);
   background: rgba(126,224,255,0.04);
 }
+/* Photo header: rectangular image filling the left half + full height,
+   compacted info on the right. */
+.panel-head.has-photo {
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+}
+.panel-head-photo {
+  width: 44%;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-right: 1px solid var(--line);
+  background: rgba(126,224,255,0.06);
+  overflow: hidden;
+}
+.panel-head-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.panel-head.has-photo .panel-head-info {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px 13px;
+}
+.panel-head.has-photo .panel-head-top { margin-bottom: 7px; }
+.panel-head.has-photo .panel-name { font-size: 18px; }
+.panel-head.has-photo .panel-role,
+.panel-head.has-photo .panel-group { margin-top: 3px; }
+.panel-head.has-photo .panel-year { margin-top: 3px; }
+.panel-head.has-photo .meta-row { margin-top: 8px; }
+.panel-head.has-photo .bloc-row { margin-top: 6px; }
 .panel-head-top {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 10px;
@@ -836,11 +871,15 @@ button {
   background: rgba(0,0,0,0.3);
 }
 .close {
+  position: absolute;
+  top: 10px; right: 10px;
+  z-index: 2;
   width: 28px; height: 28px;
   font-size: 20px;
   line-height: 1;
   color: var(--ink-dim);
   border-radius: 4px;
+  background: rgba(8,16,28,0.55);
   transition: all 0.15s;
 }
 .close:hover { color: var(--cyan-bright); background: rgba(126,224,255,0.1); }
@@ -852,23 +891,6 @@ button {
   line-height: 1.2;
   color: var(--ink);
   text-wrap: balance;
-}
-.panel-name-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.panel-name-row .panel-name { flex: 1; min-width: 0; }
-.panel-face {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  border: 1px solid var(--cyan);
-  background: rgba(126,224,255,0.06);
-  box-shadow: 0 0 12px var(--cyan-glow);
 }
 .panel-role {
   margin-top: 4px;

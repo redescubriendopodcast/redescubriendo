@@ -2,6 +2,8 @@
 
 function DetailPanel({ node, data, onSelect, onClose, lang }) {
   const { t } = window.useT();
+  const [imgError, setImgError] = React.useState(false);
+  React.useEffect(() => { setImgError(false); }, [node && node.id]);
   if (!node) return null;
 
   // Read localised fields when available
@@ -64,41 +66,44 @@ function DetailPanel({ node, data, onSelect, onClose, lang }) {
   const videoWord = (n) => n === 1 ? t("panel.video") : t("panel.videos");
 
   const ytDesc = node.youtube && ((L && node.youtube.desc_en) || node.youtube.desc || "");
+  const showPhoto = node.photo && !imgError;
 
   return (
     <div className="panel">
-      <div className="panel-head">
-        <div className="panel-head-top">
-          <span className="type-pill" style={{borderColor: color, color}}>
-            <span className="dot" style={{background: color}}></span>
-            {typeLabel}
-          </span>
-          <button className="close" onClick={onClose} aria-label={t("panel.close")}>×</button>
-        </div>
-        {node.photo
-          ? <div className="panel-name-row">
-              <img className="panel-face" src={node.photo} alt={displayName}
-                   loading="lazy" onError={e => { e.target.style.display = 'none'; }} />
-              <h2 className="panel-name">{displayName}</h2>
-            </div>
-          : <h2 className="panel-name">{displayName}</h2>}
-        {displayRole && displayRole !== displayName && <div className="panel-role">{displayRole}</div>}
-        {displayGroup && displayGroup !== displayRole && <div className="panel-group">{displayGroup}</div>}
-        {node.year && <div className="panel-year">{node.year}</div>}
-        <div className="meta-row">
-          {node.blocs && node.blocs.length > 0 && (
-            <div className="bloc-row">
-              {node.blocs.map(b => {
-                const c = CANAL_LIST.find(x => x.id === b);
-                return <span key={b} className="bloc-chip" title={c?.name || ("B"+b)}>{c?.short || ("B"+b)}</span>;
-              })}
-            </div>
-          )}
-          {node.videoCount > 0 && (
-            <div className="vid-count-pill">
-              {node.videoCount} {videoWord(node.videoCount)}
-            </div>
-          )}
+      <div className={"panel-head" + (showPhoto ? " has-photo" : "")}>
+        <button className="close" onClick={onClose} aria-label={t("panel.close")}>×</button>
+        {showPhoto && (
+          <div className="panel-head-photo">
+            <img src={node.photo} alt={displayName} loading="lazy"
+                 onError={() => setImgError(true)} />
+          </div>
+        )}
+        <div className="panel-head-info">
+          <div className="panel-head-top">
+            <span className="type-pill" style={{borderColor: color, color}}>
+              <span className="dot" style={{background: color}}></span>
+              {typeLabel}
+            </span>
+          </div>
+          <h2 className="panel-name">{displayName}</h2>
+          {displayRole && displayRole !== displayName && <div className="panel-role">{displayRole}</div>}
+          {displayGroup && displayGroup !== displayRole && <div className="panel-group">{displayGroup}</div>}
+          {node.year && <div className="panel-year">{node.year}</div>}
+          <div className="meta-row">
+            {node.blocs && node.blocs.length > 0 && (
+              <div className="bloc-row">
+                {node.blocs.map(b => {
+                  const c = CANAL_LIST.find(x => x.id === b);
+                  return <span key={b} className="bloc-chip" title={c?.name || ("B"+b)}>{c?.short || ("B"+b)}</span>;
+                })}
+              </div>
+            )}
+            {node.videoCount > 0 && (
+              <div className="vid-count-pill">
+                {node.videoCount} {videoWord(node.videoCount)}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
