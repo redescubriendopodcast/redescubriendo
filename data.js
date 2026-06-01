@@ -63,7 +63,8 @@ window.RDC_DATA = {
       "name_en": "Leslie Kean",
       "role_en": "AATIP Revelation",
       "bio_en": "Professional Background: Independent investigative journalist.\n\nKey Publications & Statements: Co-author of the landmark 2017 New York Times articles. Author of the influential book UFOs: Generals, Pilots, and Government Officials Go on the Record (2010).\n\nMedia Appearances: She is a frequent guest on news programs to discuss the topic.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/leslie_kean.jpg"
     },
     {
       "id": "luis_elizondo",
@@ -757,7 +758,8 @@ window.RDC_DATA = {
           "titulo": "Teleportation Physics Study (Air Force Research Laboratory, 2004)",
           "url": "https://www.theblackvault.com/documentarchive/teleportation-physics-study-air-force-research-laboratory-august-2004-dr-eric-w-davis/"
         }
-      ]
+      ],
+      "photo": "assets/faces/eric_w_davis.PNG"
     },
     {
       "id": "david_grusch",
@@ -881,7 +883,8 @@ window.RDC_DATA = {
       "name_en": "Ralph Blumenthal",
       "role_en": "In-depth Journalism",
       "bio_en": "Professional Background: Veteran journalist at the New York Times for 45 years.\n\nKey Publications & Statements: Together with Leslie Kean and Helene Cooper, he co-authored the landmark 2017 articles and the subsequent 2020 article that revealed the existence of a secret Pentagon program and mentioned Eric Davis.\n\nMedia Appearances: His contribution from the pages of the NYT was fundamental in legitimizing the topic before a skeptical, highly educated audience.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/ralph_blumenthal.PNG"
     },
     {
       "id": "linda_moulton_howe",
@@ -924,7 +927,8 @@ window.RDC_DATA = {
       "name_en": "Carey & Schmitt",
       "role_en": "The Truth About Roswell",
       "bio_en": "Professional Background: Carey was a forensic anthropologist. Schmitt is a researcher and director of the UFO Study Center.\n\nKey Publications & Statements: They are the most important contemporary investigators of the Roswell incident. Key book: Witness to Roswell: Unmasking the 60-Year Cover-Up (2007). Their work focuses on testimonial evidence of a crash of an object of non-terrestrial origin.\n\nMedia Appearances: Frequent guests in Roswell documentaries and history programs.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/carey_schmitt.PNG"
     },
     {
       "id": "william_tompkins",
@@ -945,7 +949,8 @@ window.RDC_DATA = {
       "name_en": "William Tompkins",
       "role_en": "Selected by Extraterrestrials",
       "bio_en": "Professional Background: Design engineer who claimed to have worked for aerospace corporations such as Douglas Aircraft Company and TRW.\n\nKey Publications & Statements: In his books (Selected by Extraterrestrials), he claimed to have participated in secret U.S. Navy programs to design spacecraft based on reverse-engineered extraterrestrial technology.\n\nMedia Appearances: His claims are considered by most to be science fiction, but he has a following among proponents of the 'Secret Space War' theory.",
-      "group_en": "Historical Figures"
+      "group_en": "Historical Figures",
+      "photo": "assets/faces/william_tompkins.PNG"
     },
     {
       "id": "carl_gustav_jung",
@@ -1037,7 +1042,8 @@ window.RDC_DATA = {
       "name_en": "Diana Walsh Pasulka",
       "role_en": "",
       "bio_en": "Professional Background: Professor and Chair of Philosophy and Religion at the University of North Carolina, Wilmington. She is a religious historian specializing in contemporary religion, new religious movements, and the intersection between technology and belief. Her academic approach allows her to analyze the UFO/UAP phenomenon from a unique perspective — not as a matter of belief or skepticism, but as an emerging cultural and religious meaning system.\n\nKey Publications & Statements: Her most influential book, American Cosmic: UFOs, Religion, Technology, is the result of six years of immersive research within the UFO community. Her central thesis is that ufology has developed all the characteristics of a modern religious system: relics (alleged UFO materials), sacred texts (key witness books), rituals (artifact searches) and technology that functions as miracle. Her subsequent work, Encounters: Experiences with Non-Human Intelligences (2023), deepens the narrative of those experiences and their transformative impact on individuals, comparing them to historical religious and mystical experiences.\n\nDistinctive Academic Contributions: In 2016 she accompanied Garry Nolan and an aerospace engineer identified only as 'Tyler' to a 'donation' site of materials in New Mexico, accessing what she described as crash retrieval remains on federal land. Her visit to Vatican archives on Marian apparitions led her to conclude that the Catholic Church has a much more active internal history with the NHI phenomenon than its public position suggests.\n\nMedia Appearances: She is a frequent guest on high-audience podcasts such as The Joe Rogan Experience, where she details her surprising findings about the secret culture surrounding the phenomenon.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/diana_walsh_pasulka.PNG"
     },
     {
       "id": "dylan_borland",
@@ -1082,7 +1088,8 @@ window.RDC_DATA = {
       "name_en": "Dylan Borland",
       "role_en": "",
       "bio_en": "Professional Background: UAP whistleblower and former U.S. government contractor with firsthand knowledge of classified UAP programs. His interview with journalist Jeremy Corbell on Weaponized in 2025 provided new testimony about recent encounters and alleged ongoing programs.\n\nKey Publications & Statements: Borland came forward through the Weaponized podcast (Jeremy Corbell & George Knapp) to report direct knowledge of recent UAP incidents and the intimidation tactics used against witnesses who attempt to report or investigate them. He subsequently participated in additional interviews following Matthew Brown's Immaculate Constellation revelations.\n\nMedia Appearances: His primary public appearances are through the Weaponized podcast (episodes 1, 2, and the Matthew Brown follow-up #69).",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/dylan_borland.PNG"
     },
     {
       "id": "jeremy_corbell",
@@ -1181,7 +1188,8 @@ window.RDC_DATA = {
       "name_en": "Jeremy Corbell",
       "role_en": "",
       "bio_en": "Year of Impact Documentary: 2018 (Release of 'Bob Lazar: Area 51 & Flying Saucers').\n\nProfessional Background: Documentary filmmaker, UFO/UAP investigator and media personality. Corbell describes himself as a 'cinematic investigator' and has positioned himself as a bridge between government insiders and the general public. He is the creator and host of the Weaponized podcast, alongside former Pentagon official George Knapp, and is a frequent contributor to the radio program Coast to Coast AM.\n\nKey Publications & Statements: Corbell is known for obtaining and leaking classified or restricted visual material related to UAPs. Some of his most significant releases include the Navy videos 'GOFAST' and 'GIMBAL' (which he helped verify and popularize), the video of the 'triangular UAP' over a Navy destroyer, and images of so-called 'cube-in-sphere drones' that affected an aircraft carrier. His documentary about Bob Lazar revitalized public interest in the most controversial figure in the field. More recently, he has presented cases such as the 'Jellyfish UAPs' and interviewed whistleblowers like David Grusch.\n\nWeaponized and the Whistleblower Network: Since 2022 Corbell co-hosts with George Knapp the Weaponized podcast, which has produced over 200 episodes and has become the primary communication channel between UAP whistleblowers and the public. Corbell was the first journalist to verify and publish David Grusch's identity before his public declaration, the first to extensively interview Matthew Brown (Immaculate Constellation), Jake Barber (crash retrieval and NDE), Michael Herrera (Sumatra 2009) and Dylan Borland. His methodology involves verifying credentials before publishing.\n\nMedia Appearances: Jeremy Corbell is a constant presence in the UAP media ecosystem. He is a regular guest on news programs such as NewsNation and on high-audience podcasts like The Joe Rogan Experience.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/jeremy_corbell.PNG"
     },
     {
       "id": "bob_lazar",
@@ -1281,7 +1289,8 @@ window.RDC_DATA = {
       "name_en": "Bob Lazar",
       "role_en": "The Singular Figure of Modern UAP",
       "bio_en": "The foundational case: In 1989, physicist (or technician, according to critics) Bob Lazar publicly claimed to have worked at Site S-4 — an underground facility approximately 15 km south of Area 51 — where he allegedly studied nine gravitational propulsion craft of non-human origin under the project 'Galileo'. The interview was conducted by journalist George Knapp, who before publishing it performed independent verification: he took Lazar to the Los Alamos laboratory, where Lazar moved comfortably around the campus, was identified by former supervisors and his name was found in an old internal telephone directory.\n\nVerifiable details: Lazar described in 1989 the operational mechanics of S-4 — including a hand scanner at the entrance, hangar configuration, security procedures — which in the documentary film Bob Lazar: Area 51 & Flying Saucers (Jeremy Corbell, 2018) and in the Project Gravitar are corroborated with a level of detail that could hardly be invented. The five behavioral observables he described for the craft (instantaneous antigravity, absence of acoustic signature, inertia-free maneuvers, submersion capability, vector reversal without curve) are today the Pentagon's technical reference framework for cataloging UAPs.\n\nDisputed credentials: Lazar's academic credentials — masters from MIT and Caltech — do not appear in the records of those institutions. A supposed professor at Caltech turned out to teach at Pierce Junior College. At Los Alamos he worked as a contractor technician. Lazar explains the absence of records as part of an identity-erasure operation preceding his hiring; his critics interpret it as fabrication.\n\nElement 115: Lazar described the propulsion system using a stable isotope of element 115. The element was synthesized in 2003 (moscovium), but the known isotopes are highly unstable. However, Lazar always specified that it was a stable isotope — one that science has not yet synthesized. Nuclear physics does not rule out the existence of stable isotopes of superheavy elements in the so-called 'island of stability' theoretically predicted. The prediction remains the only one of Lazar's claims without definitive verification or refutation.\n\nEvidence level: ★ Singular case — historical foundational figure with partially verified details and unconfirmed academic credentials.",
-      "group_en": "Historical Figures"
+      "group_en": "Historical Figures",
+      "photo": "assets/faces/bob_lazar.PNG"
     },
     {
       "id": "bob_salas",
@@ -1341,7 +1350,8 @@ window.RDC_DATA = {
       "name_en": "Bob Salas",
       "role_en": "",
       "bio_en": "Year of Incident and Key Public Testimony: 1967 (Malmstrom Incident); 2010 (National Press Club press conference).\n\nProfessional Background: Former U.S. Air Force Captain who served as a Minuteman ICBM launch officer at Malmstrom Air Force Base, Montana. His job involved being buried in a concrete launch control center (LCC) with the ability to activate nuclear missiles under Presidential orders.\n\nKey Publications & Statements: Salas is the primary witness of the 1967 Malmstrom Incident. He recounts that while on duty at the 'Oscar-Flight' launch facility, his surface security officer radioed a report of a glowing, pulsating, reddish-orange object hovering over the main gate. Minutes later, one by one, his missiles began going into a 'No Go' (non-operational) status, effectively being shut down remotely. A nearly identical incident had occurred days earlier at 'Echo-Flight'. Salas has declared under oath that he was ordered never to speak of the event. He is co-author of the book Faded Giant: The 1967 Malmstrom UFO Incident. His testimony is one of the strongest pieces of evidence directly linking UAPs to interference with the strategic nuclear arsenal.\n\nEcho Flight, Oscar Flight and 2024 Testimony: In 2024, Salas testified before the House Oversight Subcommittee — his first sworn declaration — alongside Congresswoman Nancy Mace. He revealed having been under NDAs for decades prohibiting discussion of the March 24, 1967 incident at Malmstrom. He estimates there are at least 6-7 missile commanders with similar experiences at U.S. nuclear bases, most still under NDAs. The UAP × nuclear missiles pattern repeats in France, Ukraine (USSR), and the United Kingdom.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/bob_salas.PNG"
     },
     {
       "id": "david_fravor",
@@ -1380,7 +1390,8 @@ window.RDC_DATA = {
       "name_en": "David Fravor",
       "role_en": "",
       "bio_en": "Year of Incident and Public Revelation: 2004 (USS Nimitz Incident); 2017 (Public interview in NYT and 60 Minutes).\n\nProfessional Background: Retired U.S. Navy Commander with a distinguished 18-year career. Combat pilot with thousands of hours in the F/A-18F Super Hornet and Commander of Fighter Squadron 41 ('Black Aces'). His training, experience and rank make him one of the most credible and difficult-to-dismiss eyewitnesses in the history of the phenomenon.\n\nKey Publications & Statements: Fravor is the primary witness of the now-famous 2004 USS Nimitz 'Tic Tac' Incident. While conducting routine training off the coast of San Diego, he was dispatched to investigate an unknown object detected by the USS Princeton cruiser's radar. Upon arrival, he and his wingman observed a white object approximately 40 feet long, with the shape of a 'Tic Tac' candy, no wings, no control surfaces, no windows and no visible propulsion system. The object moved erratically, stopping, instantly accelerating, and descending from 28,000 feet to 50 feet above the ocean in less than a second. His detailed and coherent testimony about the object's capabilities, which defy known laws of physics, is considered the 'gold standard' of UAP encounters.\n\nMedia Appearances: His 2017 60 Minutes interview was a crucial moment for the credibility of the phenomenon. His extensive appearance on The Joe Rogan Experience (#1361) is one of the most complete narratives of the incident.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/david_fravor.PNG"
     },
     {
       "id": "ryan_graves",
@@ -1560,7 +1571,8 @@ window.RDC_DATA = {
       "name_en": "Joe McMoneagle",
       "role_en": "",
       "bio_en": "Professional Background: Former U.S. Army Sergeant Major and one of the most prominent figures of the government-controlled remote viewing program. He served in Vietnam and was decorated with the Legion of Merit. In 1978, he was recruited for the Army's remote viewing unit, which would later become the infamous Project Stargate, a joint CIA/DIA program investigating the potential of extrasensory perception for intelligence applications. McMoneagle was designated as the project's 'Remote Viewer Number 1'. After his military retirement, he continued his work as a civilian remote viewer for various government agencies and private corporations.\n\nKey Publications & Statements: McMoneagle is the author of several books detailing his experiences and methodology, including Mind Trek: Exploring Consciousness, Time, and Space Through Remote Viewing (1993) and The Stargate Chronicles: Memoirs of a Psychic Spy (2002). In the context of the UAP phenomenon, his most relevant work was a 1993 remote viewing session in which he attempted to perceive the origin and nature of UFOs. According to his account, he perceived that UFOs were not extraterrestrial craft in the conventional sense, but biological probes or 'place markers' created by a non-human intelligence existing on a different timeline. He described these entities as 'the Ancients', beings who had evolved millions of years before humanity and used these probes to monitor the planet.\n\nMedia Appearances: McMoneagle has appeared in numerous paranormal documentaries and television programs, including 60 Minutes and The Unexplained.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/joe_mcmoneagle.PNG"
     },
     {
       "id": "sgt_lyn_buchanan",
@@ -1581,7 +1593,8 @@ window.RDC_DATA = {
       "name_en": "Sgt. Lyn Buchanan",
       "role_en": "",
       "bio_en": "Professional Background: Former U.S. Army Sergeant Major and core member of the government-controlled remote viewing program, Project Stargate. With initial training in linguistics and intelligence, Buchanan was recruited for the unit in 1984 and quickly distinguished himself both for his skills as a viewer and his ability to teach the discipline to others. He became the program's lead instructor, responsible for training all new military remote viewers, including Joe McMoneagle. After his military retirement, he founded Problems>Solutions>Innovations (PSI) and Controlled Remote Viewing (CRV) Services, through which he continued teaching and applying the remote viewing methodology.\n\nKey Publications & Statements: Buchanan is the author of The Seventh Sense: The Secrets of Remote Viewing as Told by a 'Psychic Spy' for the U.S. Military (2003). In the context of the UAP phenomenon, Buchanan has openly stated that one of the applications of remote viewing within the program was to investigate unidentified flying objects. He claimed that he and his colleagues were used to 'visit' and describe alleged extraterrestrial craft, their interiors and, on occasion, their occupants. Buchanan always emphasized that remote viewing is a trainable skill and a disciplined process, not a psychic gift, and warned about the disinformation and sensationalism surrounding the topic.\n\nMedia Appearances: Lyn Buchanan has appeared in several documentaries and TV series exploring Project Stargate and psychic phenomena, such as The Real X-Men and Third Eye Spies.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/sgt_lyn_buchanan.PNG"
     },
     {
       "id": "richard_dolan",
@@ -1817,7 +1830,8 @@ window.RDC_DATA = {
       "name_en": "Skip Atwater",
       "role_en": "",
       "bio_en": "Professional Background: Former U.S. Army officer and a fundamental figure in the government-controlled remote viewing program, Project Stargate. Atwater served as the unit's Training Director and later became its Commanding Officer. His focus centered on refining remote viewing techniques and exploring the limits of human consciousness for intelligence applications. After his military service, he continued his work at the Monroe Institute, a consciousness research center, where he served as President and Research Director. The institute is famous for developing sound technologies (Hemi-Sync) to induce altered states of consciousness — a tool also used in training remote viewers.\n\nKey Publications & Statements: Atwater is the author of Captain of My Ship, Master of My Soul (2001). In the context of the UAP phenomenon, Atwater has confirmed that Project Stargate was used to investigate UFOs. He has described sessions in which remote viewers, including himself, attempted to perceive the origin, nature and purpose of UFOs.\n\nMedia Appearances: Skip Atwater has appeared in several documentaries and TV series exploring Project Stargate and psychic phenomena, such as The Real X-Men and Third Eye Spies.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/skip_atwater.PNG"
     },
     {
       "id": "prof_garry_nolan",
@@ -1912,7 +1926,8 @@ window.RDC_DATA = {
           "titulo": "Improved instrumental techniques, including isotopic analysis, applicable to the characterization of unusual materials (Progress in Aerospace Sciences, 2022)",
           "url": "https://doi.org/10.1016/j.paerosci.2021.100788"
         }
-      ]
+      ],
+      "photo": "assets/faces/prof_garry_nolan.PNG"
     },
     {
       "id": "timothy_tyler_d_taylor",
@@ -1951,7 +1966,8 @@ window.RDC_DATA = {
       "name_en": "Timothy \"Tyler D\" Taylor",
       "role_en": "",
       "bio_en": "Year of Public Revelation through an Academic: 2019 (Identified as 'Tyler D' in Diana Pasulka's book American Cosmic).\n\nProfessional Background: According to Professor Diana Pasulka, who interviewed him extensively using the pseudonym 'Tyler D' for American Cosmic, Taylor is a scientist and engineer who has worked for Department of Defense and NASA contractor entities. His work appears to center on cutting-edge and extremely sensitive technologies. Pasulka describes him as a figure operating at the intersection of official science and unacknowledged special access programs (USAPs). The description strongly suggests an affiliation with what is often called in the UAP community a 'Secret Space Program' or classified space programs operating independently of public civilian entities like NASA.\n\nKey Publications & Statements: Timothy Taylor does not make direct public statements or publish open scientific articles about his most sensitive work. His testimony and perspectives come to us filtered through Diana Pasulka's ethnographic work. According to Pasulka, 'Tyler D' is fundamental to understanding how a new generation of scientists and engineers within the military-industrial complex is approaching the UAP phenomenon — representing the idea that the phenomenon is real, is being seriously studied with significant resources, and is driving a technological revolution in secret.\n\nMedia Appearances: Timothy Taylor does not make public media appearances. His existence and role are known only through the books and interviews of Diana Pasulka.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/timothy_tyler_d_taylor.PNG"
     },
     {
       "id": "harald_malmgren",
@@ -2083,7 +2099,8 @@ window.RDC_DATA = {
           "titulo": "Electrokinetic Apparatus (US3187206A, 1965)",
           "url": "https://patents.google.com/patent/US3187206A/en"
         }
-      ]
+      ],
+      "photo": "assets/faces/thomas_townsend_brown.PNG"
     },
     {
       "id": "ross_coulthart",
@@ -2327,7 +2344,8 @@ window.RDC_DATA = {
       "name_en": "Jay Stratton",
       "role_en": "",
       "bio_en": "Professional Background: Naval intelligence expert with a long and distinguished career. He served as Director of Intelligence at Naval Information Warfare Systems Command (NAVWAR). His most relevant role for the UAP phenomenon was as the founding interim director of the Department of Defense's UAP Synchronization Management Group (UAP Task Force - UAPTF), preceding his successor Sean Kirkpatrick. Stratton was fundamental in the creation and launch of this official body, establishing initial protocols for the collection and analysis of data on anomalous objects. He also previously led the Naval Intelligence Office (ONI)'s Unidentified Aerial Phenomena Task Force, a less well-known but critical effort that paved the way for the UAPTF.\n\nKey Publications & Statements: In his 2021 interview with John Greenewald Jr. of 'The Black Vault', Stratton provided unprecedented insider views of the government process on UAPs. He confirmed that the famous 'GOFAST' video was captured by an F/A-18 Super Hornet aircraft in 2015 off the U.S. East Coast. He detailed how his team at the ONI initiated a serious investigation after pilots reported encounters with UAPs they described as 'cubes inside spheres'. Stratton emphasized that these objects represented a significant flight safety risk and an 'intelligence gap' that it was his duty to fill. His testimony is crucial because it demonstrates that the Navy's concern about UAPs was genuine, systematic, and dates back years before the topic became public.\n\nMedia Appearances: Jay Stratton's interview at 'The Black Vault' is his most significant public appearance and a foundational piece of evidence. Unlike other officials, he spoke openly about operational details and the timeline of the Navy's internal investigation.",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/jay_stratton.PNG"
     },
     {
       "id": "marco_rubio",
@@ -2428,7 +2446,8 @@ window.RDC_DATA = {
       "name_en": "Jim Semivan",
       "role_en": "",
       "bio_en": "Professional Background: Former senior officer of the Central Intelligence Agency (CIA) with a 25-year career in the clandestine service (Directorate of Operations). Semivan specialized in covert foreign operations, asset handling and counterintelligence. After his CIA retirement, he became co-founder and board member of To The Stars Academy of Arts & Science (TTSA), the vehicle that helped Luis Elizondo and others bring the UAP phenomenon to the mainstream.\n\nKey Publications & Statements: Semivan is co-author of the book Truth (2023) with his wife. In it and in his public statements, he provides a unique perspective that fuses his intelligence experience with a deep personal acceptance of the reality of the phenomenon. He not only confirms that the UAP phenomenon is real and has been of intelligence community interest, but goes further by affirming that it has a fundamental 'paranormal' or 'interdimensional' component. Semivan has recounted personal and family experiences with poltergeist phenomena, apparitions and non-human presences, suggesting that the intelligence behind UAPs may interact with human consciousness and the domestic environment in ways that transcend the merely physical — a position similar to that of Jacques Vallée.\n\nMedia Appearances: Jim Semivan has been a less high-profile figure than other TTSA members, but his appearances carry high impact due to his credentials. He has given in-depth interviews for documentaries and podcasts such as Weaponized and Micah Hanks Program.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/jim_semivan.PNG"
     },
     {
       "id": "sen_kirsten_gillibrand",
@@ -2557,7 +2576,8 @@ window.RDC_DATA = {
       "name_en": "Brett Feddersen",
       "role_en": "",
       "bio_en": "Professional Background: Imagery Intelligence (IMINT) analyst with more than a decade of experience. He served as Deputy Chief of the Unidentified Aerial Phenomena Group at the Office of the Director of National Intelligence (ODNI). This group was responsible for producing the landmark unclassified report to Congress titled 'Preliminary Assessment: Unidentified Aerial Phenomena' in June 2021, as well as the 2022 update.\n\nKey Publications & Statements: In a 2022 interview with NewsNation journalist Brian Entin, Feddersen described the enormous challenge of his task: dealing with fragmented data, outdated reporting systems and persistent stigma. He confirmed that of the 144 cases reviewed in the 2021 report, only one could be conclusively explained (a deflated balloon). He expressed personal frustration at the lack of a robust, standardized data collection system and the 'culture of secrecy' within agencies that delayed information sharing. His testimony provided unprecedented insight into the real bureaucratic efforts and limitations of the government in understanding the phenomenon.\n\nMedia Appearances: Brett Feddersen's exclusive interview with Brian Entin on NewsNation is his only significant public appearance. This interview was crucial because it showed for the first time the face and heard the voice of one of the government analysts directly responsible for evaluating the UAP phenomenon.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/brett_feddersen.PNG"
     },
     {
       "id": "andre_carson",
@@ -2709,7 +2729,8 @@ window.RDC_DATA = {
       "name_en": "John Blitch",
       "role_en": "",
       "bio_en": "Professional Background: Former U.S. Army Colonel and former Defense Advanced Research Projects Agency (DARPA) official, the high-tech research and development arm of the Department of Defense. At DARPA, Blitch directed pioneering programs in autonomous robotics for search and rescue in collapsed urban environments. Before that, he had a long career in Army Special Forces, including the Green Berets, where he participated in high-risk operations and developed expertise in cutting-edge tactical technologies.\n\nKey Publications & Statements: Blitch came to prominence in the UAP community after a 2023 interview with journalist Ross Coulthart. He revealed that during his time at DARPA in the early 2000s, he was approached by an anonymous intelligence community contractor who offered him access to extremely advanced technology, of non-human origin, for study and reverse engineering. Blitch claimed to have declined the offer because he felt he lacked the appropriate expertise and was suspicious of the contact's motivations. His testimony is significant because it comes from a DARPA official with verifiable credentials, who claims that the existence of such programs and technology is not only real, but an 'open secret' among certain elite circles within the military-industrial complex.\n\nMedia Appearances: John Blitch's interview with Ross Coulthart is his main public appearance on the topic, and had high impact due to its provenance.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/john_blitch.PNG"
     },
     {
       "id": "jake_barber",
@@ -2807,7 +2828,8 @@ window.RDC_DATA = {
       "name_en": "Jake Barber",
       "role_en": "",
       "bio_en": "Professional Background: Former U.S. Army Special Forces helicopter pilot and avionics systems technician. He served in the 160th Special Operations Aviation Regiment (SOAR), known as the 'Night Stalkers', an elite unit tasked with conducting covert and high-risk aviation missions for Special Forces. He subsequently worked as a civilian contractor and avionics technician for the U.S. Air Force's Special Systems Program, involved in the maintenance and testing of classified aircraft technologies, including advanced sensor systems such as the AN/ASQ-236 'Dragon Pod'.\n\nKey Publications & Statements: In his January 2025 interview with Ross Coulthart on NewsNation, Barber claimed under oath that while working as a contractor around 2012, he had access to classified radar data from the 'Dragon Pod' that captured a massive cylindrical object, approximately the size of a football field, flying at hypersonic speeds. He said the object performed impossible maneuvers, including stopping instantly from Mach 2 and then accelerating in a perpendicular direction. He declared that his superiors ordered him to erase all data related to the incident and warned him to forget what he had seen. Barber testified that he was subsequently investigated by the Air Force Office of Special Investigations (AFOSI) and that his home was raided. He stated he was willing '100%' to testify under oath before Congress.\n\nMedia Appearances: Jake Barber's exclusive interview on NewsNation's Reality Check is his main public appearance and has accumulated millions of views.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/jake_barber.PNG"
     },
     {
       "id": "karl_nell",
@@ -2891,7 +2913,8 @@ window.RDC_DATA = {
       "name_en": "Karl Nell",
       "role_en": "",
       "bio_en": "Professional Background: Former U.S. Army Lieutenant Colonel with a distinguished career including service as an Aviation Support Battalion Commander. After his military retirement, Nell developed a successful executive career in the aerospace and defense sector, holding senior positions at companies such as Bell Flight (Textron) and L3Harris Technologies, specializing in advanced concepts and business development for next-generation systems.\n\nKey Publications & Statements: Karl Nell rose to prominence not through direct public statements, but by being identified by journalist Leslie Kean as one of the key first-hand sources supporting David Grusch's claims before the Intelligence Community Inspector General (ICIG). According to reports, Nell testified under oath that the recovery and reverse-engineering program of non-human origin vehicles described by Grusch was real and that he had personal knowledge of its details. In a rare address at the 'SOL' conference in 2023, Nell called the UAP phenomenon the 'greatest secret in history' and advocated for 'controlled disclosure' managed by an international consortium.\n\nThe UAP Campaign Plan: Colonel Nell is arguably the most explicit figure in articulating a disclosure roadmap. As David Grusch's direct supervisor at the NGA (2021), he publicly validated Grusch's credibility as 'beyond any reproach'. At the Sol Foundation 2024 symposium he presented a '5-phase UAP Campaign Plan' with a horizon through October 2030, distinguishing between 'controlled disclosure' (ordered process with democratic oversight) and 'catastrophic disclosure' (mass leak or adversarial action that could create panic or institutional chaos). He technically distinguishes between UAP (Unidentified Aerial Phenomenon) and TNO (Temporarily Non-attributed Object), arguing that most sightings are TNOs, but those with impossible characteristics are genuine UAPs.\n\nMedia Appearances: Karl Nell avoids extensive public interviews. His testimony was initially reported by Leslie Kean in The Debrief. His speech at the 'SOL' conference was covered by specialist media.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/karl_nell.PNG"
     },
     {
       "id": "peter_levenda",
@@ -2929,7 +2952,8 @@ window.RDC_DATA = {
       "name_en": "Peter Levenda",
       "role_en": "",
       "bio_en": "Professional Background: Author and researcher specializing in occult history, politics, comparative religions and anomalous phenomena. He is known for his monumental Sinister Forces trilogy, which traces a 'hidden history' of the United States. Levenda has an academic background in Eastern religions and has conducted extensive fieldwork around the world investigating cults, magic and esoteric traditions.\n\nKey Publications & Statements: Levenda is co-author, together with Jacques Vallée, of the foundational book Trinity: The Best-Kept Secret (2021). In this work, they investigate an alleged UFO incident with artifact recovery that supposedly occurred in the New Mexico desert in August 1945, two years before the famous Roswell incident. Through meticulous investigation of declassified military documents, witness testimonies and historical analysis, they build a compelling case that the U.S. government recovered a crashed craft near the site of the first atomic test, the 'Trinity Test'. Their thesis is that this event, not Roswell, was the true starting point of the modern cover-up and established an early and deep link between the phenomenon, the atomic project and intelligence operations.\n\nMedia Appearances: Peter Levenda has been interviewed on numerous podcasts and documentaries exploring the deeper and more conspiratorial aspects of the UAP phenomenon. His work has redefined the accepted timeline of the cover-up.",
-      "group_en": "Key Journalists"
+      "group_en": "Key Journalists",
+      "photo": "assets/faces/peter_levenda.PNG"
     },
     {
       "id": "angela_ford",
@@ -2968,7 +2992,8 @@ window.RDC_DATA = {
       "name_en": "Angela Ford",
       "role_en": "",
       "bio_en": "Professional Background: Former military remote viewer (Psychic) for the U.S. Army's STARGATE Program. She served at Fort Meade, Maryland, from the late 1980s to the early 1990s. Her recruitment was unconventional: following a near-death experience in her teens, she began having spontaneous psychic capabilities and intense premonitory dreams, which eventually led military personnel to locate and recruit her directly for the secret program.\n\nKey Publications & Statements (2025): In her 2025 interview, Ford offered unprecedented operational details and confirmed the direct link between STARGATE and UFO/UAP investigation. She confirmed explicitly that a significant portion of her missions in STARGATE were dedicated to UFO/UAP targets — assigned coordinates to 'visit' and describe crashed or intact craft, their interiors, technology and, critically, their occupants. She described a variety of beings, including classic 'Greys', but also interdimensional entities she perceived more as 'consciousnesses' or 'energy packets' than conventional biological life forms. She also revealed that a faction within or affiliated with these programs (referred to as '3I' or 'Intelligence/Interdimensional Interface Initiative') was deeply interested in what she called 'Soul Work', using remote viewing and channeling techniques to interact with these non-human intelligences (NHI) with the stated goal of accelerating human consciousness evolution.\n\nMedia Appearances: Her 2025 interview on the 'DEBRIEFED — An AREA52 Podcast' is currently her most complete and revealing public testimony.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/angela_ford.PNG"
     },
     {
       "id": "dr_robert_irving_sarbacher",
@@ -2999,7 +3024,8 @@ window.RDC_DATA = {
       "name_en": "Dr. Robert Irving Sarbacher",
       "role_en": "",
       "bio_en": "Year of Key Testimony: 1950 (initial statement to Canadian engineer Wilbert Smith) and 1983 (signed letter to researcher William Steinman confirming the substance of his testimony).\n\nProfessional Background: American physicist (1907-1986), former student of Albert Einstein at the Institute for Advanced Study, Dean of the Graduate School of Georgia Institute of Technology and consultant to the Research and Development Board (RDB) of the Department of Defense under the Truman administration in the late 1940s and early 1950s. His access to classified programs from the immediate post-World War II era was extensive and verifiable through his RDB card.\n\nKey Statements: In 1950, Sarbacher confirmed to Canadian engineer Wilbert B. Smith — director of the Canadian government's Project Magnet — that UFOs were 'the most highly classified subject in the U.S. Government, rating even higher than the H-bomb', and that a small group led by Dr. Vannevar Bush was studying them in secret. Smith documented that conversation in his famous 'Top Secret Memorandum to the Canadian Government' (November 21, 1950) — one of the oldest documents in the modern disclosure corpus. In a signed 1983 letter to researcher William Steinman, Sarbacher confirmed that recovered materials were 'extremely light and very hard' and that recovered beings appeared 'to be constructed like insects' — with low mass to withstand the brutal accelerations of their craft.\n\nRelevance to UAP: Sarbacher is the first high-ranking witness to confirm in life and in writing the existence of a government group dedicated to the UAP phenomenon. His testimony is the documentary link connecting the Manhattan Project apparatus (Bush, Walker, Forrestal) with the subsequently described MJ-12 group.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/dr_robert_irving_sarbacher.PNG"
     },
     {
       "id": "arthur_stansel_jr_fritz_werner",
@@ -3020,7 +3046,8 @@ window.RDC_DATA = {
       "name_en": "Arthur Stansel Jr. (\"Fritz Werner\")",
       "role_en": "",
       "bio_en": "Year of Key Testimony: May 1953 (documented presence at the Kingman crash site); 1970s-1990s (gradual revelations under the pseudonym 'Fritz Werner'); before his death he signed a statement with his real name.\n\nProfessional Background: American aerospace engineer with security clearances from the Air Force Materiel Command (AMC) at Wright-Patterson AFB. He worked documentably under Dr. Eric Wang, director of the Special Studies Department repeatedly linked by witnesses to disc reverse-engineering programs. His immediate supervisor during the Kingman incident was Dr. Ed Doll, director of Project Upshot-Knothole — the series of 11 nuclear detonations in Nevada in 1953.\n\nKey Statements: In May 1953, Stansel was transported by bus with blacked-out windows along with 15 AEC specialists to the Kingman, Arizona site. There he observed an oval craft approximately 9 meters in diameter, in brushed aluminum, with no visible damage despite being 50 cm sunk in sand after impacting at approximately 1,200 mph. In a guarded tent he described a humanoid approximately 1.2 meters tall, with dark brown skin, large eyes, small mouth and a silvery metallic suit — a description consistent, according to UAP Gerb, with at least three additional independent witnesses. Stansel signed a non-disclosure agreement and did not speak of the event for decades; he revealed the details first under the pseudonym 'Fritz Werner' to researcher Raymond Fowler, and before his death signed a public statement with his real name.\n\nRelevance: Stansel's testimony is the strongest case in the corpus of 'minor Roswells' precisely because it combines verifiable identity, documented institutional context (AMC under Wang, Doll, Upshot-Knothole) and internal consistency over decades.",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/arthur_stansel_jr_fritz_werner.PNG"
     },
     {
       "id": "coronel_philip_j_corso",
@@ -3136,7 +3163,8 @@ window.RDC_DATA = {
       "name_en": "Michael Herrera",
       "role_en": "",
       "bio_en": "Year of Key Testimony: 2009 (incident in Sumatra, Indonesia); 2023-2025 (public testimonies before Senate, House and AARO/Arrow).\n\nProfessional Background: Michael Herrera is a veteran of the U.S. Marine Corps Marine Expeditionary Unit (MEU), with operational deployment in the Pacific during Operation Sahayog Kala 2009: a humanitarian disaster response mission following the West Sumatra earthquake in Indonesia. His unit was assigned to evacuation and reconnaissance operations from the USS Denver (LPD-9). Herrera has presented verifiable military documentation of his service and presence in the operation from September 30 to October 2, 2009.\n\nKey Statements: On patrol on a hill in the interior of Sumatra, Herrera and his team of four Marines spotted a large multi-sided UAP craft, color-shifting in vegetation, while being loaded with supplies by unidentified contractor operators wearing ballistic helmets but no recognizable national uniforms. When the team was detected, the operators threatened them at gunpoint and forced them to withdraw. Herrera filed a formal complaint with Arrow/AARO under director Sean Kirkpatrick, who — according to Herrera — only asked three identical questions about the operators and never followed up. The Arrow historical report deliberately misrepresented his testimony. He was subsequently contacted by a CIA NOC (Non-Official Cover) through Dr. Steven Greer, who flew him to a secret meeting to deliver additional documentation about the identity of the operators.\n\nRelevance to UAP: Herrera's testimony is one of the most relevant for understanding the role of unbranded private contractors in UAP logistics operations outside U.S. territory. His case is also a documented example of the pattern of witness testimony manipulation by AARO under Kirkpatrick — a pattern confirmed by Matthew Brown, Dylan Borland and David Grusch.",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/michael_herrera.PNG"
     },
     {
       "id": "beatriz_villarroel",
@@ -3207,7 +3235,8 @@ window.RDC_DATA = {
           "titulo": "Transients in the Palomar Observatory Sky Survey (POSS-I) may be associated with nuclear testing and reports of UAP (Scientific Reports, 2025)",
           "url": "https://www.nature.com/articles/s41598-025-21620-3"
         }
-      ]
+      ],
+      "photo": "assets/faces/beatriz_villarroel.PNG"
     },
     {
       "id": "matthew_brown",
@@ -3297,7 +3326,8 @@ window.RDC_DATA = {
       "name_en": "Matthew Brown",
       "role_en": "The Whistleblower of the Program Under the White House",
       "bio_en": "Who he is: Matthew Brown is a former U.S. national security official who served in the Office of the Secretary of Defense (OSD), the Under Secretary of Defense for Intelligence and Security, and the State Department, with TS/SCI clearances and experience in weapons of mass destruction intelligence.\n\nWhat he discovered: In 2024, while performing routine organization of mislabeled archives on a shared server across OSD offices, Brown accidentally discovered an unacknowledged Special Access Program (USAP) called 'Immaculate Constellation', which systematically collects and segregates UAP/NHI data from multiple intelligence platforms using AI. Brown documented the program in a seven-body-of-evidence report and escalated it to his superiors. The response was an order to delete the files.\n\nPublic disclosure: Brown came forward through journalist Michael Shellenberger (Public) and through extensive interviews with Jeremy Corbell and George Knapp on Weaponized. His most institutionally disturbing claim: Immaculate Constellation operates under the NSC / White House, not under the DoD, which would place it outside the Pentagon's budget jurisdiction and much of Congress's. The Department of Defense confirmed in November 2024 that it was investigating his allegations.\n\nEvidence level: ✅ 5 Confirmed — Pentagon confirmed investigating his allegations (November 2024).",
-      "group_en": "Whistleblowers & Witnesses"
+      "group_en": "Whistleblowers & Witnesses",
+      "photo": "assets/faces/matthew_brown.PNG"
     },
     {
       "id": "james_lacatski",
@@ -3372,7 +3402,8 @@ window.RDC_DATA = {
       "name_en": "James Lacatski",
       "role_en": "The 'Doctor of Disclosure' Who Directed the Real UAP Program",
       "bio_en": "Who he is: Dr. James Lacatski is a former intelligence official and rocket scientist from the Defense Intelligence Agency (DIA). He is the creator and director of the Advanced Aerospace Weapon System Applications Program (AAWSAP), the largest-budgeted recognized modern government UAP program: $22 million, active between 2008 and 2012. The name 'AATIP' was actually an alias used for security reasons — AAWSAP is the real program.\n\nWhat he did: Under Lacatski's direction, the program investigated the Tic Tac incident (USS Nimitz), multiple UAP intrusions at U.S. military bases, and centralized scientific research on Skinwalker Ranch for years. In 2021 he published together with Colm Kelleher and George Knapp the book Skinwalkers at the Pentagon: An Insiders' Account of the Secret Government UFO Program, considered by investigative journalism to be the first book written from inside by a former federal UAP program director. In 2024 he published Future Visions with the same co-authors.\n\nWhy it matters: Lacatski represents the first public confirmation by a former federal UAP program director that the United States possesses craft of unknown origin — and of having personally entered one of them. His technical-scientific profile (PhD in Engineering) makes the testimony very difficult to dismiss as sensationalism.\n\nEvidence level: ✅ 5 Confirmed — book published 2021, DIA profile verifiable; claims about recovered craft: 🟢 4 Partially verifiable.",
-      "group_en": "Scientists & Researchers"
+      "group_en": "Scientists & Researchers",
+      "photo": "assets/faces/james_lacatski.PNG"
     },
     {
       "id": "kevin_knuth",
@@ -3417,7 +3448,8 @@ window.RDC_DATA = {
           "titulo": "Estimating Flight Characteristics of Anomalous Unidentified Aerial Vehicles (Entropy, 2019)",
           "url": "https://doi.org/10.3390/e21100939"
         }
-      ]
+      ],
+      "photo": "assets/faces/kevin_knuth.PNG"
     },
     {
       "id": "almirante_thomas_wilson",
@@ -3780,7 +3812,8 @@ window.RDC_DATA = {
       "name_en": "Nick Pope",
       "role_en": "The Real-Life 'X-Files Agent' of the British MoD",
       "bio_en": "Professional Background: Former British civil servant who worked for the UK Ministry of Defence (MoD) from 1985 to 2006. From 1991 to 1994, he ran the MoD's UFO project — the office responsible for investigating and responding to UFO reports from British military personnel and the public.\n\nKey Publications & Statements: Pope is the author of several books including Open Skies, Closed Minds (1996), which details his government UFO investigations, and The Uninvited (1997). During his tenure at the MoD, Pope investigated hundreds of UFO reports and became personally convinced that some represented genuinely unexplained phenomena that warranted serious official investigation. After leaving the MoD, he became a prominent media commentator on UFOs and UAPs.\n\nRelevance: Nick Pope is significant as the most prominent former Western government official to publicly state, while still in a credible position, that some UFO cases are genuine and unexplained. His MoD background gives him institutional credibility in the UK context equivalent to what Elizondo provides in the U.S. context. He is particularly associated with the Rendlesham Forest incident, for which he has been a consistent advocate of serious investigation.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/nick_pope.PNG"
     },
     {
       "id": "russell_targ",
@@ -3919,7 +3952,8 @@ window.RDC_DATA = {
       "name_en": "Tim Phillips",
       "role_en": "Kirkpatrick's Successor as AARO Director",
       "bio_en": "Tim Phillips is a UAP researcher and investigator known for his work documenting cases in the United Kingdom and his analysis of historical British UAP incidents. He has contributed to multiple UAP documentaries and research publications, focusing particularly on military encounter cases from the UK's Cold War-era classified files.",
-      "group_en": "Military Figures"
+      "group_en": "Military Figures",
+      "photo": "assets/faces/tim_phillips.PNG"
     },
     {
       "id": "michael_shellenberger",
