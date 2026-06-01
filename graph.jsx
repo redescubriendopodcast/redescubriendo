@@ -132,13 +132,21 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       };
     };
 
+    const NV = visibleNodes.length;
     st.nodes = visibleNodes.map((n, i) => {
       const home = computeHome(n, i);
+      // Precompute a unit Fibonacci-sphere direction ONCE (for the chat orb), so
+      // the render loop never recomputes trig per node per frame.
+      const phi = Math.acos(1 - 2 * (i + 0.5) / NV);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * (i + 0.5);
+      const ux = Math.sin(phi) * Math.cos(theta);
+      const uy = Math.cos(phi);
+      const uz = Math.sin(phi) * Math.sin(theta);
       // The phenomenon stays anchored at the galactic center
       if (n.type === "phenomenon") {
         return {
           ...n,
-          hx: 0, hy: 0, hz: 0, homeR: 0, homeA: 0,
+          hx: 0, hy: 0, hz: 0, homeR: 0, homeA: 0, ux: 0, uy: 0, uz: 0,
           x: 0, y: 0, z: 0,
           vx: 0, vy: 0, vz: 0,
           deg: 0, px: 0, py: 0, scale: 1, depth: 0
@@ -150,6 +158,7 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         homeR: Math.hypot(home.hx, home.hz),
         homeA: Math.atan2(home.hz, home.hx),
         homeFrac: home.frac,
+        ux, uy, uz,
         // Start collapsed at the galactic centre; the launch flings them out.
         x: 0, y: 0, z: 0,
         vx: 0, vy: 0, vz: 0,
@@ -249,16 +258,17 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       const shouldAutoRotate = !selectedId && !isInteracting && idleMs > 1500 && !chatActive;
       if (shouldAutoRotate) {
         st.galaxyRot += 0.000045 * dt;
+      } else if (chatActive) {
+        st.galaxyRot += 0.00008 * dt;   // gentle spin of the orb (free via projection)
       }
 
-      // Convergence ramp: 0 = normal galaxy, 1 = converged into Jarvis orb
+      // Convergence ramp: 0 = normal galaxy, 1 = converged into the chat orb.
+      // Time-based (exponential toward target) so it feels identical and fluid
+      // on desktop, tablet and phone — independent of frame rate.
       const targetConv = chatActive ? 1 : 0;
-      st.convergence += (targetConv - st.convergence) * 0.05;
-      if (st.chatMode === "thinking") {
-        st.pulse += 0.003 * dt;
-      } else {
-        st.pulse += 0.0008 * dt;
-      }
+      st.convergence += (targetConv - st.convergence) * (1 - Math.exp(-dt / 140));
+      if (st.convergence < 0.0005) st.convergence = 0;
+      st.pulse += (st.chatMode === "thinking" ? 0.003 : 0.0008) * dt;
 
       // === LAYOUT: deterministic spiral intro + gentle home settle ===
       // No force simulation → no vibration. Positions are driven by wall-clock
@@ -306,44 +316,28 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         }
       }
 
-      // project all nodes (blend between galaxy position and Jarvis sphere)
+      // Project all nodes, blending the galaxy position with the chat orb (a
+      // thin shell around the central black hole). The orb direction per node is
+      // precomputed (unit Fibonacci sphere); here it's just a cheap lerp.
       const conv = st.convergence;
       const N = st.nodes.length;
       const minDim = Math.min(st.size.w, st.size.h);
-      // Sphere radius sized so it sits inside the galaxy disk comfortably
-      const baseR = minDim * 0.22;
-      // Subtle organic pulse when thinking (breathing effect for the sphere)
-      const pulseR = st.chatMode === "thinking"
-        ? baseR * (1 + 0.04 * Math.sin(st.pulse) + 0.02 * Math.sin(st.pulse * 2.3))
-        : baseR;
-      // Independent sphere rotation while in chat mode (slow, hypnotic)
-      const sphereRot = st.sphereRot || 0;
-      st.sphereRot = sphereRot + 0.00012 * dt * (conv > 0.05 ? 1 : 0);
+      // Global breathing pulse when thinking (one sin for the whole orb, not per node).
+      const pulse = st.chatMode === "thinking" ? (1 + 0.05 * Math.sin(st.pulse)) : 1;
+      const orbR = minDim * 0.2 * pulse;
 
       for (let i = 0; i < N; i++) {
         const n = st.nodes[i];
         let ex, ey, ez;
         if (n.type === "phenomenon" || conv < 0.001) {
+          // Phenomenon stays at the centre; everything else is the plain galaxy.
           ex = n.x * (1 - conv);
           ey = n.y * (1 - conv);
           ez = n.z * (1 - conv);
         } else {
-          // Fibonacci sphere distribution
-          const phi = Math.acos(1 - 2 * (i + 0.5) / N);
-          const theta = Math.PI * (1 + Math.sqrt(5)) * (i + 0.5) + st.sphereRot;
-          let sx = pulseR * Math.sin(phi) * Math.cos(theta);
-          let sy = pulseR * Math.cos(phi);
-          let sz = pulseR * Math.sin(phi) * Math.sin(theta);
-          // Per-node tiny breathing offset for organic feel during thinking
-          if (st.chatMode === "thinking") {
-            const j = Math.sin(i * 7.1 + st.pulse * 3) * 4;
-            sx += sx * 0.02 * j / 4;
-            sy += sy * 0.02 * j / 4;
-            sz += sz * 0.02 * j / 4;
-          }
-          ex = n.x * (1 - conv) + sx * conv;
-          ey = n.y * (1 - conv) + sy * conv;
-          ez = n.z * (1 - conv) + sz * conv;
+          ex = n.x * (1 - conv) + n.ux * orbR * conv;
+          ey = n.y * (1 - conv) + n.uy * orbR * conv;
+          ez = n.z * (1 - conv) + n.uz * orbR * conv;
         }
         const p = projectPoint(ex, ey, ez, st);
         n.px = p.px; n.py = p.py; n.scale = p.scale; n.depth = p.depth;
@@ -373,28 +367,25 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       const sortedEdges = st.edges.slice().sort((a, b) =>
         (b.source.depth + b.target.depth) - (a.source.depth + a.target.depth)
       );
-      for (const e of sortedEdges) {
-        const isHi = focus && (e.source === focus || e.target === focus);
-        const depthAvg = (e.source.depth + e.target.depth) / 2;
-        const depthAlpha = Math.max(0.3, Math.min(1, 1 - depthAvg / 1000));
-        // During convergence, edges become the bright wireframe of the polyhedron
-        const convBoost = st.convergence;
-        const baseEdge = isHi ? 0.95 : (dim ? 0.04 : 0.10);
-        const wireEdge = 0.55;
-        const alphaEdge = baseEdge * (1 - convBoost) + wireEdge * convBoost;
-        ctx.globalAlpha = alphaEdge * depthAlpha;
-        ctx.strokeStyle = (convBoost > 0.3 || isHi) ? "#bff5ff" : "#7ee0ff";
-        ctx.lineWidth = isHi ? 1.4 : (0.5 + convBoost * 0.6);
-        if (isHi || convBoost > 0.5) {
-          ctx.shadowColor = "#7ee0ff";
-          ctx.shadowBlur = isHi ? 10 : (4 + convBoost * 6);
-        } else {
-          ctx.shadowBlur = 0;
+      // Edges fade out as the orb forms (no edges/shadows during chat → clean
+      // orb and far cheaper to render).
+      const edgeFade = 1 - st.convergence;
+      if (edgeFade > 0.02) {
+        for (const e of sortedEdges) {
+          const isHi = focus && (e.source === focus || e.target === focus);
+          const depthAvg = (e.source.depth + e.target.depth) / 2;
+          const depthAlpha = Math.max(0.3, Math.min(1, 1 - depthAvg / 1000));
+          const baseEdge = isHi ? 0.95 : (dim ? 0.04 : 0.10);
+          ctx.globalAlpha = baseEdge * depthAlpha * edgeFade;
+          ctx.strokeStyle = isHi ? "#bff5ff" : "#7ee0ff";
+          ctx.lineWidth = isHi ? 1.4 : 0.5;
+          if (isHi) { ctx.shadowColor = "#7ee0ff"; ctx.shadowBlur = 10; }
+          else { ctx.shadowBlur = 0; }
+          ctx.beginPath();
+          ctx.moveTo(e.source.px, e.source.py);
+          ctx.lineTo(e.target.px, e.target.py);
+          ctx.stroke();
         }
-        ctx.beginPath();
-        ctx.moveTo(e.source.px, e.source.py);
-        ctx.lineTo(e.target.px, e.target.py);
-        ctx.stroke();
       }
       ctx.shadowBlur = 0;
       ctx.globalAlpha = 1;
@@ -406,8 +397,8 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       const sortedNodes = orbitableNodes.slice().sort((a, b) => b.depth - a.depth);
 
       // === FAINT ATTRACTION LINES from orbs toward the phenomenon (the "pull") ===
-      if (phenomenonNode) {
-        ctx.globalAlpha = 0.06;
+      if (phenomenonNode && st.convergence < 0.5) {
+        ctx.globalAlpha = 0.06 * (1 - st.convergence * 2);
         ctx.strokeStyle = "#7ee0ff";
         ctx.lineWidth = 0.3;
         for (const n of orbitableNodes) {
