@@ -368,28 +368,36 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       // links (and the nodes they touch) glow in and out, so the galaxy feels
       // alive and hints at connectivity without permanent clutter. Hover/select
       // still lights a node up fully.
+      // Timing: 5 s of plain orbiting first, then a constellation glows for 6 s
+      // and a new one appears every 12 s (with a calm gap in between).
+      const AMB_DELAY = 5000, AMB_GLOW = 6000, AMB_INTERVAL = 12000;
+      if (st.intro) st.ambClock0 = null;   // restart the calm period after a (re)form
       let ambNode = null, ambAlpha = 0, ambSet = null;
       const canAmbient = !focus && st.convergence < 0.05 && !isInteracting && !st.intro;
       if (canAmbient) {
-        const c = st.constellation;
-        if (!c || (t - c.start) > c.dur || !st.nodes.includes(c.node)) {
-          const pool = st.nodes.filter(n => n.type !== "phenomenon" && (n.deg || 0) >= 3);
-          const arr = pool.length ? pool : st.nodes.filter(n => n.type !== "phenomenon");
-          const pick = arr[Math.floor(Math.random() * arr.length)];
-          const neigh = new Set([pick.id]);
-          for (const e of st.edges) {
-            if (e.source === pick) neigh.add(e.target.id);
-            if (e.target === pick) neigh.add(e.source.id);
+        if (st.ambClock0 == null) st.ambClock0 = t;
+        const elapsed = t - st.ambClock0;
+        if (elapsed >= AMB_DELAY) {
+          const localT = elapsed - AMB_DELAY;
+          const cycle = Math.floor(localT / AMB_INTERVAL);
+          const inCycle = localT - cycle * AMB_INTERVAL;
+          if (!st.constellation || st.constellation.cycle !== cycle || !st.nodes.includes(st.constellation.node)) {
+            const pool = st.nodes.filter(n => n.type !== "phenomenon" && (n.deg || 0) >= 6);
+            const arr = pool.length ? pool : st.nodes.filter(n => n.type !== "phenomenon");
+            const pick = arr[Math.floor(Math.random() * arr.length)];
+            const neigh = new Set([pick.id]);
+            for (const e of st.edges) {
+              if (e.source === pick) neigh.add(e.target.id);
+              if (e.target === pick) neigh.add(e.source.id);
+            }
+            st.constellation = { node: pick, cycle, neigh };
           }
-          st.constellation = { node: pick, start: t, dur: 3000, neigh };
+          if (inCycle < AMB_GLOW) {
+            ambAlpha = Math.sin((inCycle / AMB_GLOW) * Math.PI);   // 0 → 1 → 0 over 6 s
+            ambNode = st.constellation.node;
+            ambSet = st.constellation.neigh;
+          }
         }
-        const cc = st.constellation;
-        const ph = Math.max(0, Math.min(1, (t - cc.start) / cc.dur));
-        ambAlpha = Math.sin(ph * Math.PI);   // 0 → 1 → 0
-        ambNode = cc.node;
-        ambSet = cc.neigh;
-      } else {
-        st.constellation = null;
       }
 
       // === EDGES ===
@@ -417,16 +425,19 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         }
         ctx.shadowBlur = 0;
       } else if (edgeFade > 0.02 && ambNode && ambAlpha > 0.01) {
-        // Only the ambient constellation's links, soft glow.
-        ctx.strokeStyle = "#ade8ff";
-        ctx.lineWidth = 1;
+        // Only the ambient constellation's links — soft glow so it reads, but
+        // gentler than the focus state.
+        ctx.strokeStyle = "#bff0ff";
+        ctx.lineWidth = 1.3;
+        ctx.shadowColor = "#7ee0ff"; ctx.shadowBlur = 6;
         for (const e of sortedEdges) {
           if (e.source !== ambNode && e.target !== ambNode) continue;
           const depthAvg = (e.source.depth + e.target.depth) / 2;
           const depthAlpha = Math.max(0.3, Math.min(1, 1 - depthAvg / 1000));
-          ctx.globalAlpha = 0.55 * ambAlpha * depthAlpha;
+          ctx.globalAlpha = 0.8 * ambAlpha * depthAlpha;
           drawEdge(e);
         }
+        ctx.shadowBlur = 0;
       }
       ctx.shadowBlur = 0;
       ctx.globalAlpha = 1;
