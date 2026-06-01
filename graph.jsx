@@ -362,29 +362,70 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       }
       const dim = !!focus;
 
-      // === EDGES (z-sorted) ===
-      // Sort edges by average depth so back ones draw first
+      // === AMBIENT CONSTELLATIONS ===
+      // The full web of 561 links is just a tangle, so by default it stays
+      // hidden. Instead we softly cycle a random node's "constellation": its
+      // links (and the nodes they touch) glow in and out, so the galaxy feels
+      // alive and hints at connectivity without permanent clutter. Hover/select
+      // still lights a node up fully.
+      let ambNode = null, ambAlpha = 0, ambSet = null;
+      const canAmbient = !focus && st.convergence < 0.05 && !isInteracting && !st.intro;
+      if (canAmbient) {
+        const c = st.constellation;
+        if (!c || (t - c.start) > c.dur || !st.nodes.includes(c.node)) {
+          const pool = st.nodes.filter(n => n.type !== "phenomenon" && (n.deg || 0) >= 3);
+          const arr = pool.length ? pool : st.nodes.filter(n => n.type !== "phenomenon");
+          const pick = arr[Math.floor(Math.random() * arr.length)];
+          const neigh = new Set([pick.id]);
+          for (const e of st.edges) {
+            if (e.source === pick) neigh.add(e.target.id);
+            if (e.target === pick) neigh.add(e.source.id);
+          }
+          st.constellation = { node: pick, start: t, dur: 3000, neigh };
+        }
+        const cc = st.constellation;
+        const ph = Math.max(0, Math.min(1, (t - cc.start) / cc.dur));
+        ambAlpha = Math.sin(ph * Math.PI);   // 0 → 1 → 0
+        ambNode = cc.node;
+        ambSet = cc.neigh;
+      } else {
+        st.constellation = null;
+      }
+
+      // === EDGES ===
       const sortedEdges = st.edges.slice().sort((a, b) =>
         (b.source.depth + b.target.depth) - (a.source.depth + a.target.depth)
       );
-      // Edges fade out as the orb forms (no edges/shadows during chat → clean
-      // orb and far cheaper to render).
-      const edgeFade = 1 - st.convergence;
-      if (edgeFade > 0.02) {
+      const edgeFade = 1 - st.convergence;   // fade out as the chat orb forms
+      const drawEdge = (e) => {
+        ctx.beginPath();
+        ctx.moveTo(e.source.px, e.source.py);
+        ctx.lineTo(e.target.px, e.target.py);
+        ctx.stroke();
+      };
+      if (edgeFade > 0.02 && focus) {
+        // Only the focused node's links, bright.
+        ctx.strokeStyle = "#bff5ff";
+        ctx.lineWidth = 1.4;
+        ctx.shadowColor = "#7ee0ff"; ctx.shadowBlur = 10;
         for (const e of sortedEdges) {
-          const isHi = focus && (e.source === focus || e.target === focus);
+          if (e.source !== focus && e.target !== focus) continue;
           const depthAvg = (e.source.depth + e.target.depth) / 2;
           const depthAlpha = Math.max(0.3, Math.min(1, 1 - depthAvg / 1000));
-          const baseEdge = isHi ? 0.95 : (dim ? 0.04 : 0.10);
-          ctx.globalAlpha = baseEdge * depthAlpha * edgeFade;
-          ctx.strokeStyle = isHi ? "#bff5ff" : "#7ee0ff";
-          ctx.lineWidth = isHi ? 1.4 : 0.5;
-          if (isHi) { ctx.shadowColor = "#7ee0ff"; ctx.shadowBlur = 10; }
-          else { ctx.shadowBlur = 0; }
-          ctx.beginPath();
-          ctx.moveTo(e.source.px, e.source.py);
-          ctx.lineTo(e.target.px, e.target.py);
-          ctx.stroke();
+          ctx.globalAlpha = 0.95 * depthAlpha * edgeFade;
+          drawEdge(e);
+        }
+        ctx.shadowBlur = 0;
+      } else if (edgeFade > 0.02 && ambNode && ambAlpha > 0.01) {
+        // Only the ambient constellation's links, soft glow.
+        ctx.strokeStyle = "#ade8ff";
+        ctx.lineWidth = 1;
+        for (const e of sortedEdges) {
+          if (e.source !== ambNode && e.target !== ambNode) continue;
+          const depthAvg = (e.source.depth + e.target.depth) / 2;
+          const depthAlpha = Math.max(0.3, Math.min(1, 1 - depthAvg / 1000));
+          ctx.globalAlpha = 0.55 * ambAlpha * depthAlpha;
+          drawEdge(e);
         }
       }
       ctx.shadowBlur = 0;
@@ -396,14 +437,14 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
       const orbitableNodes = st.nodes.filter(n => n.type !== "phenomenon");
       const sortedNodes = orbitableNodes.slice().sort((a, b) => b.depth - a.depth);
 
-      // === FAINT ATTRACTION LINES from orbs toward the phenomenon (the "pull") ===
-      if (phenomenonNode && st.convergence < 0.5) {
-        ctx.globalAlpha = 0.06 * (1 - st.convergence * 2);
+      // === FAINT ATTRACTION LINES toward the phenomenon (only for the focused
+      // node's constellation — no permanent radial clutter in the default view) ===
+      if (phenomenonNode && focus && st.convergence < 0.5) {
+        ctx.globalAlpha = 0.10 * (1 - st.convergence * 2);
         ctx.strokeStyle = "#7ee0ff";
         ctx.lineWidth = 0.3;
         for (const n of orbitableNodes) {
-          if (focus && !connected.has(n.id) && n !== focus) continue; // dim non-related when focused
-          // gradient line from node to center, but draw simple thin line for perf
+          if (!connected.has(n.id) && n !== focus) continue;
           ctx.beginPath();
           ctx.moveTo(n.px, n.py);
           ctx.lineTo(phenomenonNode.px, phenomenonNode.py);
@@ -421,8 +462,10 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
         const isFocus = focus === n;
         const isHover = st.hover === n && st.hover !== selectedNode;
         const isConn = connected.has(n.id);
+        const ambHit = ambSet && ambSet.has(n.id);   // in the active ambient constellation
         // Size: selected biggest, hovered intermediate, connections smaller, others normal
-        const sizeMul = isFocus ? 1.25 : (isHover ? 1.1 : (isConn ? 0.85 : 1));
+        const sizeMul = (isFocus ? 1.25 : (isHover ? 1.1 : (isConn ? 0.85 : 1)))
+                        * (1 + (ambHit ? 0.16 * ambAlpha : 0));
         const r = Math.max(2.2, nodeRadius(n) * n.scale * sizeMul);
         let color = TYPE_COLORS[n.type] || "#fff";
         // During chat thinking: shift all colors toward cyan with a soft pulse
@@ -438,8 +481,8 @@ function NetworkGraph({ data, selectedId, onSelect, filters, tweaks, focusId, ch
 
         // === OUTER GLOW (atmospheric halo) ===
         if (!dimmed) {
-          const glowR = r * (isFocus ? 5.5 : (isConn ? 2.2 : 2.8));
-          const glowAlpha = isFocus ? 0.7 : (isConn ? 0.22 : 0.32);
+          const glowR = r * (isFocus ? 5.5 : (isConn ? 2.2 : (ambHit ? 3.6 : 2.8)));
+          const glowAlpha = (isFocus ? 0.7 : (isConn ? 0.22 : 0.32)) + (ambHit ? 0.42 * ambAlpha : 0);
           const glowGrad = ctx.createRadialGradient(n.px, n.py, r * 0.6, n.px, n.py, glowR);
           glowGrad.addColorStop(0, hexA(color, glowAlpha));
           glowGrad.addColorStop(0.5, hexA(color, glowAlpha * 0.35));
