@@ -1,5 +1,5 @@
 // REDESCUBRIENDO — Dataset
-// Nodes: 228 — Edges: 561 — Threads: 12
+// Nodes: 229 — Edges: 574 — Threads: 12
 // Generado automáticamente por scripts/build-data.js. NO EDITAR A MANO.
 // Para regenerar: npm run build
 
@@ -10956,6 +10956,68 @@ window.RDC_DATA = {
         "desc": "Dr. Steven Greer — divulgación y el protocolo de contacto CE-5.",
         "desc_en": "Dr. Steven Greer — disclosure advocacy and the CE-5 contact protocol."
       }
+    },
+    {
+      "id": "desclasificacion_pursue_war_gov_ufo",
+      "name": "Desclasificación PURSUE (war.gov/UFO)",
+      "role": "EE.UU. Abre Oficialmente Sus Archivos UAP (2026)",
+      "type": "event",
+      "group": "Audiencias y Divulgación",
+      "bio": "Descripción del Evento: El 8 de mayo de 2026, por orden directa del presidente Donald Trump, el Departamento de Guerra de EE.UU. (la antigua Secretaría de Defensa, renombrada por el ejecutivo) puso en marcha war.gov/UFO, el portal oficial del programa PURSUE (Presidential Unsealing and Reporting System for UAP Encounters). Es un esfuerzo multiagencia para localizar, revisar, identificar, desclasificar y publicar de forma escalonada los registros y documentos históricos sobre Fenómenos Anómalos No Identificados (UAP) en poder del gobierno federal.\n\nQué se publicó: El primer lote incluyó informes, fotografías, vídeos, relatos de testigos, expedientes militares, transcripciones de astronautas y otros materiales históricos vinculados a avistamientos e investigaciones sin resolver, con fechas que abarcan desde 1944-1945 hasta años recientes. La administración anunció que se añadirían más archivos «de forma continua».\n\nSignificado y relevancia: Por primera vez un gobierno como el estadounidense reconoce el fenómeno como una categoría legítima de comunicación pública y desclasifica el material por un canal oficial y permanente. Supone un cambio estructural frente a décadas de negación y desinformación: institucionaliza la divulgación y traslada la presión del testimonio individual (Grusch, las audiencias del Congreso) a la transparencia documental del propio Estado. Aun así, la comunidad investigadora mantiene un debate abierto —«los datos por sí solos no son divulgación»— sobre si se trata de una apertura real o de una liberación parcial y controlada.",
+      "year": 2026,
+      "media": "https://www.war.gov/UFO/",
+      "mediaCredit": "Departamento de Guerra de EE.UU. — Portal PURSUE",
+      "mediaCaption": "war.gov/UFO",
+      "blocs": [
+        1,
+        6,
+        10,
+        12
+      ],
+      "videos": [
+        {
+          "n": 288,
+          "t": "The UFO Files Dropped… But Are They Holding Back the Real Evidence?",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=u_xAp8uo4ZI",
+          "d": "43:31"
+        },
+        {
+          "n": 351,
+          "t": "David Grusch Drops Bombshell News About Trump's UFO Files",
+          "c": "VETTED",
+          "u": "https://www.youtube.com/watch?v=Covj-ZRL5MY",
+          "d": "61:35"
+        },
+        {
+          "n": 287,
+          "t": "40+ UFO Videos, Rogan, Tyson & The Disclosure Push",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=yJWWDLCyAuw",
+          "d": "38:17"
+        },
+        {
+          "n": 125,
+          "t": "UFO Physics & Disclosure Under Trump (ft. Matthew Pines)",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=LpLFWdsIU7M",
+          "d": "257:17"
+        },
+        {
+          "n": 172,
+          "t": "UFO Gatekeepers - Rep. Luna, Burchett & Burlison Reveal A Plan To Fight Back",
+          "c": "Jeremy Corbell",
+          "u": "https://www.youtube.com/watch?v=lhh1u9_MEUU",
+          "d": "71:23"
+        }
+      ],
+      "videoCount": 5,
+      "canal": 10,
+      "degree": 13,
+      "name_en": "PURSUE Declassification (war.gov/UFO)",
+      "role_en": "The U.S. Officially Opens Its UAP Files (2026)",
+      "bio_en": "Event Description: On May 8, 2026, by direct order of President Donald Trump, the U.S. Department of War (the former Department of Defense, renamed by the executive) launched war.gov/UFO, the official portal of the PURSUE program (Presidential Unsealing and Reporting System for UAP Encounters). It is a multiagency effort to locate, review, identify, declassify and publicly release, on a rolling basis, the historical records and documents on Unidentified Anomalous Phenomena (UAP) held by the federal government.\n\nWhat was released: The first batch included reports, photographs, videos, witness accounts, military records, astronaut transcripts and other historical materials tied to unresolved sightings and investigations, dating from 1944-1945 to recent years. The administration announced that more files would be added \"on a rolling basis.\"\n\nMeaning and relevance: For the first time, a government like that of the United States recognizes the phenomenon as a legitimate category of public communication and declassifies the material through an official, permanent channel. It marks a structural shift away from decades of denial and disinformation: it institutionalizes disclosure and moves the pressure from individual testimony (Grusch, the Congressional hearings) to the state's own documentary transparency. Even so, the research community keeps an open debate —\"data alone is not disclosure\"— over whether this is a genuine opening or a partial, controlled release.",
+      "group_en": "Hearings and Disclosure"
     }
   ],
   "edges": [
@@ -14324,6 +14386,84 @@ window.RDC_DATA = {
       "uaptf_y_aaro",
       "related",
       "Misma categoría"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "the_phenomenon",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "david_grusch",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "anna_paulina_luna",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "uaptf_y_aaro",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "uap_disclosure_act",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "la_ndaa_y_la_obligacion_legislativa_de_investigar_",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "eric_burlison",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "audiencia_del_congreso_nov_2024",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "primera_audiencia_publica_del_congreso_sobre_uaps_",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "ross_coulthart",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "christopher_mellon",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "marco_rubio",
+      "related",
+      "Divulgación oficial PURSUE"
+    ],
+    [
+      "desclasificacion_pursue_war_gov_ufo",
+      "luis_elizondo",
+      "related",
+      "Divulgación oficial PURSUE"
     ]
   ],
   "threads": [
