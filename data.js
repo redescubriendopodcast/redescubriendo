@@ -3900,8 +3900,8 @@ window.RDC_DATA = {
       "group": "Figuras Militares",
       "bio": "Quién es: Tim Phillips fue nombrado director de la All-domain Anomaly Resolution Office (AARO) en 2024, sustituyendo al Dr. Sean Kirkpatrick (quien dimitió a finales de 2023 bajo fuerte presión de whistleblowers). Phillips es la figura menos conocida públicamente de los tres directores de AARO, y ha dado pocas declaraciones públicas.\n\nContexto: La transición entre Kirkpatrick y Phillips coincidió con las críticas más intensas a AARO como oficina de control de narrativa (Corbell, Knapp, senadores Smith y Rounds). El periodista Chris Sharp (The Liberation Times) realizó la primera entrevista pública de Tim Phillips y ha cubierto extensamente sus primeras meses de gestión. La llegada de la administración Trump en 2025 ha reconfigurado el rol de AARO dentro del proceso de divulgación.\n\nNivel de evidencia: ✅ 5 Confirmado — cargo AARO verificable en registros DoD.",
       "year": 2024,
-      "media": "https://www.youtube.com/watch?v=GOWGhTEec5Y",
-      "mediaCredit": "",
+      "media": "https://www.youtube.com/watch?v=yAaO4P4Jc1U",
+      "mediaCredit": "Tim Phillips (ex-director en funciones de AARO) — UAP Revelations",
       "mediaCaption": "Chris Sharp Exposes AARO Before Trump's Decision (Jeremy Corbell)",
       "blocs": [
         1,
