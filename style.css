@@ -1744,6 +1744,22 @@ button {
 }
 .pillar p strong { color: var(--cyan-bright); font-weight: 500; }
 .pillar p em { color: var(--cyan); font-style: italic; }
+.pillar-cta {
+  margin-top: 14px;
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: inherit;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--cyan-bright);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.pillar-cta:hover { color: #fff; text-decoration: underline; }
 
 .about-channels {
   list-style: none;

@@ -1,5 +1,5 @@
 // REDESCUBRIENDO — Dataset
-// Nodes: 229 — Edges: 574 — Threads: 12
+// Nodes: 230 — Edges: 578 — Threads: 12
 // Generado automáticamente por scripts/build-data.js. NO EDITAR A MANO.
 // Para regenerar: npm run build
 
@@ -11018,6 +11018,43 @@ window.RDC_DATA = {
       "role_en": "The U.S. Officially Opens Its UAP Files (2026)",
       "bio_en": "Event Description: On May 8, 2026, by direct order of President Donald Trump, the U.S. Department of War (the former Department of Defense, renamed by the executive) launched war.gov/UFO, the official portal of the PURSUE program (Presidential Unsealing and Reporting System for UAP Encounters). It is a multiagency effort to locate, review, identify, declassify and publicly release, on a rolling basis, the historical records and documents on Unidentified Anomalous Phenomena (UAP) held by the federal government.\n\nWhat was released: The first batch included reports, photographs, videos, witness accounts, military records, astronaut transcripts and other historical materials tied to unresolved sightings and investigations, dating from 1944-1945 to recent years. The administration announced that more files would be added \"on a rolling basis.\"\n\nMeaning and relevance: For the first time, a government like that of the United States recognizes the phenomenon as a legitimate category of public communication and declassifies the material through an official, permanent channel. It marks a structural shift away from decades of denial and disinformation: it institutionalizes disclosure and moves the pressure from individual testimony (Grusch, the Congressional hearings) to the state's own documentary transparency. Even so, the research community keeps an open debate —\"data alone is not disclosure\"— over whether this is a genuine opening or a partial, controlled release.",
       "group_en": "Hearings and Disclosure"
+    },
+    {
+      "id": "web_4orbs",
+      "name": "4orbs.com",
+      "role": "Base de conocimiento · MH370 / ZPE / física avanzada",
+      "type": "channel",
+      "group": "Canal",
+      "bio": "4orbs.com es una base de conocimiento (717 vídeos analizados, 781 teorías y 1.674 afirmaciones catalogadas) construida a partir del trabajo de Ashton Forbes sobre el MH370, la energía de punto cero (ZPE) y la física de propulsión avanzada.\n\nNota de Redescubriendo: es material abiertamente especulativo y no está en nuestra mano otorgarle carácter oficial, pero creemos que hay mucha verdad en lo que plantea. Lo decisivo no es que figuras como Salvatore Pais o Eric Davis \"sigan\" a Forbes, sino que trabajan de forma independiente sobre exactamente la misma física —reducción de masa inercial, ondas gravitacionales de alta frecuencia, energía del vacío—; y el propio Pais llegó a dirigirse a su audiencia (\"A Message from Salvatore Pais\"), señal de que Forbes está rascando en el punto correcto. Nos convence a nosotros y convence a gente de mucha credibilidad. Júzgalo por ti mismo.",
+      "year": 2026,
+      "media": null,
+      "mediaCredit": "",
+      "mediaCaption": "",
+      "blocs": [
+        8
+      ],
+      "videos": [],
+      "videoCount": 0,
+      "canal": 8,
+      "degree": 4,
+      "name_en": "4orbs.com",
+      "role_en": "Knowledge base · MH370 / ZPE / advanced physics",
+      "bio_en": "4orbs.com is a knowledge base (717 analyzed videos, 781 theories and 1,674 catalogued claims) built from Ashton Forbes's work on MH370, zero-point energy (ZPE) and advanced propulsion physics.\n\nRedescubriendo's note: this is openly speculative material and it isn't within our power to grant it any official status, but we believe there is a great deal of truth in what it argues. The key point isn't that figures like Salvatore Pais or Eric Davis \"follow\" Forbes, but that they work independently on exactly the same physics —inertial mass reduction, high-frequency gravitational waves, vacuum energy—; and Pais himself addressed his audience directly (\"A Message from Salvatore Pais\"), a sign that Forbes is scratching at the right spot. It convinces us, and it convinces people with serious credibility. Judge for yourself.",
+      "group_en": "Channels",
+      "papers": [
+        {
+          "titulo": "4orbs.com — Base de conocimiento (inicio)",
+          "url": "https://4orbs.com/"
+        },
+        {
+          "titulo": "The Science — Zero-Point Energy",
+          "url": "https://4orbs.com/science/zero-point-energy/"
+        },
+        {
+          "titulo": "Library — Ashton Forbes",
+          "url": "https://4orbs.com/library/people/ashton-forbes/"
+        }
+      ]
     }
   ],
   "edges": [
@@ -14464,6 +14501,30 @@ window.RDC_DATA = {
       "luis_elizondo",
       "related",
       "Divulgación oficial PURSUE"
+    ],
+    [
+      "web_4orbs",
+      "ch_ashton_forbes",
+      "related",
+      "Base de conocimiento del corpus de Ashton Forbes"
+    ],
+    [
+      "web_4orbs",
+      "salvatore_pais",
+      "related",
+      "Sistematiza las patentes y la física de Salvatore Pais"
+    ],
+    [
+      "web_4orbs",
+      "eric_w_davis",
+      "related",
+      "Conecta con la física teórica de Eric Davis"
+    ],
+    [
+      "web_4orbs",
+      "thomas_townsend_brown",
+      "related",
+      "Recoge la electrogravitación de Townsend Brown"
     ]
   ],
   "threads": [
@@ -14667,7 +14728,8 @@ window.RDC_DATA = {
       "nodes": [
         "ch_ashton_forbes",
         "salvatore_pais",
-        "thomas_townsend_brown"
+        "thomas_townsend_brown",
+        "web_4orbs"
       ],
       "title_en": "MH370 / ZPE / Warp",
       "desc_en": "Ashton Forbes's cluster connects the MH370 case with heterodox but documented theoretical physics: Salvatore Pais's USPTO patents (zero-point energy, high-frequency electromagnetic field propulsion), Casimir, Sakharov 1967, GEM theory and Thomas Townsend Brown's work on electrogravitics. This is the 'three-letter agency' (CIA, FBI, DOE) perspective the rest of the corpus doesn't cover — speculative material but with verifiable anchors in patents and papers."

@@ -221,7 +221,7 @@ function App({ tweaks }) {
       }
 
       {tab === "about" &&
-      <AboutView data={data} />
+      <AboutView data={data} onOpenGraph={(id) => {setThreadId(id);setSelectedId(null);setTab("graph");}} />
       }
     </div>);
 
@@ -465,7 +465,7 @@ function TimelinesView({ lang }) {
 
 // ============== ABOUT VIEW ==============
 
-function AboutView({ data }) {
+function AboutView({ data, onOpenGraph }) {
   const { t, lang } = window.useT();
   const stats = useMemo(() => {
     const byType = {};
@@ -501,11 +501,16 @@ function AboutView({ data }) {
         <section className="about-section">
           <div className="about-eyebrow">{t("about.pillars.eyebrow")}</div>
           <div className="about-pillars">
-            {[1,2,3,4,5].map(n => (
+            {[1,2,3,4,5,6].map(n => (
               <article key={n} className="pillar">
                 <div className="pillar-num">0{n}</div>
                 <h3>{t(`about.pillar${n}.title`)}</h3>
                 <p dangerouslySetInnerHTML={{ __html: t(`about.pillar${n}.body`) }} />
+                {n === 6 &&
+                  <button className="pillar-cta" onClick={() => onOpenGraph && onOpenGraph("t_mh370")}>
+                    {t("about.pillar6.cta")}
+                  </button>
+                }
               </article>
             ))}
           </div>

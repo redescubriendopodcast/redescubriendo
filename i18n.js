@@ -106,6 +106,9 @@ window.I18N = {
     "about.pillar4.body":      "Las audiencias 2023-2025 (Grusch, Fravor, Graves; después Mellon, McConnell, Gallaudet, Davis) son la mayor cadena de testimonios oficiales bajo juramento de la historia del campo. Por primera vez senadores y congresistas reconocen abiertamente que <em>existen objetos que ni el Congreso ni los departamentos saben qué son</em>.",
     "about.pillar5.title":     "Página oficial UAP del gobierno de EE.UU. (mayo 2026)",
     "about.pillar5.body":      "La creación de un portal oficial de divulgación UAP por parte del ejecutivo estadounidense marca un cambio estructural: por primera vez la administración reconoce el fenómeno como categoría legítima de comunicación pública con el ciudadano.",
+    "about.pillar6.title":     "La física tras nuevas fuentes de energía (punto cero / ZPE)",
+    "about.pillar6.body":      "Más allá de testigos y documentos hay un hilo que rara vez llega al gran público: la física que podría sustentar la propulsión y la energía detrás del fenómeno. Las patentes USPTO de <strong>Salvatore Pais</strong>, el efecto Casimir, la electrogravitación de <strong>Thomas Townsend Brown</strong> o la idea de extraer trabajo del vacío cuántico (<em>zero-point energy</em>). Es el terreno más <em>especulativo</em> del campo —conviene tratarlo como hipótesis, no como conclusión—, pero con anclajes verificables en patentes y artículos reales que merecen mirarse con ojo crítico.",
+    "about.pillar6.cta":       "Si quieres entrar en la ciencia, la energía y las nuevas tecnologías asociadas al fenómeno, explora la constelación «MH370 / ZPE / Warp» y saca tus propias conclusiones →",
     "about.channels.eyebrow":  "CANALES Y FUENTES DEL CORPUS",
     "about.channels.intro":    "La base documental es una lectura cruzada del trabajo de los principales investigadores independientes y medios especializados del campo. Cada nodo del mapa está enlazado a los vídeos donde aparece:",
     "about.channels.list":     [
@@ -276,6 +279,9 @@ window.I18N = {
     "about.pillar4.body":      "The 2023-2025 hearings (Grusch, Fravor, Graves; then Mellon, McConnell, Gallaudet, Davis) represent the largest chain of official sworn testimony in the history of the field. For the first time, senators and congressmembers openly acknowledge that <em>objects exist that neither Congress nor the departments can identify</em>.",
     "about.pillar5.title":     "Official U.S. Government UAP Website (May 2026)",
     "about.pillar5.body":      "The creation of an official UAP disclosure portal by the U.S. executive marks a structural shift: for the first time the administration recognizes the phenomenon as a legitimate category of public communication with citizens.",
+    "about.pillar6.title":     "The Physics Behind New Energy Sources (Zero-Point Energy)",
+    "about.pillar6.body":      "Beyond witnesses and documents, one thread rarely reaches the wider public: the physics that might underpin the phenomenon's propulsion and energy. The USPTO patents of <strong>Salvatore Pais</strong>, the Casimir effect, <strong>Thomas Townsend Brown</strong>'s electrogravitics, or the idea of extracting work from the quantum vacuum (<em>zero-point energy</em>). This is the field's most <em>speculative</em> terrain —treat it as a hypothesis, not a conclusion— yet with verifiable anchors in real patents and papers worth examining with a critical eye.",
+    "about.pillar6.cta":       "If you want to dig into the science, energy and new technologies tied to the phenomenon, explore the «MH370 / ZPE / Warp» constellation and draw your own conclusions →",
     "about.channels.eyebrow":  "CHANNELS AND SOURCES OF THE CORPUS",
     "about.channels.intro":    "The documentary base is a cross-reading of the work of the leading independent researchers and specialist media in the field. Each node on the map is linked to the videos where it appears:",
     "about.channels.list":     [
