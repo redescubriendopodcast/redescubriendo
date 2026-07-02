@@ -1,5 +1,5 @@
 // REDESCUBRIENDO — Dataset
-// Nodes: 230 — Edges: 578 — Threads: 12
+// Nodes: 234 — Edges: 591 — Threads: 12
 // Generado automáticamente por scripts/build-data.js. NO EDITAR A MANO.
 // Para regenerar: npm run build
 
@@ -17,8 +17,16 @@ window.RDC_DATA = {
       "mediaCredit": "",
       "mediaCaption": "",
       "blocs": [],
-      "videos": [],
-      "videoCount": 0,
+      "videos": [
+        {
+          "n": 392,
+          "t": "UFO Truths Exposed | UFOs: Investigating the Unknown MEGA Episode | National Geographic",
+          "c": "National Geographic",
+          "u": "https://www.youtube.com/watch?v=dDxYZyMEmUU",
+          "d": "131:59"
+        }
+      ],
+      "videoCount": 1,
       "canal": 0,
       "degree": 0,
       "fixed": true,
@@ -530,9 +538,23 @@ window.RDC_DATA = {
           "c": "That UFO Podcast",
           "u": "https://www.youtube.com/watch?v=pT1rT_M4iT0",
           "d": "90:42"
+        },
+        {
+          "n": 385,
+          "t": "Avi Loeb: The New UAP Board Could Change Everything",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=UTXXuYoGFp8",
+          "d": "64:18"
+        },
+        {
+          "n": 389,
+          "t": "Episode 73: Science vs. Secrecy - Fresh freedom Podcast",
+          "c": "Fresh Freedom",
+          "u": "https://www.youtube.com/watch?v=tZHuAZpLdFw",
+          "d": "62:30"
         }
       ],
-      "videoCount": 5,
+      "videoCount": 7,
       "canal": 3,
       "degree": 3,
       "name_en": "Avi Loeb",
@@ -632,9 +654,23 @@ window.RDC_DATA = {
           "c": "VETTED",
           "u": "https://www.youtube.com/watch?v=pQfs0yznyeg",
           "d": "50:32"
+        },
+        {
+          "n": 389,
+          "t": "Episode 73: Science vs. Secrecy - Fresh freedom Podcast",
+          "c": "Fresh Freedom",
+          "u": "https://www.youtube.com/watch?v=tZHuAZpLdFw",
+          "d": "62:30"
+        },
+        {
+          "n": 390,
+          "t": "UAP Gerb Live - the State of Disclosure, Hanging with Ross Coulthart, Current Events & QnA",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=VNR78kiTjgQ",
+          "d": "125:02"
         }
       ],
-      "videoCount": 9,
+      "videoCount": 11,
       "canal": 5,
       "degree": 9,
       "name_en": "Hal Puthoff & the BAASS Program",
@@ -1180,9 +1216,16 @@ window.RDC_DATA = {
           "c": "Jeremy Corbell",
           "u": "https://www.youtube.com/watch?v=sOOAVlatb2E",
           "d": "133:27"
+        },
+        {
+          "n": 375,
+          "t": "\"If You Knew What I Knew!\" -Jeremy Corbell UNLEASHES On Jesse Michels",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=-XdvIrexF08",
+          "d": "180:18"
         }
       ],
-      "videoCount": 22,
+      "videoCount": 23,
       "canal": 1,
       "degree": 20,
       "name_en": "Jeremy Corbell",
@@ -1586,8 +1629,16 @@ window.RDC_DATA = {
       "mediaCredit": "Sgt. Lyn Buchanan - Third eye drops with Michael Phillip",
       "mediaCaption": "Figuras Militares",
       "blocs": [],
-      "videos": [],
-      "videoCount": 0,
+      "videos": [
+        {
+          "n": 379,
+          "t": "\"I Operated a UFO… It's Not What You Think\" -Army Sergeant Lyn Buchanan",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=1sxmSMzqnmA",
+          "d": "180:30"
+        }
+      ],
+      "videoCount": 1,
       "canal": 0,
       "degree": 1,
       "name_en": "Sgt. Lyn Buchanan",
@@ -1683,9 +1734,30 @@ window.RDC_DATA = {
           "c": "Richard Dolan Intelligent Disclosure",
           "u": "https://www.youtube.com/watch?v=NRAXsNbKMQE",
           "d": "57:11"
+        },
+        {
+          "n": 386,
+          "t": "Richard Dolan: They're Watching Us | The UFO Files, Disclosure & Alien Behaviour",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=H6trXDmLN5A",
+          "d": "151:19"
+        },
+        {
+          "n": 387,
+          "t": "The Franklin D Roosevelt UFO: Why the Military Kept This Secret (From the Archives)",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=mJ4reirVp5I",
+          "d": "51:09"
+        },
+        {
+          "n": 393,
+          "t": "The Disclosure Forum - What It REALLY Revealed",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=OexB_7a4ZAA",
+          "d": "17:07"
         }
       ],
-      "videoCount": 36,
+      "videoCount": 39,
       "canal": 7,
       "degree": 12,
       "name_en": "Richard Dolan",
@@ -2190,9 +2262,30 @@ window.RDC_DATA = {
           "c": "NewsNation",
           "u": "https://www.youtube.com/watch?v=EjLINIR3sS0",
           "d": "68:37"
+        },
+        {
+          "n": 388,
+          "t": "Rep. Eric Burlison on UAP material he saw inside SCIF and files he's forcing open | Reality Check",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=fsse0ZYw31s",
+          "d": "20:58"
+        },
+        {
+          "n": 390,
+          "t": "UAP Gerb Live - the State of Disclosure, Hanging with Ross Coulthart, Current Events & QnA",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=VNR78kiTjgQ",
+          "d": "125:02"
+        },
+        {
+          "n": 391,
+          "t": "\"We've got to stop this bloody nonsense:\" Coulthart on UFO infighting",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=9RcCJfdIhEw",
+          "d": "46:58"
         }
       ],
-      "videoCount": 37,
+      "videoCount": 40,
       "canal": 9,
       "degree": 24,
       "name_en": "Ross Coulthart",
@@ -3155,9 +3248,16 @@ window.RDC_DATA = {
           "c": "NewsNation",
           "u": "https://www.youtube.com/watch?v=RhrH0KzKft4&list=PL6PrA6lo8rJLDQ29IhfY8na0heR9zD-Fu&index=85",
           "d": "76:16"
+        },
+        {
+          "n": 384,
+          "t": "Michael Herrera: The 300ft Craft Was Only the Beginning",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=gzNUjNxSp1c",
+          "d": "76:37"
         }
       ],
-      "videoCount": 5,
+      "videoCount": 6,
       "canal": 4,
       "degree": 4,
       "name_en": "Michael Herrera",
@@ -3708,9 +3808,16 @@ window.RDC_DATA = {
           "c": "VETTED",
           "u": "https://www.youtube.com/watch?v=NIQsTyGHW6c",
           "d": "26:44"
+        },
+        {
+          "n": 388,
+          "t": "Rep. Eric Burlison on UAP material he saw inside SCIF and files he's forcing open | Reality Check",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=fsse0ZYw31s",
+          "d": "20:58"
         }
       ],
-      "videoCount": 5,
+      "videoCount": 6,
       "canal": 1,
       "degree": 6,
       "name_en": "Eric Burlison",
@@ -5698,9 +5805,16 @@ window.RDC_DATA = {
           "c": "Richard Dolan Intelligent Disclosure",
           "u": "https://www.youtube.com/watch?v=r6oRQpOIE60",
           "d": "80:15"
+        },
+        {
+          "n": 374,
+          "t": "Brazil Defense Minister: \"UFOs Are NOT Human Technology\"",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=nqLnEVcZ8vE",
+          "d": "159:08"
         }
       ],
-      "videoCount": 2,
+      "videoCount": 3,
       "canal": 7,
       "degree": 2,
       "name_en": "Varginha, Brazil",
@@ -5859,9 +5973,16 @@ window.RDC_DATA = {
           "c": "Richard Dolan Intelligent Disclosure",
           "u": "https://www.youtube.com/watch?v=W3XVKqyuQJQ",
           "d": "42:12"
+        },
+        {
+          "n": 387,
+          "t": "The Franklin D Roosevelt UFO: Why the Military Kept This Secret (From the Archives)",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=mJ4reirVp5I",
+          "d": "51:09"
         }
       ],
-      "videoCount": 1,
+      "videoCount": 2,
       "canal": 7,
       "degree": 1,
       "name_en": "USS Franklin D. Roosevelt",
@@ -6728,9 +6849,23 @@ window.RDC_DATA = {
           "c": "Area52",
           "u": "https://www.youtube.com/watch?v=YBLabIhW00c",
           "d": "139:08"
+        },
+        {
+          "n": 373,
+          "t": "\"I Was Taken By The UFO Program As a Kid!\" [Exclusive Interview]",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=PiFbeWfA3LM",
+          "d": "148:03"
+        },
+        {
+          "n": 379,
+          "t": "\"I Operated a UFO… It's Not What You Think\" -Army Sergeant Lyn Buchanan",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=1sxmSMzqnmA",
+          "d": "180:30"
         }
       ],
-      "videoCount": 17,
+      "videoCount": 19,
       "canal": 6,
       "degree": 7,
       "name_en": "Project Stargate (CIA/DIA)",
@@ -6850,9 +6985,23 @@ window.RDC_DATA = {
           "c": "Jesse Michels",
           "u": "https://www.youtube.com/watch?v=iQOibpIDx-4",
           "d": "58:21"
+        },
+        {
+          "n": 371,
+          "t": "FULL MKULTRA HEARING: CIA'S MKUltra Program Probed By Lawmakers Seeking Answers About 'Mind Control'",
+          "c": "Forbes Breaking News",
+          "u": "https://www.youtube.com/watch?v=dpQulJS-R50",
+          "d": "87:00"
+        },
+        {
+          "n": 376,
+          "t": "The CIA Scientist That Contacted an Alien Council",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=2-GeTxXi670",
+          "d": "218:56"
         }
       ],
-      "videoCount": 25,
+      "videoCount": 27,
       "canal": 6,
       "degree": 28,
       "name_en": "The CIA and the UFO Phenomenon",
@@ -7861,8 +8010,16 @@ window.RDC_DATA = {
       "mediaCredit": "David Grusch: Los Programas SAP No Autorizados — Testimonio ante el Congreso",
       "mediaCaption": "Programas Gubernamentales",
       "blocs": [],
-      "videos": [],
-      "videoCount": 0,
+      "videos": [
+        {
+          "n": 370,
+          "t": "Special Access Required - the Secrecy of UFO Crash Retrieval Programs [VOL.2]",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=6MsmPrpQqa8",
+          "d": "202:47"
+        }
+      ],
+      "videoCount": 1,
       "canal": 0,
       "degree": 1,
       "name_en": "The Unauthorised SAP Program",
@@ -9724,9 +9881,65 @@ window.RDC_DATA = {
           "c": "Jesse Michels",
           "u": "https://www.youtube.com/watch?v=UkKwa4jU0fc",
           "d": "225:20"
+        },
+        {
+          "n": 372,
+          "t": "Spielberg Just Revealed The Truth About Aliens (He Knows!)",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=ScE9FaDy-mE",
+          "d": "60:43"
+        },
+        {
+          "n": 373,
+          "t": "\"I Was Taken By The UFO Program As a Kid!\" [Exclusive Interview]",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=PiFbeWfA3LM",
+          "d": "148:03"
+        },
+        {
+          "n": 374,
+          "t": "Brazil Defense Minister: \"UFOs Are NOT Human Technology\"",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=nqLnEVcZ8vE",
+          "d": "159:08"
+        },
+        {
+          "n": 375,
+          "t": "\"If You Knew What I Knew!\" -Jeremy Corbell UNLEASHES On Jesse Michels",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=-XdvIrexF08",
+          "d": "180:18"
+        },
+        {
+          "n": 376,
+          "t": "The CIA Scientist That Contacted an Alien Council",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=2-GeTxXi670",
+          "d": "218:56"
+        },
+        {
+          "n": 377,
+          "t": "Why America's Top Scientists Are Going Missing",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=wlsQIbpEKSM",
+          "d": "107:14"
+        },
+        {
+          "n": 378,
+          "t": "Why The Pentagon Tried To Censor This UFO Book",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=OOr98r51Sj0",
+          "d": "96:55"
+        },
+        {
+          "n": 379,
+          "t": "\"I Operated a UFO… It's Not What You Think\" -Army Sergeant Lyn Buchanan",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=1sxmSMzqnmA",
+          "d": "180:30"
         }
       ],
-      "videoCount": 71,
+      "videoCount": 79,
       "canal": 6,
       "degree": 22,
       "name_en": "American Alchemy (Jesse Michels)",
@@ -10022,9 +10235,23 @@ window.RDC_DATA = {
           "c": "Jason Samosa",
           "u": "https://www.youtube.com/watch?v=NT1xt-_Z8v8",
           "d": "67:37"
+        },
+        {
+          "n": 380,
+          "t": "The Religious Cults advising the President on UFOs",
+          "c": "Jason Samosa",
+          "u": "https://www.youtube.com/watch?v=0xXNnITnU6Y",
+          "d": "62:33"
+        },
+        {
+          "n": 381,
+          "t": "Scripting the Apocalypse: The Secret Plan to Simulate a UFO Apocalypse",
+          "c": "Jason Samosa",
+          "u": "https://www.youtube.com/watch?v=bRWOLKdmwWk",
+          "d": "58:13"
         }
       ],
-      "videoCount": 20,
+      "videoCount": 22,
       "canal": 2,
       "degree": 4,
       "name_en": "Jason Samosa",
@@ -10121,9 +10348,23 @@ window.RDC_DATA = {
           "c": "Area52",
           "u": "https://www.youtube.com/watch?v=CSjpgxLuYyA",
           "d": "60:47"
+        },
+        {
+          "n": 382,
+          "t": "Skinwalker Ranch Biologist Breaks Silence - Ben Woodruff | DEBRIEFED ep. 90",
+          "c": "Area52",
+          "u": "https://www.youtube.com/watch?v=0e3-ssiKUMM",
+          "d": "123:32"
+        },
+        {
+          "n": 383,
+          "t": "The Crazy Story that made him Quit Investigating UFOs- Luigi Vendittelli | DEBRIEFED ep. 91",
+          "c": "Area52",
+          "u": "https://www.youtube.com/watch?v=zOSK26sXT1Q",
+          "d": "165:27"
         }
       ],
-      "videoCount": 29,
+      "videoCount": 31,
       "canal": 3,
       "degree": 9,
       "name_en": "Area52 / DEBRIEFED",
@@ -10319,9 +10560,23 @@ window.RDC_DATA = {
           "c": "Richard Dolan Intelligent Disclosure",
           "u": "https://www.youtube.com/watch?v=e5Xh2CRAr5s",
           "d": "61:07"
+        },
+        {
+          "n": 387,
+          "t": "The Franklin D Roosevelt UFO: Why the Military Kept This Secret (From the Archives)",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=mJ4reirVp5I",
+          "d": "51:09"
+        },
+        {
+          "n": 393,
+          "t": "The Disclosure Forum - What It REALLY Revealed",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=OexB_7a4ZAA",
+          "d": "17:07"
         }
       ],
-      "videoCount": 35,
+      "videoCount": 37,
       "canal": 7,
       "degree": 11,
       "name_en": "Richard Dolan Intelligent Disclosure",
@@ -10517,9 +10772,23 @@ window.RDC_DATA = {
           "c": "UAP Gerb",
           "u": "https://www.youtube.com/watch?v=E-GleS2aGj0",
           "d": "64:53"
+        },
+        {
+          "n": 370,
+          "t": "Special Access Required - the Secrecy of UFO Crash Retrieval Programs [VOL.2]",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=6MsmPrpQqa8",
+          "d": "202:47"
+        },
+        {
+          "n": 390,
+          "t": "UAP Gerb Live - the State of Disclosure, Hanging with Ross Coulthart, Current Events & QnA",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=VNR78kiTjgQ",
+          "d": "125:02"
         }
       ],
-      "videoCount": 33,
+      "videoCount": 35,
       "canal": 4,
       "degree": 32,
       "name_en": "UAP Gerb",
@@ -10616,9 +10885,23 @@ window.RDC_DATA = {
           "c": "NewsNation",
           "u": "https://www.youtube.com/watch?v=G30zCVFR5SY",
           "d": "33:44"
+        },
+        {
+          "n": 388,
+          "t": "Rep. Eric Burlison on UAP material he saw inside SCIF and files he's forcing open | Reality Check",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=fsse0ZYw31s",
+          "d": "20:58"
+        },
+        {
+          "n": 391,
+          "t": "\"We've got to stop this bloody nonsense:\" Coulthart on UFO infighting",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=9RcCJfdIhEw",
+          "d": "46:58"
         }
       ],
-      "videoCount": 46,
+      "videoCount": 48,
       "canal": 9,
       "degree": 21,
       "name_en": "NewsNation / Reality Check",
@@ -10715,9 +10998,30 @@ window.RDC_DATA = {
           "c": "That UFO Podcast",
           "u": "https://www.youtube.com/watch?v=Tke-Q_PhTTY",
           "d": "55:24"
+        },
+        {
+          "n": 384,
+          "t": "Michael Herrera: The 300ft Craft Was Only the Beginning",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=gzNUjNxSp1c",
+          "d": "76:37"
+        },
+        {
+          "n": 385,
+          "t": "Avi Loeb: The New UAP Board Could Change Everything",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=UTXXuYoGFp8",
+          "d": "64:18"
+        },
+        {
+          "n": 386,
+          "t": "Richard Dolan: They're Watching Us | The UFO Files, Disclosure & Alien Behaviour",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=H6trXDmLN5A",
+          "d": "151:19"
         }
       ],
-      "videoCount": 21,
+      "videoCount": 24,
       "canal": 10,
       "degree": 16,
       "name_en": "That UFO Podcast",
@@ -11055,6 +11359,142 @@ window.RDC_DATA = {
           "url": "https://4orbs.com/library/people/ashton-forbes/"
         }
       ]
+    },
+    {
+      "id": "jordan_jozak",
+      "name": "Jordan Jozak",
+      "role": "El niño del programa · interfaz de conciencia",
+      "type": "person",
+      "group": "Whistleblowers y Testigos",
+      "group_en": "Whistleblowers & Witnesses",
+      "role_en": "The program child · consciousness interface",
+      "year": 2026,
+      "media": null,
+      "mediaCredit": "",
+      "mediaCaption": "",
+      "blocs": [],
+      "videos": [
+        {
+          "n": 373,
+          "t": "\"I Was Taken By The UFO Program As a Kid!\" [Exclusive Interview]",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=PiFbeWfA3LM",
+          "d": "148:03"
+        }
+      ],
+      "videoCount": 1,
+      "bio": "Testigo que afirma haber sido reclutado de niño en un programa clasificado de UAP. En enero de 2023, tras sobrevivir a un intento de suicidio, sus recuerdos empezaron a romperse en forma de flashbacks traumáticos tipo PTSD: un 'gate classroom', una 'bebida rosa' sedante y experimentos para digitalizar sus señales cerebrales. La capacidad supuestamente explotada: desplazar su conciencia hacia craft UAP y pilotarlos con el pensamiento —una interfaz mente-máquina—. Describe además un 'relicario', un orbe de cristal que parecía consciente y que adaptaba su estructura interna al ser observado. Su relato, dado a American Alchemy (Jesse Michels), conecta la tecnología UAP con la conciencia y con los programas de interfaz neural. Material extraordinario y, por su naturaleza, imposible de verificar: trátese como testimonio en abierto.",
+      "bio_en": "A witness who claims he was recruited as a child into a classified UAP program. In January 2023, after surviving a suicide attempt, his memories began breaking through as traumatic PTSD-style flashbacks: a 'gate classroom', a sedating 'pink drink' and experiments to digitize his brain signals. The capability allegedly exploited: shifting his consciousness into UAP craft and piloting them by thought — a mind-machine interface. He also describes a 'reliquary', a crystal orb that seemed conscious and adapted its inner structure when observed. His account, given to American Alchemy (Jesse Michels), links UAP technology to consciousness and to neural-interface programs. Extraordinary material and, by its nature, impossible to verify: treat it as open testimony.",
+      "degree": 2
+    },
+    {
+      "id": "aldo_rebelo",
+      "name": "Aldo Rebelo",
+      "role": "Ex-ministro de Defensa de Brasil · candidato presidencial",
+      "type": "person",
+      "group": "Figura política",
+      "group_en": "Political Figure",
+      "role_en": "Former Brazilian Minister of Defense · presidential candidate",
+      "year": 2026,
+      "media": null,
+      "mediaCredit": "",
+      "mediaCaption": "",
+      "blocs": [],
+      "videos": [
+        {
+          "n": 374,
+          "t": "Brazil Defense Minister: \"UFOs Are NOT Human Technology\"",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=nqLnEVcZ8vE",
+          "d": "159:08"
+        }
+      ],
+      "videoCount": 1,
+      "bio": "Ex-ministro de Defensa de Brasil (2015-2016) y candidato presidencial. En una conversación con American Alchemy (Jesse Michels), reconoció explícitamente que el fenómeno UAP es real —siendo el equivalente a un Secretario de Defensa que más lejos ha llegado en ese reconocimiento—. Validó institucionalmente dos casos brasileños de primer orden: los ataques del 'Chupa-Chupa' en Colares, Pará (1977), donde objetos dispararon haces de luz a cientos de aldeanos causando quemaduras, investigados por la Fuerza Aérea Brasileña en la Operación Prato; y Varginha (1996), afirmando que algo aterrizó, que se recuperaron criaturas de piel aceitosa y ojos rojos y que al menos una fue atendida por un neurocirujano. Se comprometió públicamente a abrir los archivos brasileños si EE.UU. abre los suyos.",
+      "bio_en": "Former Brazilian Minister of Defense (2015-2016) and presidential candidate. In a conversation with American Alchemy (Jesse Michels), he explicitly acknowledged that the UAP phenomenon is real — making him the equivalent of a Secretary of Defense who has gone furthest in that recognition. He institutionally validated two major Brazilian cases: the 'Chupa-Chupa' attacks in Colares, Pará (1977), where objects fired light beams at hundreds of villagers causing burns, investigated by the Brazilian Air Force in Operation Prato; and Varginha (1996), stating that something landed, that oily-skinned, red-eyed creatures were recovered and that at least one was treated by a neurosurgeon. He publicly pledged to open Brazil's archives if the U.S. opens its own.",
+      "degree": 3
+    },
+    {
+      "id": "disclosure_forum_2026",
+      "name": "Disclosure Forum 2026",
+      "role": "Sala Kennedy del Senado · el despertar institucional",
+      "type": "event",
+      "group": "Audiencias y Divulgación",
+      "group_en": "Hearings & Disclosure",
+      "role_en": "Kennedy Caucus Room · the institutional awakening",
+      "year": 2026,
+      "media": "https://www.youtube.com/watch?v=3004GwnxwzM",
+      "mediaCredit": "Disclosure Foundation",
+      "mediaCaption": "Disclosure Forum 2026 · Kennedy Caucus Room",
+      "blocs": [],
+      "videos": [
+        {
+          "n": 389,
+          "t": "Episode 73: Science vs. Secrecy - Fresh freedom Podcast",
+          "c": "Fresh Freedom",
+          "u": "https://www.youtube.com/watch?v=tZHuAZpLdFw",
+          "d": "62:30"
+        },
+        {
+          "n": 390,
+          "t": "UAP Gerb Live - the State of Disclosure, Hanging with Ross Coulthart, Current Events & QnA",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=VNR78kiTjgQ",
+          "d": "125:02"
+        },
+        {
+          "n": 391,
+          "t": "\"We've got to stop this bloody nonsense:\" Coulthart on UFO infighting",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=9RcCJfdIhEw",
+          "d": "46:58"
+        },
+        {
+          "n": 393,
+          "t": "The Disclosure Forum - What It REALLY Revealed",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=OexB_7a4ZAA",
+          "d": "17:07"
+        },
+        {
+          "n": 394,
+          "t": "Disclosure Forum 2026: Humanity at the Edge of Discovery | Kennedy Caucus Room",
+          "c": "Disclosure Foundation",
+          "u": "https://www.youtube.com/watch?v=3004GwnxwzM",
+          "d": "440:01"
+        }
+      ],
+      "videoCount": 5,
+      "bio": "Celebrado en junio de 2026 en la histórica Sala Kennedy del Senado de EE.UU. y organizado por la Disclosure Foundation, reunió durante más de siete horas a físicos, historiadores, economistas, profesionales de inteligencia, legisladores y periodistas. Su señal principal no fue una revelación tipo Grusch —no hubo admisión oficial de tecnología no humana—, sino la constatación de un cambio cultural: el tema se ha institucionalizado y ha pasado de reuniones de investigadores a conferencia de política en Washington. Se reconoció que datos UAP decisivos siguen retenidos en la USAF, la CIA y el DOE (el exdirector de inteligencia John Ratcliffe confirmó la existencia de datos satelitales UAP nunca publicados), y se debatieron marcos físicos como agujeros de gusano, dimensiones extra y propulsión supralumínica. Junto a la apertura de war.gov/UFO, es uno de los dos rostros del despertar institucional de 2026.",
+      "bio_en": "Held in June 2026 in the historic Kennedy Caucus Room of the U.S. Senate and organized by the Disclosure Foundation, it gathered physicists, historians, economists, intelligence professionals, legislators and journalists for more than seven hours. Its main signal was not a Grusch-style revelation — there was no official admission of non-human technology — but the recognition of a cultural shift: the subject has become institutionalized and moved from researcher meetings to a Washington policy conference. It was acknowledged that decisive UAP data remains held by the USAF, CIA and DOE (former intelligence director John Ratcliffe confirmed the existence of never-released UAP satellite data), and physical frameworks such as wormholes, extra dimensions and superluminal propulsion were debated. Together with the war.gov/UFO release, it is one of the two faces of the 2026 institutional awakening.",
+      "degree": 7
+    },
+    {
+      "id": "colares_para_1977",
+      "name": "Colares, Pará 1977",
+      "role": "El 'Chupa-Chupa' y la Operación Prato",
+      "type": "event",
+      "group": "Contacto y Testigos Civiles",
+      "group_en": "Contact & Civilian Witnesses",
+      "role_en": "The 'Chupa-Chupa' and Operation Prato",
+      "year": 1977,
+      "media": null,
+      "mediaCredit": "",
+      "mediaCaption": "",
+      "blocs": [],
+      "videos": [
+        {
+          "n": 374,
+          "t": "Brazil Defense Minister: \"UFOs Are NOT Human Technology\"",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=nqLnEVcZ8vE",
+          "d": "159:08"
+        }
+      ],
+      "videoCount": 1,
+      "bio": "Entre 1977 y 1978, la isla de Colares y la región de Pará, en el norte de Brasil, vivieron una oleada de encuentros conocida como el 'Chupa-Chupa': objetos luminosos que descendían de noche y proyectaban haces de luz sobre los habitantes, causando quemaduras, marcas y, en varios casos descritos, extracción de sangre y anemia. Cientos de aldeanos se vieron afectados. Ante la alarma social, la Fuerza Aérea Brasileña abrió una investigación oficial, la Operación Prato (Operação Prato), dirigida por el capitán Uyrangê Hollanda, que recopiló fotografías, informes y testimonios; buena parte del material permaneció clasificado durante décadas. Es uno de los casos de 'contacto físico' mejor documentados a nivel estatal, reivindicado en 2026 por el ex-ministro de Defensa Aldo Rebelo.",
+      "bio_en": "Between 1977 and 1978, Colares island and the Pará region of northern Brazil experienced a wave of encounters known as the 'Chupa-Chupa': luminous objects that descended at night and projected light beams onto residents, causing burns, marks and, in several reported cases, blood loss and anemia. Hundreds of villagers were affected. Amid public alarm, the Brazilian Air Force opened an official investigation, Operation Prato (Operação Prato), led by Captain Uyrangê Hollanda, which gathered photographs, reports and testimonies; much of the material remained classified for decades. It is one of the best state-documented 'physical contact' cases, reasserted in 2026 by former Defense Minister Aldo Rebelo.",
+      "degree": 2
     }
   ],
   "edges": [
@@ -14525,6 +14965,84 @@ window.RDC_DATA = {
       "thomas_townsend_brown",
       "related",
       "Recoge la electrogravitación de Townsend Brown"
+    ],
+    [
+      "jordan_jozak",
+      "ch_jesse_michels",
+      "related",
+      "Entrevistado en American Alchemy"
+    ],
+    [
+      "jordan_jozak",
+      "proyecto_stargate_cia_dia",
+      "related",
+      "Interfaz mente-máquina: conciencia como control de craft"
+    ],
+    [
+      "aldo_rebelo",
+      "varginha_brasil",
+      "related",
+      "Reconoce Varginha (1996) como ex-ministro de Defensa"
+    ],
+    [
+      "aldo_rebelo",
+      "colares_para_1977",
+      "related",
+      "Reivindica el Chupa-Chupa y la Operación Prato"
+    ],
+    [
+      "aldo_rebelo",
+      "ch_jesse_michels",
+      "related",
+      "Entrevista histórica en American Alchemy"
+    ],
+    [
+      "colares_para_1977",
+      "varginha_brasil",
+      "related",
+      "Casos brasileños de contacto físico"
+    ],
+    [
+      "disclosure_forum_2026",
+      "la_primera_desclasificacion_trump_de_uap",
+      "related",
+      "Los dos rostros del despertar institucional de 2026"
+    ],
+    [
+      "disclosure_forum_2026",
+      "ross_coulthart",
+      "related",
+      "Cobertura desde Washington"
+    ],
+    [
+      "disclosure_forum_2026",
+      "richard_dolan",
+      "related",
+      "Análisis del foro"
+    ],
+    [
+      "disclosure_forum_2026",
+      "avi_loeb",
+      "related",
+      "Nuevo Consejo Científico Asesor de UAP"
+    ],
+    [
+      "disclosure_forum_2026",
+      "hal_puthoff_y_el_programa_baass",
+      "related",
+      "Participa en el debate científico"
+    ],
+    [
+      "disclosure_forum_2026",
+      "eric_burlison",
+      "related",
+      "Legisladores y apertura de archivos"
+    ],
+    [
+      "disclosure_forum_2026",
+      "ch_uap_gerb",
+      "related",
+      "Cobertura y reacción"
     ]
   ],
   "threads": [
