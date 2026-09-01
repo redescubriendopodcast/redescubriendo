@@ -4,7 +4,8 @@
   "private": true,
   "description": "Mapa galáctico UAP/NHI del corpus Redescubriendo. Web estática + script de build de data.js.",
   "scripts": {
-    "build": "node scripts/build-data.js",
+    "build": "node scripts/build-data.js && node add_en_translations.js && node add_en_v2.js && node add_en_v3.js && node enrich-data.js",
+    "build:data": "node scripts/build-data.js",
     "dev": "npx --yes serve . -l 8000"
   },
   "dependencies": {
