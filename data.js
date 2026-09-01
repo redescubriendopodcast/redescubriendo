@@ -1,5 +1,5 @@
 // REDESCUBRIENDO — Dataset
-// Nodes: 234 — Edges: 644 — Threads: 12
+// Nodes: 240 — Edges: 653 — Threads: 12
 // Generado automáticamente por scripts/build-data.js. NO EDITAR A MANO.
 // Para regenerar: npm run build
 
@@ -380,7 +380,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 21,
       "canal": 2,
-      "degree": 22,
+      "degree": 23,
       "photo": "assets/faces/jacques_vallee.jpg",
       "papers": [
         {
@@ -874,7 +874,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 39,
       "canal": 4,
-      "degree": 44,
+      "degree": 47,
       "photo": "assets/faces/david_grusch.jpg"
     },
     {
@@ -4041,6 +4041,228 @@ window.RDC_DATA = {
       "photo": "assets/faces/aldo_rebelo.jpg"
     },
     {
+      "id": "richard_doty",
+      "name": "Richard Doty",
+      "role": "Contrainteligencia y desinformación de la AFOSI",
+      "type": "person",
+      "group": "Whistleblowers y Testigos",
+      "bio": "Año de su testimonio en el corpus: 2026 (Area52 / DEBRIEFED ep.100).\n\nQuién es: Exagente de contrainteligencia de la AFOSI (Oficina de Investigaciones Especiales de la Fuerza Aérea de EE. UU.), figura tan citada como controvertida por su papel en operaciones de desinformación.\n\nQué cuenta: Describe a una sargento de la USAF supuestamente abducida y vigilada en una operación de sting multidepartamental —su testigo, dice, más convincente—, una rama de la DIA dedicada a investigar abducciones, el pago de la Fuerza Aérea a informantes, la vigilancia de convenciones OVNI, un objeto recuperado que habría acabado en un pozo minero y monjes que se comunicarían con no humanos. Cierra con su célebre juego de «tres historias, una es mentira».\n\nRelevancia: Encarna el problema central del expediente: la frontera difusa entre testimonio, operación de inteligencia y desinformación deliberada.",
+      "year": 2026,
+      "media": "https://www.youtube.com/watch?v=T-3CmY_ztwo",
+      "mediaCredit": "Richard Doty - Area52 (DEBRIEFED ep.100)",
+      "mediaCaption": "Whistleblowers y Testigos",
+      "blocs": [
+        3,
+        4,
+        13
+      ],
+      "videos": [
+        {
+          "n": 61,
+          "t": "The Hidden Wing - US Air Force UFO Reverse Engineering Programs",
+          "c": "UAP Gerb",
+          "u": "https://www.youtube.com/watch?v=-IXSZe4xVv4",
+          "d": "214:48"
+        },
+        {
+          "n": 358,
+          "t": "UFO Crashes & Experimental US Prototypes | Disclosure Advocates Series",
+          "c": "Dr. Steven Greer",
+          "u": "https://www.youtube.com/watch?v=Y3xK5O7Iqo0",
+          "d": "94:48"
+        },
+        {
+          "n": 398,
+          "t": "They Recorded This Alien Encounter - Richard Doty | ep. 100",
+          "c": "Area52",
+          "u": "https://www.youtube.com/watch?v=T-3CmY_ztwo",
+          "d": "237:30"
+        }
+      ],
+      "videoCount": 3,
+      "canal": 3,
+      "degree": 1,
+      "photo": "assets/faces/richard_doty.PNG"
+    },
+    {
+      "id": "julia_mossbridge",
+      "name": "Julia Mossbridge",
+      "role": "Precognición y 'divulgación interior'",
+      "type": "person",
+      "group": "Científicos e Investigadores",
+      "bio": "Año de su testimonio en el corpus: 2026 (Area52 / DEBRIEFED ep.99).\n\nQuién es: Doctora e investigadora de la precognición y la consciencia, autora de Have a Nice Disclosure.\n\nQué aporta: Relata recuerdos infantiles fragmentados de «pruebas» a las que habría sido sometida y lo enmarca como una «divulgación interior». Discute el programa GATE, tipos de «viaje en el tiempo» mental e informacional, experimentos de fisiología predictiva (el cuerpo se excita antes de ganar), la tesis de que «la información es la mente» y la sincronización interpersonal (parpadeos, respiración).\n\nRelevancia: Aporta el ángulo científico-consciencial: insiste en que el fenómeno exige estudiar la consciencia, no solo «coches de carreras en el cielo».",
+      "year": 2026,
+      "media": "https://www.youtube.com/watch?v=-qt2FYdP_EA",
+      "mediaCredit": "Dr. Julia Mossbridge - Area52 (DEBRIEFED ep.99)",
+      "mediaCaption": "Científicos e Investigadores",
+      "blocs": [
+        3
+      ],
+      "videos": [
+        {
+          "n": 399,
+          "t": "Non Human Intelligence, GATE Program and Psi Ability with Dr. Julia Mossbridge | ep. 99",
+          "c": "Area52",
+          "u": "https://www.youtube.com/watch?v=-qt2FYdP_EA",
+          "d": "183:22"
+        }
+      ],
+      "videoCount": 1,
+      "canal": 3,
+      "degree": 1,
+      "photo": "assets/faces/julia_mossbridge.jpg"
+    },
+    {
+      "id": "mario_woods",
+      "name": "Mario Woods",
+      "role": "El encuentro del 5 de noviembre",
+      "type": "person",
+      "group": "Whistleblowers y Testigos",
+      "bio": "Año de su testimonio en el corpus: 2026 (Area52 / DEBRIEFED ep.94; el encuentro que narra ocurrió en los años 70).\n\nQuién es: Veterano de la seguridad de la USAF y experiencer.\n\nQué cuenta: Un encuentro cercano estando de servicio un 5 de noviembre: un craft enorme, seres de distinta estatura, 45 segundos de luz blanca cegadora dentro del vehículo, tiempo perdido (despertó a las 6:15 sin explicación) y un interrogatorio posterior en «November control» donde le obligaron a redactar un informe completo. Relata también una intrusión en su dormitorio siendo niño y el peso de su fe cristiana.\n\nRelevancia: Testimonio militar detallado de encuentro cercano con tiempo perdido y protocolo de silenciamiento interno.",
+      "year": 2026,
+      "media": "https://www.youtube.com/watch?v=ua4dNq1vK2A",
+      "mediaCredit": "Mario Woods - Area52 (DEBRIEFED ep.94)",
+      "mediaCaption": "Whistleblowers y Testigos",
+      "blocs": [
+        3
+      ],
+      "videos": [
+        {
+          "n": 401,
+          "t": "The Most Convincing Alien Encounter Story - Mario Woods | ep. 94",
+          "c": "Area52",
+          "u": "https://www.youtube.com/watch?v=ua4dNq1vK2A",
+          "d": "219:53"
+        }
+      ],
+      "videoCount": 1,
+      "canal": 3,
+      "degree": 1,
+      "photo": "assets/faces/mario_woods.PNG"
+    },
+    {
+      "id": "roy_teague",
+      "name": "Roy Teague",
+      "role": "Un inspector de policía investiga los OVNIs",
+      "type": "person",
+      "group": "Whistleblowers y Testigos",
+      "bio": "Año del caso clave: 1993 (objeto rastreado por radar a ~28.800 mph).\n\nQuién es: Inspector de policía británico en activo (27 años de servicio, West Midlands), autor de Close Encounters of the Police Kind.\n\nQué aporta: Recopila testimonios de agentes británicos sobre avistamientos. Abre con un caso de 1993 en una estación de radar de detección de misiles —un objeto que recorrió ~640 millas en 80 segundos, tras lo cual se ordenó «esto no ha pasado, no se habla de ello»—. Explica su metodología: entrevista presencial «estándar oro», lectura de la comunicación no verbal, verificación en bases policiales y con Flightradar/apps astronómicas, y el estigma que impide a policías y militares reportar.\n\nRelevancia: Introduce el rigor investigativo policial y el problema del estigma institucional en el reporte de UAP.",
+      "year": 1993,
+      "media": "https://www.youtube.com/watch?v=xIB3ANZEXjE",
+      "mediaCredit": "Roy Teague - That UFO Podcast",
+      "mediaCaption": "Whistleblowers y Testigos",
+      "blocs": [
+        10
+      ],
+      "videos": [
+        {
+          "n": 405,
+          "t": "“You Don’t Talk About It” | A UK Police Inspector Investigates UFOs",
+          "c": "That UFO Podcast",
+          "u": "https://www.youtube.com/watch?v=xIB3ANZEXjE",
+          "d": "74:53"
+        }
+      ],
+      "videoCount": 1,
+      "canal": 10,
+      "degree": 1,
+      "photo": "assets/faces/roy_teague.PNG"
+    },
+    {
+      "id": "jeffrey_mishlove",
+      "name": "Jeffrey Mishlove",
+      "role": "Parapsicología y consciencia",
+      "type": "person",
+      "group": "Científicos e Investigadores",
+      "bio": "Año de su testimonio en el corpus: 2026 (Jesse Michels / American Alchemy).\n\nQuién es: Doctor y parapsicólogo, presentador de New Thinking Allowed.\n\nQué aporta: Casos como el de Ted Owens, «el hombre del rayo» que supuestamente predecía avistamientos masivos y habría «anunciado» el desastre del Challenger, e Ingo Swann y la visión remota. Cuenta cómo ganó el concurso de ensayos de Robert Bigelow sobre la supervivencia de la consciencia tras la muerte, y explora la sincronicidad, las tradiciones contemplativas y una visión de la consciencia como un todo que se reconoce a sí mismo.\n\nRelevancia: Enlaza el fenómeno con la parapsicología, la visión remota y la supervivencia de la consciencia.",
+      "year": 2026,
+      "media": "https://www.youtube.com/watch?v=lcaY-rd9Dhc",
+      "mediaCredit": "Dr. Jeffrey Mishlove - Jesse Michels (American Alchemy)",
+      "mediaCaption": "Científicos e Investigadores",
+      "blocs": [
+        6,
+        7
+      ],
+      "videos": [
+        {
+          "n": 35,
+          "t": "Russell Targ | The Richard Dolan Show | Part 2",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=e-mq9lNPsD8",
+          "d": "59:58"
+        },
+        {
+          "n": 417,
+          "t": "UFOs, Psychics and The Afterlife with PhD Jeffrey Mishlove",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=lcaY-rd9Dhc",
+          "d": "168:38"
+        }
+      ],
+      "videoCount": 2,
+      "canal": 6,
+      "degree": 1,
+      "photo": "assets/faces/jeffrey_mishlove.jpg"
+    },
+    {
+      "id": "brandon_fugal",
+      "name": "Brandon Fugal",
+      "role": "El dueño de Skinwalker Ranch",
+      "type": "person",
+      "group": "Whistleblowers y Testigos",
+      "bio": "Año de su testimonio en el corpus: 2026 (Jesse Michels / American Alchemy).\n\nQuién es: Magnate inmobiliario y propietario de Skinwalker Ranch; se define «administrador» más que dueño.\n\nQué cuenta: Rompe su silencio sobre el fenómeno del rancho: manipulación de equipos, episodios médicos agudos, criaturas tipo lobo que sobrevivirían a disparos, la «maldición» navajo sobre la mesa que cruza la propiedad, la hipótesis del «zoo cósmico» (inteligencias que nos monitorizan), una perforación agresiva que sospecha una tapadera y experimentos espirituales (un rabino con cánticos que abrirían «portales»).\n\nRelevancia: Da voz de primera mano al epicentro paranormal/UFO más famoso del corpus, Skinwalker Ranch.",
+      "year": 2026,
+      "media": "https://www.youtube.com/watch?v=uYyXpx7ADJQ",
+      "mediaCredit": "Brandon Fugal - Jesse Michels (American Alchemy)",
+      "mediaCaption": "Whistleblowers y Testigos",
+      "blocs": [
+        6,
+        7,
+        9
+      ],
+      "videos": [
+        {
+          "n": 41,
+          "t": "The Man Who Owns SKINWALKER | Richard Dolan Show w/Brandon Fugal",
+          "c": "Richard Dolan Intelligent Disclosure",
+          "u": "https://www.youtube.com/watch?v=6t8L1DnvOxU",
+          "d": "68:53"
+        },
+        {
+          "n": 144,
+          "t": "I Searched for UFOs on Skinwalker Ranch…",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=7W7iOt57fOo",
+          "d": "22:50"
+        },
+        {
+          "n": 267,
+          "t": "Skinwalker Ranch owner says former AARO Director Sean Kirkpatrick lied, shows proof | Reality Check",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=NtilGOcNmgY&list=PL6PrA6lo8rJLDQ29IhfY8na0heR9zD-Fu&index=81",
+          "d": "62:09"
+        },
+        {
+          "n": 286,
+          "t": "Skinwalker Ranch, Oak Island curse and Kona Blue | Reality Check",
+          "c": "NewsNation",
+          "u": "https://www.youtube.com/watch?v=kNEJaw-Erks&list=PL6PrA6lo8rJLDQ29IhfY8na0heR9zD-Fu&index=36",
+          "d": "87:59"
+        },
+        {
+          "n": 419,
+          "t": "\"There's A UFO Under the Ranch!\" - Skinwalker Owner Breaks Silence",
+          "c": "Jesse Michels",
+          "u": "https://www.youtube.com/watch?v=uYyXpx7ADJQ",
+          "d": "199:03"
+        }
+      ],
+      "videoCount": 5,
+      "canal": 6,
+      "degree": 4,
+      "photo": "assets/faces/brandon_fugal.PNG"
+    },
+    {
       "id": "caso_magenta_italia",
       "name": "Caso Magenta, Italia",
       "role": "El Primer Crash Europeo Documentado",
@@ -6509,7 +6731,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 28,
       "canal": 1,
-      "degree": 41
+      "degree": 42
     },
     {
       "id": "proyecto_stargate_cia_dia",
@@ -6605,7 +6827,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 21,
       "canal": 6,
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "la_nsa_y_los_uaps",
@@ -7568,7 +7790,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 13,
       "canal": 1,
-      "degree": 20
+      "degree": 21
     },
     {
       "id": "scu_scientific_coalition_for_uap_studies",
@@ -9412,7 +9634,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 87,
       "canal": 6,
-      "degree": 29,
+      "degree": 30,
       "youtube": {
         "url": "https://www.youtube.com/@JesseMichels",
         "desc": "American Alchemy — periodismo gonzo de Jesse Michels con foco técnico en propulsión y figuras heterodoxas.",
@@ -10264,7 +10486,7 @@ window.RDC_DATA = {
       ],
       "videoCount": 50,
       "canal": 9,
-      "degree": 24,
+      "degree": 25,
       "youtube": {
         "url": "https://www.youtube.com/@NewsNation",
         "desc": "NewsNation / Reality Check — periodismo de investigación de Ross Coulthart.",
@@ -11071,6 +11293,18 @@ window.RDC_DATA = {
       "richard_dolan",
       "related",
       "6 co-apariciónes"
+    ],
+    [
+      "jeffrey_mishlove",
+      "proyecto_stargate_cia_dia",
+      "related",
+      "2 co-apariciónes"
+    ],
+    [
+      "brandon_fugal",
+      "skinwalker_ranch",
+      "related",
+      "5 co-apariciónes"
     ],
     [
       "bigelow_aerospace_baass",
@@ -12369,6 +12603,12 @@ window.RDC_DATA = {
       "5 co-apariciónes"
     ],
     [
+      "brandon_fugal",
+      "uaptf_y_aaro",
+      "related",
+      "2 co-apariciónes"
+    ],
+    [
       "lockheed_martin_skunk_works",
       "uaptf_y_aaro",
       "related",
@@ -12703,6 +12943,12 @@ window.RDC_DATA = {
       "jacques_vallee",
       "mentioned_by",
       "3 menciones"
+    ],
+    [
+      "ch_jesse_michels",
+      "brandon_fugal",
+      "mentioned_by",
+      "2 menciones"
     ],
     [
       "ch_jesse_michels",
@@ -13510,6 +13756,12 @@ window.RDC_DATA = {
     ],
     [
       "ch_newsnation",
+      "brandon_fugal",
+      "mentioned_by",
+      "2 menciones"
+    ],
+    [
+      "ch_newsnation",
       "lockheed_martin_skunk_works",
       "mentioned_by",
       "4 menciones"
@@ -13894,6 +14146,30 @@ window.RDC_DATA = {
     ],
     [
       "jordan_jozak",
+      "david_grusch",
+      "related",
+      "Misma categoría"
+    ],
+    [
+      "richard_doty",
+      "david_grusch",
+      "related",
+      "Misma categoría"
+    ],
+    [
+      "julia_mossbridge",
+      "jacques_vallee",
+      "related",
+      "Misma categoría"
+    ],
+    [
+      "mario_woods",
+      "david_grusch",
+      "related",
+      "Misma categoría"
+    ],
+    [
+      "roy_teague",
       "david_grusch",
       "related",
       "Misma categoría"
@@ -14518,7 +14794,8 @@ window.RDC_DATA = {
         "sol_foundation",
         "uaptf_y_aaro",
         "el_uap_caucus_del_congreso",
-        "james_lacatski"
+        "james_lacatski",
+        "brandon_fugal"
       ]
     },
     {
@@ -14575,7 +14852,8 @@ window.RDC_DATA = {
         "aztec_nuevo_mexico",
         "wright_patterson_afb",
         "el_memo_wilson_davis",
-        "dr_robert_irving_sarbacher"
+        "dr_robert_irving_sarbacher",
+        "richard_doty"
       ]
     },
     {
@@ -14603,7 +14881,9 @@ window.RDC_DATA = {
         "hal_puthoff_y_el_programa_baass",
         "prof_garry_nolan",
         "joe_mcmoneagle",
-        "russell_targ"
+        "russell_targ",
+        "julia_mossbridge",
+        "jeffrey_mishlove"
       ]
     },
     {
@@ -14761,7 +15041,8 @@ window.RDC_DATA = {
         "caso_mantell",
         "westall_australia",
         "david_fravor",
-        "ryan_graves"
+        "ryan_graves",
+        "roy_teague"
       ]
     },
     {
@@ -14812,7 +15093,8 @@ window.RDC_DATA = {
         "travis_walton",
         "betty_y_barney_hill",
         "jacques_vallee",
-        "diana_walsh_pasulka"
+        "diana_walsh_pasulka",
+        "mario_woods"
       ]
     }
   ]

@@ -193,6 +193,14 @@ const ALIASES_BY_ID = {
   carey_schmitt:                       ['carey schmitt'],
   timothy_tyler_d_taylor:              ['tyler d taylor', 'tim taylor'],
 
+  // Personas nuevas del lote #395–#425 (altas en Personas.xlsx)
+  richard_doty:                        ['richard doty', 'doty'],
+  julia_mossbridge:                    ['julia mossbridge', 'mossbridge'],
+  mario_woods:                         ['mario woods'],
+  roy_teague:                          ['roy teague', 'teague'],
+  jeffrey_mishlove:                    ['jeffrey mishlove', 'mishlove'],
+  brandon_fugal:                       ['brandon fugal', 'fugal'],
+
   // Eventos / casos — palabras clave reconocibles
   roswell_nuevo_mexico:                ['roswell'],
   caso_magenta_italia:                 ['magenta', 'magenta italia'],
@@ -282,7 +290,8 @@ const BANNED_WORDS = new Set([
   'fundacion', 'fundación', 'foundation',
   'corporacion', 'corporación', 'empresa', 'compania', 'compañía',
   'centro', 'instituto', 'agencia', 'comite', 'comité',
-  'sin'
+  'sin',
+  'woods'   // demasiado genérico como apellido suelto; Mario Woods usa alias completo
 ]);
 
 // ============================================================
@@ -297,7 +306,7 @@ const THREADS = [
     id: 't_aatip',
     title: 'AATIP, AAWSAP y los programas serios',
     desc: 'El expediente moderno tiene una columna vertebral institucional: AAWSAP (2008) bajo Lacatski y Stratton, después AATIP bajo Elizondo, con Puthoff y Eric Davis como brazo científico desde BAASS. El Skinwalker Ranch fue el laboratorio de campo, y los 38 DIRDs la producción técnica derivada. Es la única ventana en la que el gobierno trató el fenómeno como un problema de investigación real, antes de que AARO lo reemplazara con escepticismo oficial.',
-    nodes: ['aatip','aawsap','skinwalker_ranch','luis_elizondo','hal_puthoff_y_el_programa_baass','jay_stratton','eric_w_davis','sol_foundation','uaptf_y_aaro','el_uap_caucus_del_congreso','james_lacatski']
+    nodes: ['aatip','aawsap','skinwalker_ranch','luis_elizondo','hal_puthoff_y_el_programa_baass','jay_stratton','eric_w_davis','sol_foundation','uaptf_y_aaro','el_uap_caucus_del_congreso','james_lacatski','brandon_fugal']
   },
   {
     id: 't_grusch',
@@ -309,13 +318,13 @@ const THREADS = [
     id: 't_roswell',
     title: 'Roswell — el origen del relato parcializado',
     desc: 'Cuatro testigos cuentan Roswell desde cuatro ángulos: el funerario local que vio cuerpos, el coronel Philip Corso con acceso desde Fort Riley, MJ-12 como presunta estructura de custodia post-1947, y Richard Doty con las operaciones de desinformación post-1979. El memo Wilson-Davis añade una pieza más a la cadena. Roswell no es un evento aislado: es un campo de batalla narrativo donde cada fuente valida o problematiza el relato canónico.',
-    nodes: ['roswell_nuevo_mexico','mj_12_majestic_12','coronel_philip_j_corso','aztec_nuevo_mexico','wright_patterson_afb','el_memo_wilson_davis','dr_robert_irving_sarbacher']
+    nodes: ['roswell_nuevo_mexico','mj_12_majestic_12','coronel_philip_j_corso','aztec_nuevo_mexico','wright_patterson_afb','el_memo_wilson_davis','dr_robert_irving_sarbacher','richard_doty']
   },
   {
     id: 't_stargate',
     title: 'Stargate / visión remota / psionics',
     desc: 'Stargate (CIA/DIA, 1972-1995) institucionalizó la visión remota como activo de inteligencia operativa durante más de dos décadas. Hal Puthoff y Russell Targ lideraron el ala científica en SRI, Joe McMoneagle fue el visor estrella, Skip Atwater coordinó, y Sgt. Lyn Buchanan y John B. Alexander entrenaron operadores. No es un programa periférico: es la prueba documentada de que el aparato de seguridad nacional invirtió recursos sostenidos en psionics como infraestructura real.',
-    nodes: ['proyecto_stargate_cia_dia','sgt_lyn_buchanan','skip_atwater','john_b_alexander','hal_puthoff_y_el_programa_baass','prof_garry_nolan','joe_mcmoneagle','russell_targ']
+    nodes: ['proyecto_stargate_cia_dia','sgt_lyn_buchanan','skip_atwater','john_b_alexander','hal_puthoff_y_el_programa_baass','prof_garry_nolan','joe_mcmoneagle','russell_targ','julia_mossbridge','jeffrey_mishlove']
   },
   {
     id: 't_sol',
@@ -351,7 +360,7 @@ const THREADS = [
     id: 't_military',
     title: 'Avistamientos militares confirmados',
     desc: 'Casos con radar, FLIR, audio ATC y testimonio bajo juramento: USS Nimitz 2004 (Fravor y el Tic-Tac), Ryan Graves y los avistamientos diarios del USS Roosevelt 2014-2015, Malmstrom 1967 (apagado simultáneo de 10 misiles ICBM con Bob Salas), Rendlesham 1980 (memo Halt junto a almacenamiento nuclear), Japan Air Lines 1628 sobre Alaska, Manises 1979 (España), Mantell 1948, Westall 1966 (Australia) y las luces de Phoenix 1997. Es el suelo evidencial duro del expediente moderno.',
-    nodes: ['uss_nimitz','japan_air_lines_1628','malmstrom_afb','rendlesham_forest_uk','las_luces_de_phoenix','caso_manises','caso_mantell','westall_australia','david_fravor','ryan_graves']
+    nodes: ['uss_nimitz','japan_air_lines_1628','malmstrom_afb','rendlesham_forest_uk','las_luces_de_phoenix','caso_manises','caso_mantell','westall_australia','david_fravor','ryan_graves','roy_teague']
   },
   {
     id: 't_journalism',
@@ -363,7 +372,7 @@ const THREADS = [
     id: 't_abduction',
     title: 'Abducción / contacto',
     desc: 'La rama que la psiquiatría académica tomó en serio en los 90: John E. Mack (psiquiatra de Harvard y Premio Pulitzer, documentó rasgos clínicos en más de 200 experiencers), Betty y Barney Hill 1961 (el caso paradigmático con hipnosis regresiva), Travis Walton 1975 (5 días desaparecido con testigos múltiples). Jacques Vallée aporta el marco interpretativo no-extraterrestre (Magonia) y Diana Pasulka el ángulo de fenómeno religioso. Material incómodo pero documentado.',
-    nodes: ['john_e_mack','travis_walton','betty_y_barney_hill','jacques_vallee','diana_walsh_pasulka']
+    nodes: ['john_e_mack','travis_walton','betty_y_barney_hill','jacques_vallee','diana_walsh_pasulka','mario_woods']
   }
 ];
 
