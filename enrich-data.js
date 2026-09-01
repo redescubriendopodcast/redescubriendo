@@ -118,7 +118,10 @@ const YOUTUBE = {
     desc_en: 'VETTED — critical investigation and fact-checking of UAP cases.' },
   ch_dr_steven_greer: { url: 'https://www.youtube.com/channel/UCC6B4Y0oFACv9QBlf0ebBcg',
     desc: 'Dr. Steven Greer — divulgación y el protocolo de contacto CE-5.',
-    desc_en: 'Dr. Steven Greer — disclosure advocacy and the CE-5 contact protocol.' }
+    desc_en: 'Dr. Steven Greer — disclosure advocacy and the CE-5 contact protocol.' },
+  ch_third_eye_drops: { url: 'https://www.youtube.com/@THIRDEYEDROPS',
+    desc: 'Third Eye Drops · Michael Phillip — conversaciones sobre conciencia, fenómeno y experiencia.',
+    desc_en: 'Third Eye Drops · Michael Phillip — conversations on consciousness, the phenomenon, and experience.' }
 };
 
 // ── 4. COHERENCE COMPLEMENT (extra useful info from the timeline) ────────────

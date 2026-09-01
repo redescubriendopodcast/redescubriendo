@@ -223,7 +223,8 @@ const CANAL_LIST = [
   { id: 10, name: "That UFO Podcast",       short: "That UFO" },
   { id: 11, name: "Polarity",               short: "Polarity" },
   { id: 12, name: "VETTED",                 short: "VETTED" },
-  { id: 13, name: "Dr. Steven Greer",       short: "Greer" }
+  { id: 13, name: "Dr. Steven Greer",       short: "Greer" },
+  { id: 14, name: "Third Eye Drops",        short: "Third Eye" }
 ];
 
 function Sidebar({ data, query, setQuery, filters, setFilters, onSelect, selectedId, onThread, threadId }) {

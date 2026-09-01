@@ -29,7 +29,8 @@ const OUT  = path.join(ROOT, 'data.js');
 // Fuentes únicas (no duplicadas en este repo): viven en las carpetas donde
 // el operador trabaja habitualmente. Si cambias estas rutas, ajusta el README.
 const PROJECT_ROOT = path.resolve(ROOT, '..', '..');
-const LINEAS_DE_TIEMPO = path.join(PROJECT_ROOT, 'LINEAS DE TIEMPO');
+// Los xlsx de timeline en castellano viven en la subcarpeta ESP/ (los EN en ENG/).
+const LINEAS_DE_TIEMPO = path.join(PROJECT_ROOT, 'LINEAS DE TIEMPO', 'ESP');
 const TRANSCRIPCIONES  = path.join(PROJECT_ROOT, 'Transcripciones');
 
 const TIMELINE_FILES = {
@@ -80,7 +81,8 @@ const CHANNELS = [
   { id: 'ch_that_ufo_podcast',                    name: 'That UFO Podcast',                    corpusName: 'That UFO Podcast',                             bloc: 10 },
   { id: 'ch_polarity',                            name: 'Polarity',                            corpusName: 'Polarity',                                     bloc: 11 },
   { id: 'ch_vetted',                              name: 'VETTED',                              corpusName: 'VETTED',                                       bloc: 12 },
-  { id: 'ch_dr_steven_greer',                     name: 'Dr. Steven Greer',                    corpusName: 'Dr. Steven Greer',                             bloc: 13 }
+  { id: 'ch_dr_steven_greer',                     name: 'Dr. Steven Greer',                    corpusName: 'Dr. Steven Greer',                             bloc: 13 },
+  { id: 'ch_third_eye_drops',                     name: 'Third Eye Drops · Michael Phillip',   corpusName: 'THIRD EYE DROPS with Michael Phillip',         bloc: 14 }
 ];
 
 const CHANNEL_BY_CORPUS_NAME = Object.fromEntries(CHANNELS.map(c => [c.corpusName, c]));
